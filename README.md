@@ -21,8 +21,8 @@
    hexo  server
    浏览器访问 http://localhoxst:4000
 ## 部署方法
-使用 hexo generate 生成静态文件
-使用 hexo deploy 部署到 GitHub Pages
+1. 使用 hexo generate 生成静态文件
+2. 使用 hexo deploy 部署到 GitHub Pages
 ## 联系方式
   作者：奶油苏打和冕型灯
   邮箱：Relieved026@outlook.com
