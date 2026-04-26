@@ -106,5 +106,5 @@ theme: next
 
 deploy:
   type: git
-  repo: https://github.com/Blooming-cherry/My-Hexo-Blog.git
+  repo: https://github.com/Blooming-cherry/blooming-cherry.github.io.git
   branch: gh-pages
