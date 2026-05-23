@@ -76,5 +76,79 @@
     </div>
     
   </footer>
+
+  <!-- ═══ Arknights Dynamic Layer ═══ -->
+  <script>
+  (function(){
+    /* ── Gyroscope parallax (Diegetic Interface) ── */
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', function(e) {
+        var hero = document.querySelector('.hero');
+        if (!hero) return;
+        var x = (e.gamma || 0) / 15;
+        var y = (e.beta  || 0) / 20;
+        var h1 = hero.querySelector('h1');
+        var badge = hero.querySelector('.badge');
+        if (h1) h1.style.transform = 'translate(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px)';
+        if (badge) badge.style.transform = 'translate(' + (x * 0.6).toFixed(1) + 'px, ' + (y * 0.6).toFixed(1) + 'px)';
+      });
+    }
+
+    /* ── Scroll reveal ── */
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+    /* ── Cursor glow (desktop only) ── */
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.addEventListener('mousemove', function(e) {
+        document.documentElement.style.setProperty('--cursor-x',
+          (e.clientX / window.innerWidth * 100).toFixed(1) + '%');
+        document.documentElement.style.setProperty('--cursor-y',
+          (e.clientY / window.innerHeight * 100).toFixed(1) + '%');
+      });
+      document.documentElement.classList.add('cursor-glow');
+    }
+
+    /* ── Floating particles in hero ── */
+    var hero = document.querySelector('.hero');
+    if (hero) {
+      var canvas = document.createElement('canvas');
+      canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:1;opacity:0.35';
+      hero.appendChild(canvas);
+      var ctx = canvas.getContext('2d');
+      var dots = [], count = 35;
+      function resize() { canvas.width = hero.offsetWidth; canvas.height = hero.offsetHeight; }
+      resize(); window.addEventListener('resize', resize);
+      for (var i = 0; i < count; i++) {
+        dots.push({
+          x: Math.random() * (canvas.width || 300),
+          y: Math.random() * (canvas.height || 200),
+          r: Math.random() * 1.6 + 0.3,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25
+        });
+      }
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#f0a030';
+        ctx.fillStyle = accent;
+        dots.forEach(function(d) {
+          ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2); ctx.fill();
+          d.x += d.vx; d.y += d.vy;
+          if (d.x < 0) d.x = canvas.width;
+          if (d.x > canvas.width) d.x = 0;
+          if (d.y < 0) d.y = canvas.height;
+          if (d.y > canvas.height) d.y = 0;
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+  })();
+  </script>
 </body>
 </html>
