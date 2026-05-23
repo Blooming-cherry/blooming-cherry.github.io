@@ -1,0 +1,46 @@
+# Arknights Theme Config
+# 菜单
+menu:
+  Home: /
+  Archives: /archives
+
+# 页脚
+footer:
+  since: 2024
+  icon: heart
+  powered: true
+  arknights_link: true
+  arknights_url: https://ak.hypergryph.com/
+
+# 主线风格（首页 & 特定文章）
+main_accent: "#f0a030"
+main_badge: "罗德岛 · PRTS"
+
+# 随机风格池（文章页随机选取）
+style_pool:
+  - accent: "#4a90d9"
+    badge: "龙门 · Lungmen"
+  - accent: "#b89a50"
+    badge: "维多利亚 · Victoria"
+  - accent: "#d4a030"
+    badge: "卡西米尔 · Kazimierz"
+  - accent: "#40b4c0"
+    badge: "莱茵生命 · Rhine Lab"
+  - accent: "#c04040"
+    badge: "炎国 · Yan"
+  - accent: "#d4b896"
+    badge: "拉特兰 · Laterano"
+  - accent: "#3a6a9a"
+    badge: "伊比利亚 · Iberia"
+  - accent: "#9ab8d8"
+    badge: "谢拉格 · Kjerag"
+  - accent: "#e87080"
+    badge: "多索雷斯 · Dossoles"
+  - accent: "#e8a850"
+    badge: "火山旅梦 · Siesta"
+  - accent: "#a060c0"
+    badge: "莱塔尼亚 · Leithanien"
+
+# 不参与随机的文章 slug 列表（始终使用主线风格）
+fixed_main_style:
+  - "明日方舟美术风格分析"

@@ -1,0 +1,27 @@
+<% const accent = theme.main_accent || "#f0a030"; %>
+
+<section class="hero" style="--accent: <%- accent %>;">
+  <div class="badge">ARCHIVES / 归档</div>
+  <h1>归档</h1>
+  <p class="subtitle">All Posts</p>
+</section>
+
+<section class="archive-page">
+  <div class="container">
+    <% page.posts.each(function(post){ %>
+    <div class="archive-item">
+      <span class="archive-date"><%- date(post.date, 'YYYY-MM-DD') %></span>
+      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+    </div>
+    <% }); %>
+  </div>
+</section>
+
+<% if (page.total > 1) { %>
+<div class="pagination">
+  <%- paginator({
+    prev_text: '< PREV',
+    next_text: 'NEXT >'
+  }) %>
+</div>
+<% } %>

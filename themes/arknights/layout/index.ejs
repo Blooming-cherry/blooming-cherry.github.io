@@ -1,0 +1,38 @@
+<% const mainAccent = theme.main_accent || "#f0a030"; %>
+
+<!-- ── Hero (主线风格) ── -->
+<section class="hero" style="--accent: <%- mainAccent %>;">
+  <div class="badge"><%= theme.main_badge || "罗德岛 · PRTS" %></div>
+  <h1><%= config.title %></h1>
+  <p class="subtitle"><%= config.subtitle %></p>
+</section>
+
+<!-- ── Post List ── -->
+<section class="post-list">
+  <div class="container">
+    <% page.posts.each(function(post){ %>
+    <article class="post-item">
+      <div class="post-date">
+        <%- date(post.date, 'YYYY-MM-DD') %>
+      </div>
+      <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+      <div class="post-excerpt">
+        <%- post.excerpt || (post.content ? post.content.substring(0, 200).replace(/<[^>]*>/g, '') + '...' : '') %>
+      </div>
+    </article>
+    <% }); %>
+  </div>
+</section>
+
+<!-- ── Pagination ── -->
+<% if (page.total > 1) { %>
+<div class="pagination">
+  <%- paginator({
+    prev_text: '< PREV',
+    next_text: 'NEXT >',
+    space: '&nbsp;',
+    end_size: 1,
+    mid_size: 2
+  }) %>
+</div>
+<% } %>

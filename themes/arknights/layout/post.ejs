@@ -1,0 +1,32 @@
+<%
+  const style = post_style(page);
+  const accent = style.accent;
+  const badge = style.badge;
+%>
+
+<article class="post-page" style="--accent: <%- accent %>;">
+  <div class="container">
+    <header class="post-header">
+      <div class="post-badge"><%= badge %></div>
+      <h1><%= page.title %></h1>
+      <div class="post-date">
+        <%- date(page.date, 'YYYY-MM-DD') %>
+        <% if (page.updated && page.updated.format('YYYY-MM-DD') !== page.date.format('YYYY-MM-DD')) { %>
+          &middot; Updated <%- date(page.updated, 'YYYY-MM-DD') %>
+        <% } %>
+      </div>
+    </header>
+
+    <div class="post-body">
+      <%- page.content %>
+    </div>
+
+    <% if (page.tags && page.tags.length) { %>
+    <div class="post-tags">
+      <% page.tags.each(function(tag){ %>
+        <a href="<%- url_for(tag.path) %>">#<%= tag.name %></a>
+      <% }); %>
+    </div>
+    <% } %>
+  </div>
+</article>
