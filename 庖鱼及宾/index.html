@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>庖鱼及宾 | “松花酿酒，春水煎茶”</title>
+  <meta name="description" content="总觉得诗意和哲理之类，是零碎的、断续的、明灭的。多有两万七千行的诗剧，峰峦重叠的逻辑著作，哥德、黑格尔写完了也不言累，予一念及此已累得茫无头绪。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="庖鱼及宾">
+<meta property="og:url" content="https://blooming-cherry.github.io/%E5%BA%96%E9%B1%BC%E5%8F%8A%E5%AE%BE/index.html">
+<meta property="og:site_name" content="“松花酿酒，春水煎茶”">
+<meta property="og:description" content="总觉得诗意和哲理之类，是零碎的、断续的、明灭的。多有两万七千行的诗剧，峰峦重叠的逻辑著作，哥德、黑格尔写完了也不言累，予一念及此已累得茫无头绪。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\my-blog\my-blog\source\images\4.blog\1.png">
+<meta property="og:image" content="d:\my-blog\my-blog\source\images\4.blog\2.png">
+<meta property="article:published_time" content="2026-05-22T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-23T16:54:14.860Z">
+<meta property="article:author" content="奶油苏打和冕型灯">
+<meta property="article:tag" content="archlinux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\my-blog\my-blog\source\images\4.blog\1.png">
+  <meta name="description" content="在下不才，兹于AAU求学，于图门下求道，辟此秘境，记录技术学习点滴。">
+  <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- ── Header / Nav ── -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-brand">“松花酿酒，春水煎茶”</a>
+      <ul class="site-nav">
+        <li><a href="/">HOME / 首页</a></li>
+        <li><a href="/archives">ARCHIVES / 归档</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    
+
+<article class="post-page" style="--accent: #b89a50;">
+  <div class="container">
+    <header class="post-header">
+      <div class="post-badge">维多利亚 · Victoria</div>
+      <h1>庖鱼及宾</h1>
+      <div class="post-date">
+        2026-05-22
+        
+          &middot; Updated 2026-05-24
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+      <h1 id="夏意正盎"><a href="#夏意正盎" class="headerlink" title="夏意正盎"></a>夏意正盎</h1><p>五月十日下午，阳光正好，青纱漫卷，一帘夏至，云卷云舒，花鸟缱绻，学生倥偬驹过隙，诗眼倦天涯。从上午十点开始便浸淫在archlinux，急头白脸地上B站选择自己的桌面环境，然后阅读官网文章，学习搭建桌面环境，然后查看archwili，学习pacman（然而现在看来并无什么用，接近于无用功）的命令，然后指望从里面看出自定义桌面环境的搭建方法。<br>事实上当我发现，我的vmtools都没有办法正常使用之后，我已经lose my temper了，随后百无聊赖地打开桌面上的steam查看自己的库（实际上只有Apex和CS2），准备开始用FPS麻痹一下自己纤弱的神经。直到我收到这条信息<img src="D:\my-blog\my-blog\source\images\4.blog\1.png" alt="聊天记录">，本来抱着试一试的心态，邀请他来帮我进行桌面环境安装，但是由于是第一次上手archlinux，也是一波三折。</p>
+<h2 id="ping网的波折"><a href="#ping网的波折" class="headerlink" title="ping网的波折"></a>ping网的波折</h2><p>起初，我们按照gtp的建议，先安装了base-devel开发工具包组和git，构建基础的开发环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S base-devel git</span><br></pre></td></tr></table></figure>
+<p>但是我马上就遇到问题了<img src="D:\my-blog\my-blog\source\images\4.blog\2.png" alt="网络报错">在这个页面中，最初的报错是镜像源中未查找到我尝试安装的包，继而我尝试进行连接百度的网址，也就是ping网，然后出现了访问不到网络的情况。经过初步排查，是虚拟机的网络设置问题。这里我采用systed-netwokd的网络配置方式，配置文件使用[Match]和[Network]段，具体bash命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip <span class="built_in">link</span></span><br></pre></td></tr></table></figure>
+<p>然后获得我的网络接口为[ens33]然后启用systermd-network，终端命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#命令1</span></span><br><span class="line">systemctl <span class="built_in">enable</span> --now systemd-networkd</span><br><span class="line"><span class="comment">#命令2</span></span><br><span class="line">systemctl <span class="built_in">enable</span> --now systemd-resolved</span><br></pre></td></tr></table></figure>
+<p> 然后配置DHCP，创建系统文件[&#x2F;etc&#x2F;systemd&#x2F;network&#x2F;20-wired.network]<em>此处文本命名仅作为示例</em>，配置文件如下：<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> [Match]</span><br><span class="line"> Name=ens33</span><br><span class="line"> [Network]</span><br><span class="line"> DHCP=<span class="built_in">yes</span></span><br><span class="line"> <span class="comment">#---&lt;然后配置静态IP&gt;---</span></span><br><span class="line">Address=192.168.1.1</span><br><span class="line">Gateway=192.168.1.1</span><br><span class="line">DNS=8.8.8.8</span><br><span class="line">DNS=1.1.1.1</span><br><span class="line"><span class="comment">#---&lt;以上均作为示例，不代表实际配置&gt;---</span></span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+      
+        <a href="/tags/archlinux/">#archlinux</a>
+      
+    </div>
+    
+  </div>
+</article>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="footer-line">
+      &copy; 2024-2026
+      <a href="/">奶油苏打和冕型灯</a>
+    </div>
+    
+    <div class="footer-line">
+      Powered by <a href="https://hexo.io/" target="_blank">HEXO</a> &middot;
+       Theme <a href="https://github.com/Blooming-cherry" target="_blank">Arknights Design</a>
+    </div>
+    
+    
+    <div class="footer-line arknights-credit">
+      Inspired by <a href="https://ak.hypergryph.com/" target="_blank">Arknights / 明日方舟</a>
+      &copy; Hypergryph / Studio Montagne
+    </div>
+    
+  </footer>
+</body>
+</html>
