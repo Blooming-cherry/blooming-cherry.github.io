@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 14:34:51" itemprop="dateModified" datetime="2026-05-24T14:34:51+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 14:41:37" itemprop="dateModified" datetime="2026-05-24T14:41:37+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -304,7 +304,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 14:34:51" itemprop="dateModified" datetime="2026-05-24T14:34:51+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 14:41:37" itemprop="dateModified" datetime="2026-05-24T14:41:37+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -390,7 +390,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 14:34:51" itemprop="dateModified" datetime="2026-05-24T14:34:51+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 14:41:37" itemprop="dateModified" datetime="2026-05-24T14:41:37+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -476,7 +476,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 14:34:51" itemprop="dateModified" datetime="2026-05-24T14:34:51+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 14:41:37" itemprop="dateModified" datetime="2026-05-24T14:41:37+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -562,7 +562,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 14:34:51" itemprop="dateModified" datetime="2026-05-24T14:34:51+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 14:41:37" itemprop="dateModified" datetime="2026-05-24T14:41:37+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -878,13 +878,21 @@ window.addEventListener('pjax:success', () => {
 <!-- Arknights credit -->
 <script>
 (function(){
-  var footer = document.querySelector('.footer');
-  if (!footer) return;
-  var credit = document.createElement('div');
-  credit.className = 'arknights-credit';
-  credit.style.cssText = 'margin-top:6px;font-size:12px;color:#999;text-align:center;';
-  credit.innerHTML = 'Inspired by <a href="https://ak.hypergryph.com/" target="_blank" style="color:#999;">Arknights / 明日方舟</a> &copy; Hypergryph / Studio Montagne';
-  footer.appendChild(credit);
+  function injectCredit() {
+    var footer = document.querySelector('.footer');
+    if (!footer) return;
+    // Remove any stale duplicates first
+    var stale = footer.querySelectorAll('.arknights-credit');
+    stale.forEach(function(el) { el.remove(); });
+    var credit = document.createElement('div');
+    credit.className = 'arknights-credit';
+    credit.style.cssText = 'margin-top:6px;font-size:12px;color:#999;text-align:center;';
+    credit.innerHTML = 'Inspired by <a href="https://ak.hypergryph.com/" target="_blank" style="color:#999;">Arknights / 明日方舟</a> &copy; Hypergryph / Studio Montagne';
+    footer.appendChild(credit);
+  }
+  injectCredit();
+  // Re-inject after PJAX page swaps (footer may have been replaced)
+  document.addEventListener('pjax:success', injectCredit);
 })();
 </script>
 
