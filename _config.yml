@@ -97,10 +97,16 @@ include:
 exclude:
 ignore:
 
+# APlayer music player
+## https://github.com/MoePlayer/hexo-tag-aplayer
+aplayer:
+  meting: false
+  asset_inject: true
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: arknights
+theme: next
 
 # Deployment — 由 GitHub Actions workflow (.github/workflows/deploy.yml) 自动构建部署
 ## 本地不再使用 hexo deploy，避免与 Actions 冲突

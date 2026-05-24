@@ -28,10 +28,10 @@ custom_file_path:
   #postMeta: source/_data/post-meta.swig
   #postBodyEnd: source/_data/post-body-end.swig
   #footer: source/_data/footer.swig
-  #bodyEnd: source/_data/body-end.swig
+  bodyEnd: source/_data/body-end.swig
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
+  style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -59,7 +59,7 @@ footer:
     # Icon name in Font Awesome. See: https://fontawesome.com/icons
     name: fa fa-heart
     # If you want to animate the icon, set it to true.
-    animated: false
+    animated: true
     # Change the color of icon, using Hex Code.
     color: "#ff0000"
 
@@ -103,7 +103,7 @@ scheme: Muse
 #scheme: Gemini
 
 # Dark Mode
-darkmode: false
+darkmode: true
 
 
 # ---------------------------------------------------------------
@@ -119,8 +119,9 @@ menu:
   home: / || fa fa-home
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
+  categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
+  music: /music/ || fa fa-music
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
@@ -151,7 +152,7 @@ sidebar:
   #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: post
+  display: hide
 
   # Sidebar padding in pixels.
   padding: 18
@@ -163,9 +164,9 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: /images/avatar.jpg
   # If true, the avatar will be dispalyed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar will be rotated with the cursor.
   rotated: false
 
@@ -177,16 +178,10 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
-  #Twitter: https://twitter.com/yourname || fab fa-twitter
-  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
-  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
-  #YouTube: https://youtube.com/yourname || fab fa-youtube
-  #Instagram: https://instagram.com/yourname || fab fa-instagram
-  #Skype: skype:yourname?call|chat || fab fa-skype
+  GitHub: https://github.com/Blooming-cherry || fab fa-github
+  E-Mail: mailto:yifan230@gmail.com || fa fa-envelope
+  网易云音乐: https://music.163.com/#/user/home?id=6326055984 || fa fa-music
+  Bilibili: https://space.bilibili.com/3461564099201962 || fa fa-play-circle
 
 social_icons:
   enable: true
@@ -196,12 +191,13 @@ social_icons:
 # Blog rolls
 links_settings:
   icon: fa fa-link
-  title: Links
+  title: 友情链接
   # Available values: block | inline
   layout: block
 
 links:
-  #Title: http://yoursite.com
+  EchoesFromShell: https://echoesfromshell.netlify.app
+  SeeWater: https://seewater.cc
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -357,9 +353,9 @@ codeblock:
   highlight_theme: normal
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result.
-    show_result: false
+    show_result: true
     # Available values: default | flat | mac
     style:
 
@@ -368,7 +364,7 @@ back2top:
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
@@ -521,15 +517,15 @@ fancybox: false
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://github.com/francoischalifour/medium-zoom
-mediumzoom: false
+mediumzoom: true
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://github.com/ApoorvSaxena/lozad.js
-lazyload: false
+lazyload: true
 
 # Pangu Support
 # For more information: https://github.com/vinta/pangu.js
-pangu: false
+pangu: true
 
 # Quicklink Support
 # Do not enable both `pjax` and `quicklink`.
@@ -633,17 +629,17 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: Blooming-cherry # GitHub repo owner
+  repo: blooming-cherry.github.io # Repository name to store issues
+  client_id: Ov23li1PWJC42UVKm49t
+  client_secret: b7ea163f893ec547d25552b840dfdb3efc0a3be7
+  admin_user: Blooming-cherry # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language:
+  language: zh-CN
 
 
 # ---------------------------------------------------------------
@@ -739,7 +735,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto

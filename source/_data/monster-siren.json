@@ -1,0 +1,1846 @@
+{
+  "songs": {
+    "125030": {
+      "cid": "125030",
+      "name": "祭祷",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4507",
+      "albumName": "相变临界OST",
+      "sourceUrl": "https://res01.hycdn.cn/03dd7c3860c0172b3d80588eea18e244/6A12AB45/siren/audio/20260507/52f3bff5a12d1c2a30144258aa919d8c.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "lyricUrl": null
+    },
+    "125031": {
+      "cid": "125031",
+      "name": "无缚者之夜",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8920",
+      "albumName": "人们，我们OST",
+      "sourceUrl": "https://res01.hycdn.cn/2a84339784c2d8b13348abd30fb35002/6A12AB4B/siren/audio/20260408/91951c176c1620e58f98a7fa242f6024.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+      "lyricUrl": null
+    },
+    "125032": {
+      "cid": "125032",
+      "name": "破晦",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/14bd9640624342a48408a872e36c8d5d/6A12AAFB/siren/audio/20260323/c4a61ece7880e5c470f74a7fd6ca61ca.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "125033": {
+      "cid": "125033",
+      "name": "盘桓千古",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/dd3a4259ccd26efb15c56c3a1441601e/6A12AAF7/siren/audio/20260323/9dc16b5b090fa0e63a2ed06c6b6a759c.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "125034": {
+      "cid": "125034",
+      "name": "Oath (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "6657",
+      "albumName": "Oath",
+      "sourceUrl": "https://res01.hycdn.cn/1d5193c07e0f0739456242d566d05442/6A12AB4E/siren/audio/20260310/dfe186e74eb778bac0bd07e4184cc13e.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260310/21165f7bd3a083aff3a14f10e8f14dbf.jpg",
+      "lyricUrl": null
+    },
+    "125035": {
+      "cid": "125035",
+      "name": "A Thousand Shattered Hopes",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0235",
+      "albumName": "雅赛努斯复仇记OST",
+      "sourceUrl": "https://res01.hycdn.cn/4197fcb104e4313a600fe3e2e417022c/6A12AB55/siren/audio/20260111/b26cf972106e5f476b7ec90ccbc10fb8.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+      "lyricUrl": null
+    },
+    "125036": {
+      "cid": "125036",
+      "name": "Dance Of Athenius",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0235",
+      "albumName": "雅赛努斯复仇记OST",
+      "sourceUrl": "https://res01.hycdn.cn/db4fbb105043801ccc9b214b623abb3d/6A12AB54/siren/audio/20260111/b9680d2ccd13dd13c2928da796a44005.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+      "lyricUrl": null
+    },
+    "232222": {
+      "cid": "232222",
+      "name": "对峙",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0233",
+      "albumName": "0233",
+      "sourceUrl": "https://res01.hycdn.cn/f2d2883949c3c1e9d3c6d94c4c9ef04e/6A12AAF3/siren/audio/20260516/d736338238ea360045571118dc9639b3.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+      "lyricUrl": null
+    },
+    "232223": {
+      "cid": "232223",
+      "name": "Don't Miss It",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "6656",
+      "albumName": "6656",
+      "sourceUrl": "https://res01.hycdn.cn/dd76b23f6ff35e5ab3e0c1b597409caa/6A12AAF4/siren/audio/20260501/a52a9387dcbabfa692c2fbdb8cc2f4bc.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/1a50f5680caf2754042772157324e5e2.jpg",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260501/79a82f507edbe3875ad74613f93bc95d.lrc"
+    },
+    "232224": {
+      "cid": "232224",
+      "name": "Innocence",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "7762",
+      "albumName": "Innocence",
+      "sourceUrl": "https://res01.hycdn.cn/ca5537864394f44e6ee2895489643cb7/6A12AB48/siren/audio/20260430/ad9bf0b9ea6ca69a4d97cf479101b65f.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260430/f9b26e4c0c578194e2f9bfd553f4b991.lrc"
+    },
+    "232225": {
+      "cid": "232225",
+      "name": "守矩为义",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/1f513a96eab7d391e830c0dd3852013b/6A12AAFA/siren/audio/20260323/9ebbed7af22458f073898d88a180e2dc.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "232226": {
+      "cid": "232226",
+      "name": "意难平",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/a4af980d4f241a6e252cc47096bf330e/6A12AAFA/siren/audio/20260323/fc6e79cdbd076c6b1418b67cf86a6a50.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "232227": {
+      "cid": "232227",
+      "name": "十字路口",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "9373",
+      "albumName": "十字路口OST",
+      "sourceUrl": "https://res01.hycdn.cn/d7cf802bbc19a843b831aed26c6ac9ac/6A12AB4D/siren/audio/20260312/5a09935760bbe5a0a41094aa280fde87.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260312/93e7b12f4bf553d0168cf3a6a31461b6.jpg",
+      "lyricUrl": null
+    },
+    "232228": {
+      "cid": "232228",
+      "name": "来者可追",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2442",
+      "albumName": "辞岁行OST",
+      "sourceUrl": "https://res01.hycdn.cn/ec9be6741ea4046e3cee9bbcd85c2afd/6A12AB51/siren/audio/20260212/4cd23fbe0496f9ab61139ab2804325b4.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "lyricUrl": null
+    },
+    "232229": {
+      "cid": "232229",
+      "name": "Slowly Flow, Hearthlight Glow (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "6658",
+      "albumName": "Slowly Flow, Hearthlight Glow",
+      "sourceUrl": "https://res01.hycdn.cn/af8947b4d8e245184a0f5a45e74931bd/6A12AB58/siren/audio/20251224/1442fbd8be92c40289ca6a50070f0923.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20251224/c5ceffed908e38f7c4b88f214d4e9b7a.png",
+      "lyricUrl": null
+    },
+    "306870": {
+      "cid": "306870",
+      "name": "叙苍茫",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/44bf482f04411207b0956dbbb7b9c15f/6A12AAF8/siren/audio/20260323/09f2ebcc79bbbf3622b77e6f1704a7f1.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "306871": {
+      "cid": "306871",
+      "name": "花街迎春",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "9374",
+      "albumName": "花街迎春",
+      "sourceUrl": "https://res01.hycdn.cn/5d1de59518aac1f43fd9c1cdcac6f09a/6A12AB50/siren/audio/20260212/7c6188021e1d48ef5f04237fad67f909.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/fa6b1ffb7b95f13f6a2adb58a0422cb5.jpg",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260212/2f78da763ae28a08bec587f60a13c143.lrc"
+    },
+    "306872": {
+      "cid": "306872",
+      "name": "铁花飞",
+      "artistes": [
+        "Mili"
+      ],
+      "albumCid": "5190",
+      "albumName": "5190",
+      "sourceUrl": "https://res01.hycdn.cn/a78500e4698158e940f5bfecf4c7da9d/6A12AAFC/siren/audio/20260208/2caccb93919ede609029a2f5fa7af98d.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260208/464eada92f718ad5013e45c010b6a415.png",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260208/44176e569d7fdd12e4e7cacc51d34dc0.lrc"
+    },
+    "306877": {
+      "cid": "306877",
+      "name": "厨房谈话",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4507",
+      "albumName": "相变临界OST",
+      "sourceUrl": "https://res01.hycdn.cn/1710be4754319bd5d30751b6f3a292c8/6A12AB46/siren/audio/20260503/b48296ba0e570f44c6bbcbbb4f0a84c5.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "lyricUrl": null
+    },
+    "306878": {
+      "cid": "306878",
+      "name": "All by My Design",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0234",
+      "albumName": "All by My Design",
+      "sourceUrl": "https://res01.hycdn.cn/86ed7988c984bb499b0ab7f2c5d02967/6A12AB47/siren/audio/20260501/89ca840e4d3696fa12d000aefc94a089.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/ec1fab7576400e699d76ab022ad4ed2c.jpg",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260501/91faa573133125c65cadb9df3c1cca31.lrc"
+    },
+    "306879": {
+      "cid": "306879",
+      "name": "TOO EASY",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2441",
+      "albumName": "2441",
+      "sourceUrl": "https://res01.hycdn.cn/9a0e210eb2bcf143db0dbda6eb5c44da/6A12AAF5/siren/audio/20260402/1dad12362086b46b5ce6565e8fafccd5.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260402/f97ab41b3aa499eae97bca3a8cc87dc6.jpg",
+      "lyricUrl": null
+    },
+    "461111": {
+      "cid": "461111",
+      "name": "新生蓝图",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0233",
+      "albumName": "0233",
+      "sourceUrl": "https://res01.hycdn.cn/faa2bb5df4dd13e24fef6de69711629f/6A12AAF3/siren/audio/20260516/5d0cc3e892bc7b9e14b458b67e0ef6a4.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+      "lyricUrl": null
+    },
+    "461112": {
+      "cid": "461112",
+      "name": "破缺对称",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4507",
+      "albumName": "相变临界OST",
+      "sourceUrl": "https://res01.hycdn.cn/ea478e264e3576922d2679009f5d182d/6A12AB45/siren/audio/20260507/c5329ee86ca0c2f37c1824a097685e25.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "lyricUrl": null
+    },
+    "461113": {
+      "cid": "461113",
+      "name": "敬畏自由",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8920",
+      "albumName": "人们，我们OST",
+      "sourceUrl": "https://res01.hycdn.cn/fe00e9957ec29af7e69bc1c7f05074ea/6A12AB4B/siren/audio/20260408/89c03f573d25f77a16c0de5b483007b5.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+      "lyricUrl": null
+    },
+    "461114": {
+      "cid": "461114",
+      "name": "One Fight",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "3885",
+      "albumName": "One Fight",
+      "sourceUrl": "https://res01.hycdn.cn/9842e64a1ff355d55a24d25068d6b11b/6A12AB4C/siren/audio/20260407/ecc0c608ca616e88ccb0ce8f9871511f.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260407/4f776c3d43fe990d7e6796e2566cd483.png",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260407/7eb0ae9875988c9ee8d8b236c19644a6.lrc"
+    },
+    "461115": {
+      "cid": "461115",
+      "name": "枕景",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/ecac36a1420f28dbd7a14d13322ef31e/6A12AAF7/siren/audio/20260323/238d191d44f589fde4e423a19a0a2d52.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "461116": {
+      "cid": "461116",
+      "name": "自有乾坤",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/fcf5ca56cd306749cb401133ec7bd290/6A12AAF6/siren/audio/20260323/2bd06230a0a5b11c8b175b34e9e866ae.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "461117": {
+      "cid": "461117",
+      "name": "酬天问",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2442",
+      "albumName": "辞岁行OST",
+      "sourceUrl": "https://res01.hycdn.cn/e8a9db3481e30efbe497c7fb2cedb778/6A12AB51/siren/audio/20260212/e81bfc128cb1a62332b36b71077a024d.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "lyricUrl": null
+    },
+    "461118": {
+      "cid": "461118",
+      "name": "Beneath The Cloudless Sky",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0235",
+      "albumName": "雅赛努斯复仇记OST",
+      "sourceUrl": "https://res01.hycdn.cn/76be779c977c8c6743adda6f7861fa5f/6A12AB54/siren/audio/20260111/4f558b6849cbe70f4cb8320a0725661f.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+      "lyricUrl": null
+    },
+    "514500": {
+      "cid": "514500",
+      "name": "Slowly Flow, Hearthlight Glow",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "6658",
+      "albumName": "Slowly Flow, Hearthlight Glow",
+      "sourceUrl": "https://res01.hycdn.cn/88e172620bdc9e53f28151cf26e8c208/6A12AB57/siren/audio/20251224/e92fc315b17066c40adf2f0fd5e9dac2.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20251224/c5ceffed908e38f7c4b88f214d4e9b7a.png",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20251224/247fc3452bb6e3af5c4db6330c303d64.lrc"
+    },
+    "514503": {
+      "cid": "514503",
+      "name": "荒原黎明",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0233",
+      "albumName": "0233",
+      "sourceUrl": "https://res01.hycdn.cn/367e01a65ac52fc691dcf5d66194b227/6A12AAF2/siren/audio/20260516/f8587ce736e94a2110998cd2f28cdcf6.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+      "lyricUrl": null
+    },
+    "514504": {
+      "cid": "514504",
+      "name": "“诺言”",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4507",
+      "albumName": "相变临界OST",
+      "sourceUrl": "https://res01.hycdn.cn/12422556c58aa601f545793ca2204cc8/6A12AB46/siren/audio/20260503/ec32fb3ce861385052b4b171f4792a40.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "lyricUrl": null
+    },
+    "514505": {
+      "cid": "514505",
+      "name": "还有明天",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8920",
+      "albumName": "人们，我们OST",
+      "sourceUrl": "https://res01.hycdn.cn/699f21069f4b4a8dfd1c9181896ddfcb/6A12AB4B/siren/audio/20260408/aa3c8d6232245caa321abdf3b19070b7.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+      "lyricUrl": null
+    },
+    "514506": {
+      "cid": "514506",
+      "name": "众怒",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8920",
+      "albumName": "人们，我们OST",
+      "sourceUrl": "https://res01.hycdn.cn/7a87516cc617fed7528a5aad836f22d8/6A12AB4A/siren/audio/20260408/4df5383af7a23f25dd3688b38a9644ce.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+      "lyricUrl": null
+    },
+    "514507": {
+      "cid": "514507",
+      "name": "残卷",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/41a88002578296d5d147c25a26a80fff/6A12AAF9/siren/audio/20260323/142cf60b3d6b4a8aaf1e2f28d0a26603.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "514508": {
+      "cid": "514508",
+      "name": "界园志异",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/20dd0adcc0f784b035895d54bf6149cb/6A12AAF6/siren/audio/20260323/95a356b1249b05423e68c2865836996b.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "514509": {
+      "cid": "514509",
+      "name": "无名策 (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4509",
+      "albumName": "无名策",
+      "sourceUrl": "https://res01.hycdn.cn/1dd90d21e09c912cadbddecb49497967/6A12AB53/siren/audio/20260209/3310c31831973e9e6c2fe722f954fb66.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260209/9ac6729658ff746a0efea3794d4c73e9.png",
+      "lyricUrl": null
+    },
+    "697680": {
+      "cid": "697680",
+      "name": "博士VS博士？",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2441",
+      "albumName": "2441",
+      "sourceUrl": "https://res01.hycdn.cn/7ac97637fad93b4990e9008a767df536/6A12AAF5/siren/audio/20260402/dcd362f37c47f4ce7a80bd486f8f9104.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260402/f97ab41b3aa499eae97bca3a8cc87dc6.jpg",
+      "lyricUrl": null
+    },
+    "697681": {
+      "cid": "697681",
+      "name": "天不予",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/907c29acd8e885d6b11a7144a27e8f4e/6A12AAF7/siren/audio/20260323/99b87f09531b8ba233e64190e79a2bac.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "697682": {
+      "cid": "697682",
+      "name": "花街迎春 (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "9374",
+      "albumName": "花街迎春",
+      "sourceUrl": "https://res01.hycdn.cn/f92483870ddcc70717134618bb794017/6A12AB50/siren/audio/20260212/f177f25623eb24c2b654578753b9ee7f.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/fa6b1ffb7b95f13f6a2adb58a0422cb5.jpg",
+      "lyricUrl": null
+    },
+    "697683": {
+      "cid": "697683",
+      "name": "Never-Forgetting, Never-Forgiving",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0235",
+      "albumName": "雅赛努斯复仇记OST",
+      "sourceUrl": "https://res01.hycdn.cn/a5ce72093e2087ab39c3fb4b007ea70b/6A12AB55/siren/audio/20260111/f382b17223a61bdf6bd2c44d85459a19.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+      "lyricUrl": null
+    },
+    "697684": {
+      "cid": "697684",
+      "name": "Wanna Know Me? (Too Bad)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8921",
+      "albumName": "Wanna Know Me? (Too Bad)",
+      "sourceUrl": "https://res01.hycdn.cn/f94a0f1e33ecf9015cb6fc43ac2b532a/6A12AB56/siren/audio/20260109/8b86fdefd91a6c744be19b85f4336aff.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260109/7d2b4d1d8dfa8dd9b26532ea35447712.png",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260109/8242fc8c2cabf36a0648233211bf3cf1.lrc"
+    },
+    "697688": {
+      "cid": "697688",
+      "name": "永恒之春",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4507",
+      "albumName": "相变临界OST",
+      "sourceUrl": "https://res01.hycdn.cn/f2032e46f9e55d2cdc7859d1ed7426ae/6A12AB46/siren/audio/20260503/e835b769aa9df41eba1e0b620e2139d9.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "lyricUrl": null
+    },
+    "697689": {
+      "cid": "697689",
+      "name": "In Due Time (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "5199",
+      "albumName": "In Due Time",
+      "sourceUrl": "https://res01.hycdn.cn/0d30772b799a64212489dfce0e8dda30/6A12AB49/siren/audio/20260411/6c7b88d17241f05404dd6278f80f1c46.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260411/65c62be18955c57eca772c72fb7d2487.png",
+      "lyricUrl": null
+    },
+    "779451": {
+      "cid": "779451",
+      "name": "Дом",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4507",
+      "albumName": "相变临界OST",
+      "sourceUrl": "https://res01.hycdn.cn/cbcf0de12168e8f78f91a0c3e375f80e/6A12AB44/siren/audio/20260507/cf83571e5dea05d8b84812094aad6350.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "lyricUrl": null
+    },
+    "779452": {
+      "cid": "779452",
+      "name": "奔赴 (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8920",
+      "albumName": "人们，我们OST",
+      "sourceUrl": "https://res01.hycdn.cn/71dda3ae197adfba9196d74fbb2aea3e/6A12AB4C/siren/audio/20260408/b094f096fd741429b642d3dfa1625de0.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+      "lyricUrl": null
+    },
+    "779453": {
+      "cid": "779453",
+      "name": "岁陵漫步",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/df9d650e73be43f715380ca01a4ca24d/6A12AAFA/siren/audio/20260323/ab3480a7d8e83675da9a8ebf1116437d.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "779454": {
+      "cid": "779454",
+      "name": "巧筑八方",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/217006f76977209165e01f5b28fb4c5c/6A12AAF9/siren/audio/20260323/ab168043676ddaf9037ee40e563b1e05.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "779455": {
+      "cid": "779455",
+      "name": "阳关已远",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2442",
+      "albumName": "辞岁行OST",
+      "sourceUrl": "https://res01.hycdn.cn/313a889edf253fb8fbf9f955763858fe/6A12AB52/siren/audio/20260212/ed9f2d94bf965746f6b90a40af2b8511.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "lyricUrl": null
+    },
+    "779456": {
+      "cid": "779456",
+      "name": "千秋岁",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2442",
+      "albumName": "辞岁行OST",
+      "sourceUrl": "https://res01.hycdn.cn/b08a1898da5d5e922206991d2508fc20/6A12AB52/siren/audio/20260212/9f9adb98ff47b183549abfd159a4a132.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "lyricUrl": null
+    },
+    "779457": {
+      "cid": "779457",
+      "name": "Wanna Know Me (Too Bad) (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8921",
+      "albumName": "Wanna Know Me? (Too Bad)",
+      "sourceUrl": "https://res01.hycdn.cn/65f843a3e1c8725c3cbbad50b289ec22/6A12AB56/siren/audio/20260109/29a2bca6bf6de84ef24081a5243aa232.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260109/7d2b4d1d8dfa8dd9b26532ea35447712.png",
+      "lyricUrl": null
+    },
+    "880390": {
+      "cid": "880390",
+      "name": "无名策",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4509",
+      "albumName": "无名策",
+      "sourceUrl": "https://res01.hycdn.cn/b2c7256703fae44f0ba91f1d631c236a/6A12AB53/siren/audio/20260209/ecac8bc6384271b8543170809bd93750.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260209/9ac6729658ff746a0efea3794d4c73e9.png",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260209/09e0aef7f1a1b829a200543fd4537025.lrc"
+    },
+    "880395": {
+      "cid": "880395",
+      "name": "Don't Miss It (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "6656",
+      "albumName": "6656",
+      "sourceUrl": "https://res01.hycdn.cn/6f91addfa413940eea9114bab4a42cc3/6A12AAF4/siren/audio/20260501/216468c03fdd94da1362321c6ee6bb6a.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/1a50f5680caf2754042772157324e5e2.jpg",
+      "lyricUrl": null
+    },
+    "880396": {
+      "cid": "880396",
+      "name": "All by My Design (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0234",
+      "albumName": "All by My Design",
+      "sourceUrl": "https://res01.hycdn.cn/4da3824e93702e2f41f9a5c6ddb5e389/6A12AB47/siren/audio/20260501/7b93177b3a5a65c6f4b49d501d2fd059.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/ec1fab7576400e699d76ab022ad4ed2c.jpg",
+      "lyricUrl": null
+    },
+    "880397": {
+      "cid": "880397",
+      "name": "One Fight (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "3885",
+      "albumName": "One Fight",
+      "sourceUrl": "https://res01.hycdn.cn/7e7c6abb79152bd45b0d9d8a7d31da3f/6A12AB4D/siren/audio/20260407/58a982b780403daca292861c2e908ce1.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260407/4f776c3d43fe990d7e6796e2566cd483.png",
+      "lyricUrl": null
+    },
+    "880398": {
+      "cid": "880398",
+      "name": "意难平",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/1c598b4153841a1b8c0e9fec828357e6/6A12AAF9/siren/audio/20260323/fc6e79cdbd076c6b1418b67cf86a6a50.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "880399": {
+      "cid": "880399",
+      "name": "Oath",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "6657",
+      "albumName": "Oath",
+      "sourceUrl": "https://res01.hycdn.cn/7a37e8570eb737862791c65ca9fdbe5f/6A12AB4E/siren/audio/20260310/3fc5b73e214e48dbb7f9df6b127b6ed1.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260310/21165f7bd3a083aff3a14f10e8f14dbf.jpg",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260310/06aa81b732b872299cac3466a0bc4a77.lrc"
+    },
+    "953940": {
+      "cid": "953940",
+      "name": "巫术之夜",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "1016",
+      "albumName": "矢量突破巫术之夜OST",
+      "sourceUrl": "https://res01.hycdn.cn/af1a90836d346920a3e6f19120f815ea/6A12AB4F/siren/audio/20260227/2216a83a5fe1616a3b3f3fb076334b21.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260227/d86f21f741aa17ede8eb5c870aae3b21.jpg",
+      "lyricUrl": null
+    },
+    "953941": {
+      "cid": "953941",
+      "name": "The Proclamation",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0235",
+      "albumName": "雅赛努斯复仇记OST",
+      "sourceUrl": "https://res01.hycdn.cn/595fda84c0f6016d2db9f3aaf2cf53c0/6A12AB55/siren/audio/20260111/22aa1ca836862bec20d1684bdebf043b.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+      "lyricUrl": null
+    },
+    "953945": {
+      "cid": "953945",
+      "name": "繁务间隙",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0233",
+      "albumName": "0233",
+      "sourceUrl": "https://res01.hycdn.cn/c5f9f66587ff8203c12779a05f78390b/6A12AAF2/siren/audio/20260516/0af8993b60424cd2176c682a5ab41959.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+      "lyricUrl": null
+    },
+    "953946": {
+      "cid": "953946",
+      "name": "栖所架构",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "0233",
+      "albumName": "0233",
+      "sourceUrl": "https://res01.hycdn.cn/9d0f9be1997a5e79771a952ab5a5dd56/6A12AAF2/siren/audio/20260516/5b67bb91587e324d4c9e8717852db29c.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+      "lyricUrl": null
+    },
+    "953947": {
+      "cid": "953947",
+      "name": "Innocence (Instrumental)",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "7762",
+      "albumName": "Innocence",
+      "sourceUrl": "https://res01.hycdn.cn/039cd229067ea8dab2f1c4b070ead0d6/6A12AB48/siren/audio/20260430/5227fb10bc9488de9f1309516ab9a056.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",
+      "lyricUrl": null
+    },
+    "953948": {
+      "cid": "953948",
+      "name": "奔赴",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "8920",
+      "albumName": "人们，我们OST",
+      "sourceUrl": "https://res01.hycdn.cn/c26cc072b45f8ecd8d4f35be77817107/6A12AB4A/siren/audio/20260408/63e5c2a2af583fd4ef9ac440e2c08e38.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260408/9ae69becc7aa239e77ee5b6b3a18020e.lrc"
+    },
+    "953949": {
+      "cid": "953949",
+      "name": "岁识气象",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/6f74eedd61f7f21642542540064f256c/6A12AAF8/siren/audio/20260323/e25b9d059693e110c98b33ffa672796a.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "048762": {
+      "cid": "048762",
+      "name": "逍遥难",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/6465b965fe04c231cd3db1b9e813464a/6A12AAF8/siren/audio/20260323/a56ab15db02e9428ecf10fc1d2b61fe8.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "048761": {
+      "cid": "048761",
+      "name": "栖景室",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4508",
+      "albumName": "4508",
+      "sourceUrl": "https://res01.hycdn.cn/527eba206b1264c269d37c2858c90a69/6A12AAFB/siren/audio/20260323/acb0d741bf832d59146b1b3615bc7ab9.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "lyricUrl": null
+    },
+    "048769": {
+      "cid": "048769",
+      "name": "协议空间",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "4507",
+      "albumName": "相变临界OST",
+      "sourceUrl": "https://res01.hycdn.cn/86d1f3552adc8d4cbe5bce324df3c3bd/6A12AB45/siren/audio/20260503/0756011683cc2f8bc8cc383cf58442b4.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "lyricUrl": null
+    },
+    "048760": {
+      "cid": "048760",
+      "name": "In Due Time",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "5199",
+      "albumName": "In Due Time",
+      "sourceUrl": "https://res01.hycdn.cn/d3ef17c09271658998c98511fd561757/6A12AB49/siren/audio/20260411/af3adc96b8f0e26d4eef43890659d555.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260411/65c62be18955c57eca772c72fb7d2487.png",
+      "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260411/b2c82db65f78a6a992076179166f72d0.lrc"
+    },
+    "048764": {
+      "cid": "048764",
+      "name": "辞岁行",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2442",
+      "albumName": "辞岁行OST",
+      "sourceUrl": "https://res01.hycdn.cn/e8df511d405df458a2e8f8f7fd25b3ea/6A12AB51/siren/audio/20260212/a46cf82e1b4bc1df4a58cc69e220b153.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "lyricUrl": null
+    },
+    "048763": {
+      "cid": "048763",
+      "name": "日暖月寒",
+      "artistes": [
+        "塞壬唱片-MSR"
+      ],
+      "albumCid": "2442",
+      "albumName": "辞岁行OST",
+      "sourceUrl": "https://res01.hycdn.cn/65a33b50de7d37da58908ce7ec3f5d4e/6A12AB52/siren/audio/20260212/48091798d5ec889d7f0b791f74a56f15.wav",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "lyricUrl": null
+    }
+  },
+  "albums": {
+    "1016": {
+      "cid": "1016",
+      "name": "矢量突破巫术之夜OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260227/d86f21f741aa17ede8eb5c870aae3b21.jpg",
+      "intro": "真实的战场并不为任何人提供难度等级选项，正因如此，您敢于向困难发起冲击的勇气才更显可贵。",
+      "songs": [
+        {
+          "cid": "953940",
+          "name": "巫术之夜",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "1016",
+          "albumName": "矢量突破巫术之夜OST",
+          "sourceUrl": "https://res01.hycdn.cn/af1a90836d346920a3e6f19120f815ea/6A12AB4F/siren/audio/20260227/2216a83a5fe1616a3b3f3fb076334b21.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260227/d86f21f741aa17ede8eb5c870aae3b21.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "2441": {
+      "cid": "2441",
+      "name": "Rhodes Island Epic 黑色博士坠落",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260402/f97ab41b3aa499eae97bca3a8cc87dc6.jpg",
+      "intro": "博士VS博士",
+      "songs": [
+        {
+          "cid": "697680",
+          "name": "博士VS博士？",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2441",
+          "albumName": "2441",
+          "sourceUrl": "https://res01.hycdn.cn/7ac97637fad93b4990e9008a767df536/6A12AAF5/siren/audio/20260402/dcd362f37c47f4ce7a80bd486f8f9104.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260402/f97ab41b3aa499eae97bca3a8cc87dc6.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "306879",
+          "name": "TOO EASY",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2441",
+          "albumName": "2441",
+          "sourceUrl": "https://res01.hycdn.cn/9a0e210eb2bcf143db0dbda6eb5c44da/6A12AAF5/siren/audio/20260402/1dad12362086b46b5ce6565e8fafccd5.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260402/f97ab41b3aa499eae97bca3a8cc87dc6.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "2442": {
+      "cid": "2442",
+      "name": "辞岁行OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+      "intro": "不急，我们还有时间下完这一局——\n来，该你落子了。",
+      "songs": [
+        {
+          "cid": "048764",
+          "name": "辞岁行",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2442",
+          "albumName": "辞岁行OST",
+          "sourceUrl": "https://res01.hycdn.cn/e8df511d405df458a2e8f8f7fd25b3ea/6A12AB51/siren/audio/20260212/a46cf82e1b4bc1df4a58cc69e220b153.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "461117",
+          "name": "酬天问",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2442",
+          "albumName": "辞岁行OST",
+          "sourceUrl": "https://res01.hycdn.cn/e8a9db3481e30efbe497c7fb2cedb778/6A12AB51/siren/audio/20260212/e81bfc128cb1a62332b36b71077a024d.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "232228",
+          "name": "来者可追",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2442",
+          "albumName": "辞岁行OST",
+          "sourceUrl": "https://res01.hycdn.cn/ec9be6741ea4046e3cee9bbcd85c2afd/6A12AB51/siren/audio/20260212/4cd23fbe0496f9ab61139ab2804325b4.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "779456",
+          "name": "千秋岁",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2442",
+          "albumName": "辞岁行OST",
+          "sourceUrl": "https://res01.hycdn.cn/b08a1898da5d5e922206991d2508fc20/6A12AB52/siren/audio/20260212/9f9adb98ff47b183549abfd159a4a132.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "048763",
+          "name": "日暖月寒",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2442",
+          "albumName": "辞岁行OST",
+          "sourceUrl": "https://res01.hycdn.cn/65a33b50de7d37da58908ce7ec3f5d4e/6A12AB52/siren/audio/20260212/48091798d5ec889d7f0b791f74a56f15.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "779455",
+          "name": "阳关已远",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "2442",
+          "albumName": "辞岁行OST",
+          "sourceUrl": "https://res01.hycdn.cn/313a889edf253fb8fbf9f955763858fe/6A12AB52/siren/audio/20260212/ed9f2d94bf965746f6b90a40af2b8511.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/f7770f042ceffd81625333a79c8b34e5.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "3885": {
+      "cid": "3885",
+      "name": "One Fight",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260407/4f776c3d43fe990d7e6796e2566cd483.png",
+      "intro": "穿越空想，推倒高墙。",
+      "songs": [
+        {
+          "cid": "461114",
+          "name": "One Fight",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "3885",
+          "albumName": "One Fight",
+          "sourceUrl": "https://res01.hycdn.cn/9842e64a1ff355d55a24d25068d6b11b/6A12AB4C/siren/audio/20260407/ecc0c608ca616e88ccb0ce8f9871511f.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260407/4f776c3d43fe990d7e6796e2566cd483.png",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260407/7eb0ae9875988c9ee8d8b236c19644a6.lrc"
+        },
+        {
+          "cid": "880397",
+          "name": "One Fight (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "3885",
+          "albumName": "One Fight",
+          "sourceUrl": "https://res01.hycdn.cn/7e7c6abb79152bd45b0d9d8a7d31da3f/6A12AB4D/siren/audio/20260407/58a982b780403daca292861c2e908ce1.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260407/4f776c3d43fe990d7e6796e2566cd483.png",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "4507": {
+      "cid": "4507",
+      "name": "相变临界OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+      "intro": "不要回头，不要被落下。",
+      "songs": [
+        {
+          "cid": "779451",
+          "name": "Дом",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4507",
+          "albumName": "相变临界OST",
+          "sourceUrl": "https://res01.hycdn.cn/cbcf0de12168e8f78f91a0c3e375f80e/6A12AB44/siren/audio/20260507/cf83571e5dea05d8b84812094aad6350.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "461112",
+          "name": "破缺对称",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4507",
+          "albumName": "相变临界OST",
+          "sourceUrl": "https://res01.hycdn.cn/ea478e264e3576922d2679009f5d182d/6A12AB45/siren/audio/20260507/c5329ee86ca0c2f37c1824a097685e25.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "125030",
+          "name": "祭祷",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4507",
+          "albumName": "相变临界OST",
+          "sourceUrl": "https://res01.hycdn.cn/03dd7c3860c0172b3d80588eea18e244/6A12AB45/siren/audio/20260507/52f3bff5a12d1c2a30144258aa919d8c.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "048769",
+          "name": "协议空间",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4507",
+          "albumName": "相变临界OST",
+          "sourceUrl": "https://res01.hycdn.cn/86d1f3552adc8d4cbe5bce324df3c3bd/6A12AB45/siren/audio/20260503/0756011683cc2f8bc8cc383cf58442b4.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "514504",
+          "name": "“诺言”",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4507",
+          "albumName": "相变临界OST",
+          "sourceUrl": "https://res01.hycdn.cn/12422556c58aa601f545793ca2204cc8/6A12AB46/siren/audio/20260503/ec32fb3ce861385052b4b171f4792a40.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "306877",
+          "name": "厨房谈话",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4507",
+          "albumName": "相变临界OST",
+          "sourceUrl": "https://res01.hycdn.cn/1710be4754319bd5d30751b6f3a292c8/6A12AB46/siren/audio/20260503/b48296ba0e570f44c6bbcbbb4f0a84c5.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "697688",
+          "name": "永恒之春",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4507",
+          "albumName": "相变临界OST",
+          "sourceUrl": "https://res01.hycdn.cn/f2032e46f9e55d2cdc7859d1ed7426ae/6A12AB46/siren/audio/20260503/e835b769aa9df41eba1e0b620e2139d9.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/41a1c9bddfb88bc10ab7f131aa956dc2.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "4508": {
+      "cid": "4508",
+      "name": "岁的界园志异OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+      "intro": "洞穿异象，镇压祸乱，或许能看见......失落已久的真相。\n",
+      "songs": [
+        {
+          "cid": "514508",
+          "name": "界园志异",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/20dd0adcc0f784b035895d54bf6149cb/6A12AAF6/siren/audio/20260323/95a356b1249b05423e68c2865836996b.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "461116",
+          "name": "自有乾坤",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/fcf5ca56cd306749cb401133ec7bd290/6A12AAF6/siren/audio/20260323/2bd06230a0a5b11c8b175b34e9e866ae.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "125033",
+          "name": "盘桓千古",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/dd3a4259ccd26efb15c56c3a1441601e/6A12AAF7/siren/audio/20260323/9dc16b5b090fa0e63a2ed06c6b6a759c.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "461115",
+          "name": "枕景",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/ecac36a1420f28dbd7a14d13322ef31e/6A12AAF7/siren/audio/20260323/238d191d44f589fde4e423a19a0a2d52.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "697681",
+          "name": "天不予",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/907c29acd8e885d6b11a7144a27e8f4e/6A12AAF7/siren/audio/20260323/99b87f09531b8ba233e64190e79a2bac.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "048762",
+          "name": "逍遥难",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/6465b965fe04c231cd3db1b9e813464a/6A12AAF8/siren/audio/20260323/a56ab15db02e9428ecf10fc1d2b61fe8.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "306870",
+          "name": "叙苍茫",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/44bf482f04411207b0956dbbb7b9c15f/6A12AAF8/siren/audio/20260323/09f2ebcc79bbbf3622b77e6f1704a7f1.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "953949",
+          "name": "岁识气象",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/6f74eedd61f7f21642542540064f256c/6A12AAF8/siren/audio/20260323/e25b9d059693e110c98b33ffa672796a.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "779454",
+          "name": "巧筑八方",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/217006f76977209165e01f5b28fb4c5c/6A12AAF9/siren/audio/20260323/ab168043676ddaf9037ee40e563b1e05.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "514507",
+          "name": "残卷",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/41a88002578296d5d147c25a26a80fff/6A12AAF9/siren/audio/20260323/142cf60b3d6b4a8aaf1e2f28d0a26603.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "880398",
+          "name": "意难平",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/1c598b4153841a1b8c0e9fec828357e6/6A12AAF9/siren/audio/20260323/fc6e79cdbd076c6b1418b67cf86a6a50.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "232226",
+          "name": "意难平",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/a4af980d4f241a6e252cc47096bf330e/6A12AAFA/siren/audio/20260323/fc6e79cdbd076c6b1418b67cf86a6a50.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "779453",
+          "name": "岁陵漫步",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/df9d650e73be43f715380ca01a4ca24d/6A12AAFA/siren/audio/20260323/ab3480a7d8e83675da9a8ebf1116437d.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "232225",
+          "name": "守矩为义",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/1f513a96eab7d391e830c0dd3852013b/6A12AAFA/siren/audio/20260323/9ebbed7af22458f073898d88a180e2dc.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "048761",
+          "name": "栖景室",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/527eba206b1264c269d37c2858c90a69/6A12AAFB/siren/audio/20260323/acb0d741bf832d59146b1b3615bc7ab9.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "125032",
+          "name": "破晦",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4508",
+          "albumName": "4508",
+          "sourceUrl": "https://res01.hycdn.cn/14bd9640624342a48408a872e36c8d5d/6A12AAFB/siren/audio/20260323/c4a61ece7880e5c470f74a7fd6ca61ca.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260323/5bf6f1151f4b12c0d6d6ccd47598372a.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "4509": {
+      "cid": "4509",
+      "name": "无名策",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260209/9ac6729658ff746a0efea3794d4c73e9.png",
+      "intro": "举世为枰，生死一念。",
+      "songs": [
+        {
+          "cid": "880390",
+          "name": "无名策",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4509",
+          "albumName": "无名策",
+          "sourceUrl": "https://res01.hycdn.cn/b2c7256703fae44f0ba91f1d631c236a/6A12AB53/siren/audio/20260209/ecac8bc6384271b8543170809bd93750.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260209/9ac6729658ff746a0efea3794d4c73e9.png",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260209/09e0aef7f1a1b829a200543fd4537025.lrc"
+        },
+        {
+          "cid": "514509",
+          "name": "无名策 (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "4509",
+          "albumName": "无名策",
+          "sourceUrl": "https://res01.hycdn.cn/1dd90d21e09c912cadbddecb49497967/6A12AB53/siren/audio/20260209/3310c31831973e9e6c2fe722f954fb66.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260209/9ac6729658ff746a0efea3794d4c73e9.png",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "5190": {
+      "cid": "5190",
+      "name": "铁花飞",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260208/464eada92f718ad5013e45c010b6a415.png",
+      "intro": "轻云淡月，天地如镜。铁花千缕飞似雨，山河万里踏歌人。",
+      "songs": [
+        {
+          "cid": "306872",
+          "name": "铁花飞",
+          "artistes": [
+            "Mili"
+          ],
+          "albumCid": "5190",
+          "albumName": "5190",
+          "sourceUrl": "https://res01.hycdn.cn/a78500e4698158e940f5bfecf4c7da9d/6A12AAFC/siren/audio/20260208/2caccb93919ede609029a2f5fa7af98d.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260208/464eada92f718ad5013e45c010b6a415.png",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260208/44176e569d7fdd12e4e7cacc51d34dc0.lrc"
+        }
+      ]
+    },
+    "5199": {
+      "cid": "5199",
+      "name": "In Due Time",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260411/65c62be18955c57eca772c72fb7d2487.png",
+      "intro": "时间静止的地方，还有人在歌唱。",
+      "songs": [
+        {
+          "cid": "048760",
+          "name": "In Due Time",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "5199",
+          "albumName": "In Due Time",
+          "sourceUrl": "https://res01.hycdn.cn/d3ef17c09271658998c98511fd561757/6A12AB49/siren/audio/20260411/af3adc96b8f0e26d4eef43890659d555.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260411/65c62be18955c57eca772c72fb7d2487.png",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260411/b2c82db65f78a6a992076179166f72d0.lrc"
+        },
+        {
+          "cid": "697689",
+          "name": "In Due Time (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "5199",
+          "albumName": "In Due Time",
+          "sourceUrl": "https://res01.hycdn.cn/0d30772b799a64212489dfce0e8dda30/6A12AB49/siren/audio/20260411/6c7b88d17241f05404dd6278f80f1c46.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260411/65c62be18955c57eca772c72fb7d2487.png",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "6656": {
+      "cid": "6656",
+      "name": "Don't Miss It",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/1a50f5680caf2754042772157324e5e2.jpg",
+      "intro": "我们曾将鲜血洒遍河流，我们曾把白骨埋进垄沟。",
+      "songs": [
+        {
+          "cid": "232223",
+          "name": "Don't Miss It",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "6656",
+          "albumName": "6656",
+          "sourceUrl": "https://res01.hycdn.cn/dd76b23f6ff35e5ab3e0c1b597409caa/6A12AAF4/siren/audio/20260501/a52a9387dcbabfa692c2fbdb8cc2f4bc.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/1a50f5680caf2754042772157324e5e2.jpg",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260501/79a82f507edbe3875ad74613f93bc95d.lrc"
+        },
+        {
+          "cid": "880395",
+          "name": "Don't Miss It (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "6656",
+          "albumName": "6656",
+          "sourceUrl": "https://res01.hycdn.cn/6f91addfa413940eea9114bab4a42cc3/6A12AAF4/siren/audio/20260501/216468c03fdd94da1362321c6ee6bb6a.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/1a50f5680caf2754042772157324e5e2.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "6657": {
+      "cid": "6657",
+      "name": "Oath",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260310/21165f7bd3a083aff3a14f10e8f14dbf.jpg",
+      "intro": "穿行于夜幕，点燃了猩红。\n暴雨将街道染上锈蚀，雨滴敲出陌生的节奏。\n而那道冷白的刃口，依旧锋利如旧。",
+      "songs": [
+        {
+          "cid": "880399",
+          "name": "Oath",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "6657",
+          "albumName": "Oath",
+          "sourceUrl": "https://res01.hycdn.cn/7a37e8570eb737862791c65ca9fdbe5f/6A12AB4E/siren/audio/20260310/3fc5b73e214e48dbb7f9df6b127b6ed1.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260310/21165f7bd3a083aff3a14f10e8f14dbf.jpg",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260310/06aa81b732b872299cac3466a0bc4a77.lrc"
+        },
+        {
+          "cid": "125034",
+          "name": "Oath (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "6657",
+          "albumName": "Oath",
+          "sourceUrl": "https://res01.hycdn.cn/1d5193c07e0f0739456242d566d05442/6A12AB4E/siren/audio/20260310/dfe186e74eb778bac0bd07e4184cc13e.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260310/21165f7bd3a083aff3a14f10e8f14dbf.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "6658": {
+      "cid": "6658",
+      "name": "Slowly Flow, Hearthlight Glow",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20251224/c5ceffed908e38f7c4b88f214d4e9b7a.png",
+      "intro": "未启封的期待在树下闪耀，笑容缀满糖霜般的星光。\n就让时光放慢脚步，让相聚的欢歌悠长回响。",
+      "songs": [
+        {
+          "cid": "514500",
+          "name": "Slowly Flow, Hearthlight Glow",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "6658",
+          "albumName": "Slowly Flow, Hearthlight Glow",
+          "sourceUrl": "https://res01.hycdn.cn/88e172620bdc9e53f28151cf26e8c208/6A12AB57/siren/audio/20251224/e92fc315b17066c40adf2f0fd5e9dac2.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20251224/c5ceffed908e38f7c4b88f214d4e9b7a.png",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20251224/247fc3452bb6e3af5c4db6330c303d64.lrc"
+        },
+        {
+          "cid": "232229",
+          "name": "Slowly Flow, Hearthlight Glow (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "6658",
+          "albumName": "Slowly Flow, Hearthlight Glow",
+          "sourceUrl": "https://res01.hycdn.cn/af8947b4d8e245184a0f5a45e74931bd/6A12AB58/siren/audio/20251224/1442fbd8be92c40289ca6a50070f0923.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20251224/c5ceffed908e38f7c4b88f214d4e9b7a.png",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "7762": {
+      "cid": "7762",
+      "name": "Innocence",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",
+      "intro": "她走过永恒，走入瞬息的朝霞。\n在等待愈合的裂痕里，时间染上了温度，而希望，正自无声处生发。",
+      "songs": [
+        {
+          "cid": "232224",
+          "name": "Innocence",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "7762",
+          "albumName": "Innocence",
+          "sourceUrl": "https://res01.hycdn.cn/ca5537864394f44e6ee2895489643cb7/6A12AB48/siren/audio/20260430/ad9bf0b9ea6ca69a4d97cf479101b65f.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260430/f9b26e4c0c578194e2f9bfd553f4b991.lrc"
+        },
+        {
+          "cid": "953947",
+          "name": "Innocence (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "7762",
+          "albumName": "Innocence",
+          "sourceUrl": "https://res01.hycdn.cn/039cd229067ea8dab2f1c4b070ead0d6/6A12AB48/siren/audio/20260430/5227fb10bc9488de9f1309516ab9a056.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "8920": {
+      "cid": "8920",
+      "name": "人们，我们OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+      "intro": "我听见自由的灵魂，那声嘶力竭的咆哮。",
+      "songs": [
+        {
+          "cid": "953948",
+          "name": "奔赴",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8920",
+          "albumName": "人们，我们OST",
+          "sourceUrl": "https://res01.hycdn.cn/c26cc072b45f8ecd8d4f35be77817107/6A12AB4A/siren/audio/20260408/63e5c2a2af583fd4ef9ac440e2c08e38.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260408/9ae69becc7aa239e77ee5b6b3a18020e.lrc"
+        },
+        {
+          "cid": "514506",
+          "name": "众怒",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8920",
+          "albumName": "人们，我们OST",
+          "sourceUrl": "https://res01.hycdn.cn/7a87516cc617fed7528a5aad836f22d8/6A12AB4A/siren/audio/20260408/4df5383af7a23f25dd3688b38a9644ce.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "461113",
+          "name": "敬畏自由",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8920",
+          "albumName": "人们，我们OST",
+          "sourceUrl": "https://res01.hycdn.cn/fe00e9957ec29af7e69bc1c7f05074ea/6A12AB4B/siren/audio/20260408/89c03f573d25f77a16c0de5b483007b5.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "514505",
+          "name": "还有明天",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8920",
+          "albumName": "人们，我们OST",
+          "sourceUrl": "https://res01.hycdn.cn/699f21069f4b4a8dfd1c9181896ddfcb/6A12AB4B/siren/audio/20260408/aa3c8d6232245caa321abdf3b19070b7.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "125031",
+          "name": "无缚者之夜",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8920",
+          "albumName": "人们，我们OST",
+          "sourceUrl": "https://res01.hycdn.cn/2a84339784c2d8b13348abd30fb35002/6A12AB4B/siren/audio/20260408/91951c176c1620e58f98a7fa242f6024.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "779452",
+          "name": "奔赴 (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8920",
+          "albumName": "人们，我们OST",
+          "sourceUrl": "https://res01.hycdn.cn/71dda3ae197adfba9196d74fbb2aea3e/6A12AB4C/siren/audio/20260408/b094f096fd741429b642d3dfa1625de0.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260408/500f5ad502b8e088d154343c83bf2277.png",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "8921": {
+      "cid": "8921",
+      "name": "Wanna Know Me? (Too Bad)",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260109/7d2b4d1d8dfa8dd9b26532ea35447712.png",
+      "intro": "心绪驰骋辽远天际，奇想如云朵忽暗忽明。",
+      "songs": [
+        {
+          "cid": "697684",
+          "name": "Wanna Know Me? (Too Bad)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8921",
+          "albumName": "Wanna Know Me? (Too Bad)",
+          "sourceUrl": "https://res01.hycdn.cn/f94a0f1e33ecf9015cb6fc43ac2b532a/6A12AB56/siren/audio/20260109/8b86fdefd91a6c744be19b85f4336aff.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260109/7d2b4d1d8dfa8dd9b26532ea35447712.png",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260109/8242fc8c2cabf36a0648233211bf3cf1.lrc"
+        },
+        {
+          "cid": "779457",
+          "name": "Wanna Know Me (Too Bad) (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "8921",
+          "albumName": "Wanna Know Me? (Too Bad)",
+          "sourceUrl": "https://res01.hycdn.cn/65f843a3e1c8725c3cbbad50b289ec22/6A12AB56/siren/audio/20260109/29a2bca6bf6de84ef24081a5243aa232.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260109/7d2b4d1d8dfa8dd9b26532ea35447712.png",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "9373": {
+      "cid": "9373",
+      "name": "十字路口OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260312/93e7b12f4bf553d0168cf3a6a31461b6.jpg",
+      "intro": "如今正站在十字街头的叙拉古，该如何重新定义“铳与秩序”？",
+      "songs": [
+        {
+          "cid": "232227",
+          "name": "十字路口",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "9373",
+          "albumName": "十字路口OST",
+          "sourceUrl": "https://res01.hycdn.cn/d7cf802bbc19a843b831aed26c6ac9ac/6A12AB4D/siren/audio/20260312/5a09935760bbe5a0a41094aa280fde87.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260312/93e7b12f4bf553d0168cf3a6a31461b6.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "9374": {
+      "cid": "9374",
+      "name": "花街迎春",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/fa6b1ffb7b95f13f6a2adb58a0422cb5.jpg",
+      "intro": "年桔清新，桃花明艳。来年丰饶绚烂，尽在枝蕊摇曳间。",
+      "songs": [
+        {
+          "cid": "306871",
+          "name": "花街迎春",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "9374",
+          "albumName": "花街迎春",
+          "sourceUrl": "https://res01.hycdn.cn/5d1de59518aac1f43fd9c1cdcac6f09a/6A12AB50/siren/audio/20260212/7c6188021e1d48ef5f04237fad67f909.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/fa6b1ffb7b95f13f6a2adb58a0422cb5.jpg",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260212/2f78da763ae28a08bec587f60a13c143.lrc"
+        },
+        {
+          "cid": "697682",
+          "name": "花街迎春 (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "9374",
+          "albumName": "花街迎春",
+          "sourceUrl": "https://res01.hycdn.cn/f92483870ddcc70717134618bb794017/6A12AB50/siren/audio/20260212/f177f25623eb24c2b654578753b9ee7f.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260212/fa6b1ffb7b95f13f6a2adb58a0422cb5.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "0233": {
+      "cid": "0233",
+      "name": "重启锚点OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+      "intro": "你相信，大家能搭建起一个新的家园，拥抱充满希望的明日。",
+      "songs": [
+        {
+          "cid": "953946",
+          "name": "栖所架构",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0233",
+          "albumName": "0233",
+          "sourceUrl": "https://res01.hycdn.cn/9d0f9be1997a5e79771a952ab5a5dd56/6A12AAF2/siren/audio/20260516/5b67bb91587e324d4c9e8717852db29c.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "514503",
+          "name": "荒原黎明",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0233",
+          "albumName": "0233",
+          "sourceUrl": "https://res01.hycdn.cn/367e01a65ac52fc691dcf5d66194b227/6A12AAF2/siren/audio/20260516/f8587ce736e94a2110998cd2f28cdcf6.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "953945",
+          "name": "繁务间隙",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0233",
+          "albumName": "0233",
+          "sourceUrl": "https://res01.hycdn.cn/c5f9f66587ff8203c12779a05f78390b/6A12AAF2/siren/audio/20260516/0af8993b60424cd2176c682a5ab41959.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "461111",
+          "name": "新生蓝图",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0233",
+          "albumName": "0233",
+          "sourceUrl": "https://res01.hycdn.cn/faa2bb5df4dd13e24fef6de69711629f/6A12AAF3/siren/audio/20260516/5d0cc3e892bc7b9e14b458b67e0ef6a4.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+          "lyricUrl": null
+        },
+        {
+          "cid": "232222",
+          "name": "对峙",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0233",
+          "albumName": "0233",
+          "sourceUrl": "https://res01.hycdn.cn/f2d2883949c3c1e9d3c6d94c4c9ef04e/6A12AAF3/siren/audio/20260516/d736338238ea360045571118dc9639b3.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260516/56ceee026957e4f88904e4486702fe2e.png",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "0234": {
+      "cid": "0234",
+      "name": "All by My Design",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/ec1fab7576400e699d76ab022ad4ed2c.jpg",
+      "intro": "代码成行，指令落定，信息国度即刻上线。\n——别忘了，还得意思一下她的账单。",
+      "songs": [
+        {
+          "cid": "306878",
+          "name": "All by My Design",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0234",
+          "albumName": "All by My Design",
+          "sourceUrl": "https://res01.hycdn.cn/86ed7988c984bb499b0ab7f2c5d02967/6A12AB47/siren/audio/20260501/89ca840e4d3696fa12d000aefc94a089.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/ec1fab7576400e699d76ab022ad4ed2c.jpg",
+          "lyricUrl": "https://web.hycdn.cn/siren/lyric/20260501/91faa573133125c65cadb9df3c1cca31.lrc"
+        },
+        {
+          "cid": "880396",
+          "name": "All by My Design (Instrumental)",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0234",
+          "albumName": "All by My Design",
+          "sourceUrl": "https://res01.hycdn.cn/4da3824e93702e2f41f9a5c6ddb5e389/6A12AB47/siren/audio/20260501/7b93177b3a5a65c6f4b49d501d2fd059.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260501/ec1fab7576400e699d76ab022ad4ed2c.jpg",
+          "lyricUrl": null
+        }
+      ]
+    },
+    "0235": {
+      "cid": "0235",
+      "name": "雅赛努斯复仇记OST",
+      "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+      "intro": "也总有一些言语无法慰藉的苦痛，需要一场盛大的复仇来纾解。",
+      "songs": [
+        {
+          "cid": "461118",
+          "name": "Beneath The Cloudless Sky",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0235",
+          "albumName": "雅赛努斯复仇记OST",
+          "sourceUrl": "https://res01.hycdn.cn/76be779c977c8c6743adda6f7861fa5f/6A12AB54/siren/audio/20260111/4f558b6849cbe70f4cb8320a0725661f.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "125036",
+          "name": "Dance Of Athenius",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0235",
+          "albumName": "雅赛努斯复仇记OST",
+          "sourceUrl": "https://res01.hycdn.cn/db4fbb105043801ccc9b214b623abb3d/6A12AB54/siren/audio/20260111/b9680d2ccd13dd13c2928da796a44005.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "697683",
+          "name": "Never-Forgetting, Never-Forgiving",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0235",
+          "albumName": "雅赛努斯复仇记OST",
+          "sourceUrl": "https://res01.hycdn.cn/a5ce72093e2087ab39c3fb4b007ea70b/6A12AB55/siren/audio/20260111/f382b17223a61bdf6bd2c44d85459a19.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "125035",
+          "name": "A Thousand Shattered Hopes",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0235",
+          "albumName": "雅赛努斯复仇记OST",
+          "sourceUrl": "https://res01.hycdn.cn/4197fcb104e4313a600fe3e2e417022c/6A12AB55/siren/audio/20260111/b26cf972106e5f476b7ec90ccbc10fb8.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+          "lyricUrl": null
+        },
+        {
+          "cid": "953941",
+          "name": "The Proclamation",
+          "artistes": [
+            "塞壬唱片-MSR"
+          ],
+          "albumCid": "0235",
+          "albumName": "雅赛努斯复仇记OST",
+          "sourceUrl": "https://res01.hycdn.cn/595fda84c0f6016d2db9f3aaf2cf53c0/6A12AB55/siren/audio/20260111/22aa1ca836862bec20d1684bdebf043b.wav",
+          "coverUrl": "https://web.hycdn.cn/siren/pic/20260111/96f46b87053ff801a4780a16e112f74c.jpg",
+          "lyricUrl": null
+        }
+      ]
+    }
+  }
+}
