@@ -1222,7 +1222,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8516e2;
+  background: #a7ac79;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2459,6 +2459,71 @@ embed {
   object-fit: cover;
   border-radius: 50%;
 }
+/* ── Overlay (behind playlist panel) ── */
+#mpOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1039;
+  background: rgba(0,0,0,0.15);
+}
+/* ── Expanded Playlist Panel ── */
+#mpPlaylist {
+  position: fixed;
+  bottom: 116px;
+  right: 20px;
+  width: 260px;
+  max-height: 340px;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  z-index: 1041;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.1);
+  padding: 8px 0;
+}
+.mpp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.12s;
+  font-size: 13px;
+}
+.mpp-row:hover {
+  background: #f5f5f5;
+}
+.mpp-row.active {
+  background: #eee;
+  font-weight: 600;
+}
+.mpp-num {
+  width: 22px;
+  text-align: center;
+  color: #bbb;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.mpp-row.active .mpp-num {
+  color: #555;
+}
+.mpp-name {
+  flex: 1;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mpp-artist {
+  color: #bbb;
+  font-size: 11px;
+  max-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /* ── Global Mini Vinyl Player ── */
 #miniPlayer {
   position: fixed;
@@ -2466,8 +2531,8 @@ embed {
   right: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 14px 8px 8px;
+  gap: 8px;
+  padding: 7px 12px 7px 6px;
   background: rgba(255,255,255,0.82);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -2477,21 +2542,48 @@ embed {
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
   transition: opacity 0.3s;
 }
+.mp-ctrl {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  background: #fafafa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #bbb;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.mp-ctrl:hover {
+  border-color: #bbb;
+  color: #666;
+}
 #mpDisc {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: conic-gradient(#1a1a1a 0deg 90deg, #2a2a2a 90deg 180deg, #1a1a1a 180deg 270deg, #2a2a2a 270deg 360deg);
   position: relative;
   flex-shrink: 0;
+  cursor: pointer;
   box-shadow: 0 0 0 3px #e8e8e8, inset 0 0 0 2px #111;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#mpDisc:hover {
+  box-shadow: 0 0 0 3px #ddd, inset 0 0 0 2px #111;
+}
+#mpDisc.expanded {
+  box-shadow: 0 0 0 3px #999, inset 0 0 0 2px #111;
 }
 #mpDisc.spinning {
   animation: mpSpin 3s linear infinite;
 }
 #mpCover {
   position: absolute;
-  inset: 8px;
+  inset: 7px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
@@ -2500,14 +2592,15 @@ embed {
 #mpTitle {
   font-size: 12px;
   color: #888;
-  max-width: 100px;
+  max-width: 96px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: default;
 }
 #mpBtn {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 1px solid #ddd;
   background: #fafafa;
@@ -2548,13 +2641,51 @@ embed {
   animation: mpSpin 4s linear infinite;
 }
 /* ── Dark mode ── */
+.darkmode--activated #mpOverlay {
+  background: rgba(0,0,0,0.45);
+}
+.darkmode--activated #mpPlaylist {
+  background: rgba(28,28,28,0.95);
+  border-color: #333;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.4);
+}
+.darkmode--activated .mpp-row:hover {
+  background: #2a2a2a;
+}
+.darkmode--activated .mpp-row.active {
+  background: #333;
+}
+.darkmode--activated .mpp-name {
+  color: #ccc;
+}
+.darkmode--activated .mpp-row.active .mpp-num {
+  color: #aaa;
+}
+.darkmode--activated .mpp-artist {
+  color: #666;
+}
 .darkmode--activated #miniPlayer {
   background: rgba(30,30,30,0.85);
   border-color: #333;
   box-shadow: 0 2px 16px rgba(0,0,0,0.3);
 }
+.darkmode--activated .mp-ctrl {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #888;
+}
+.darkmode--activated .mp-ctrl:hover {
+  border-color: #666;
+  color: #ccc;
+}
 .darkmode--activated #mpDisc {
   box-shadow: 0 0 0 3px #333, inset 0 0 0 2px #111;
+}
+.darkmode--activated #mpDisc:hover {
+  box-shadow: 0 0 0 3px #555, inset 0 0 0 2px #111;
+}
+.darkmode--activated #mpDisc.expanded {
+  box-shadow: 0 0 0 3px #888, inset 0 0 0 2px #111;
 }
 .darkmode--activated #mpTitle {
   color: #888;
@@ -2576,16 +2707,29 @@ embed {
   #miniPlayer {
     bottom: 56px;
     right: 8px;
-    padding: 6px 10px 6px 6px;
-    gap: 6px;
+    padding: 5px 8px 5px 4px;
+    gap: 4px;
   }
   #mpDisc {
     width: 26px;
     height: 26px;
   }
+  #mpCover {
+    inset: 6px;
+  }
   #mpTitle {
-    max-width: 64px;
-    font-size: 11px;
+    max-width: 56px;
+    font-size: 10px;
+  }
+  .mp-ctrl {
+    width: 20px;
+    height: 20px;
+  }
+  #mpPlaylist {
+    right: 8px;
+    bottom: 104px;
+    width: 220px;
+    max-height: 260px;
   }
 }
 @-moz-keyframes mpSpin {

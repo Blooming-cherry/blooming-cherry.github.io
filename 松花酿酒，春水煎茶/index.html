@@ -28,7 +28,7 @@
 <meta property="og:description" content="花径不曾缘客扫，蓬门今始为君开，请你为我暂驻，与我共度求知之旅。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-22T07:13:17.000Z">
-<meta property="article:modified_time" content="2026-05-24T06:28:30.786Z">
+<meta property="article:modified_time" content="2026-05-24T06:34:51.824Z">
 <meta property="article:author" content="奶油苏打和冕型灯">
 <meta property="article:tag" content="时光的针脚">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 14:28:30" itemprop="dateModified" datetime="2026-05-24T14:28:30+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 14:34:51" itemprop="dateModified" datetime="2026-05-24T14:34:51+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -596,13 +596,17 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 </script>
 
 <!-- Global Mini Vinyl Player -->
+<div id="mpOverlay" style="display:none"></div>
+<div id="mpPlaylist" style="display:none"></div>
 <div id="miniPlayer">
-  <div id="mpDisc"><div id="mpCover"></div></div>
+  <button class="mp-ctrl" id="mpPrev" title="上一首"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+  <div id="mpDisc" title="展开播放列表"><div id="mpCover"></div></div>
   <span id="mpTitle">—</span>
   <button id="mpBtn" title="播放/暂停">
     <span class="mp-icon-play">▶</span>
     <span class="mp-icon-pause" style="display:none">⏸</span>
   </button>
+  <button class="mp-ctrl" id="mpNext" title="下一首"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
 </div>
 
 <script>
@@ -626,8 +630,13 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   var mpCover = document.getElementById('mpCover');
   var mpTitle = document.getElementById('mpTitle');
   var mpBtn = document.getElementById('mpBtn');
+  var mpPrev = document.getElementById('mpPrev');
+  var mpNext = document.getElementById('mpNext');
   var iconPlay = mpBtn.querySelector('.mp-icon-play');
   var iconPause = mpBtn.querySelector('.mp-icon-pause');
+  var plPanel = document.getElementById('mpPlaylist');
+  var overlay = document.getElementById('mpOverlay');
+  var plOpen = false;
 
   // Restore from localStorage
   try {
@@ -640,11 +649,13 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   }
 
   function load(i) {
+    var changed = (idx !== i);
     idx = i;
     var t = PL[i];
-    audio.src = t.url;
+    if (changed || !audio.src) { audio.src = t.url; audio.setAttribute('data-idx', i); }
     mpCover.style.backgroundImage = 'url(' + t.cover + ')';
     mpTitle.textContent = t.name;
+    updatePlaylistHighlight();
     save();
     if (playing) audio.play();
   }
@@ -683,6 +694,49 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
     mp.style.display = onMusic ? 'none' : '';
   }
 
+  // --- Playlist panel ---
+  function buildPlaylist() {
+    plPanel.innerHTML = '';
+    PL.forEach(function(t, i) {
+      var row = document.createElement('div');
+      row.className = 'mpp-row';
+      row.innerHTML = '<span class="mpp-num">' + (i < 9 ? '0' + (i + 1) : i + 1) + '</span><span class="mpp-name">' + t.name + '</span><span class="mpp-artist">' + t.artist + '</span>';
+      row.addEventListener('click', function() {
+        load(i);
+        if (!playing) toggle();
+        closePlaylist();
+      });
+      plPanel.appendChild(row);
+    });
+    updatePlaylistHighlight();
+  }
+
+  function updatePlaylistHighlight() {
+    var rows = plPanel.querySelectorAll('.mpp-row');
+    rows.forEach(function(r, i) { r.classList.toggle('active', i === idx); });
+  }
+
+  function openPlaylist() {
+    plOpen = true;
+    plPanel.style.display = 'block';
+    overlay.style.display = 'block';
+    mpDisc.classList.add('expanded');
+  }
+
+  function closePlaylist() {
+    plOpen = false;
+    plPanel.style.display = 'none';
+    overlay.style.display = 'none';
+    mpDisc.classList.remove('expanded');
+  }
+
+  mpDisc.addEventListener('click', function() {
+    if (plOpen) closePlaylist(); else openPlaylist();
+  });
+  overlay.addEventListener('click', closePlaylist);
+  buildPlaylist();
+
+  // --- Audio events ---
   audio.addEventListener('loadedmetadata', save);
   audio.addEventListener('ended', next);
   audio.addEventListener('play', function(){ setPlaying(true); });
@@ -693,14 +747,16 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   audio.addEventListener('error', function(){ setPlaying(false); });
 
   mpBtn.addEventListener('click', toggle);
+  mpPrev.addEventListener('click', prev);
+  mpNext.addEventListener('click', next);
 
-  // PJAX event handling: update UI after page transitions
+  // PJAX: update UI after page transitions
   document.addEventListener('pjax:success', function() {
     checkMusicPage();
     updateB2t();
   });
 
-  // Initial setup
+  // Init
   checkMusicPage();
   updateB2t();
 

@@ -543,13 +543,17 @@ window.addEventListener('pjax:success', () => {
 </script>
 
 <!-- Global Mini Vinyl Player -->
+<div id="mpOverlay" style="display:none"></div>
+<div id="mpPlaylist" style="display:none"></div>
 <div id="miniPlayer">
-  <div id="mpDisc"><div id="mpCover"></div></div>
+  <button class="mp-ctrl" id="mpPrev" title="上一首"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+  <div id="mpDisc" title="展开播放列表"><div id="mpCover"></div></div>
   <span id="mpTitle">—</span>
   <button id="mpBtn" title="播放/暂停">
     <span class="mp-icon-play">▶</span>
     <span class="mp-icon-pause" style="display:none">⏸</span>
   </button>
+  <button class="mp-ctrl" id="mpNext" title="下一首"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
 </div>
 
 <script>
@@ -573,8 +577,13 @@ window.addEventListener('pjax:success', () => {
   var mpCover = document.getElementById('mpCover');
   var mpTitle = document.getElementById('mpTitle');
   var mpBtn = document.getElementById('mpBtn');
+  var mpPrev = document.getElementById('mpPrev');
+  var mpNext = document.getElementById('mpNext');
   var iconPlay = mpBtn.querySelector('.mp-icon-play');
   var iconPause = mpBtn.querySelector('.mp-icon-pause');
+  var plPanel = document.getElementById('mpPlaylist');
+  var overlay = document.getElementById('mpOverlay');
+  var plOpen = false;
 
   // Restore from localStorage
   try {
@@ -587,11 +596,13 @@ window.addEventListener('pjax:success', () => {
   }
 
   function load(i) {
+    var changed = (idx !== i);
     idx = i;
     var t = PL[i];
-    audio.src = t.url;
+    if (changed || !audio.src) { audio.src = t.url; audio.setAttribute('data-idx', i); }
     mpCover.style.backgroundImage = 'url(' + t.cover + ')';
     mpTitle.textContent = t.name;
+    updatePlaylistHighlight();
     save();
     if (playing) audio.play();
   }
@@ -630,6 +641,49 @@ window.addEventListener('pjax:success', () => {
     mp.style.display = onMusic ? 'none' : '';
   }
 
+  // --- Playlist panel ---
+  function buildPlaylist() {
+    plPanel.innerHTML = '';
+    PL.forEach(function(t, i) {
+      var row = document.createElement('div');
+      row.className = 'mpp-row';
+      row.innerHTML = '<span class="mpp-num">' + (i < 9 ? '0' + (i + 1) : i + 1) + '</span><span class="mpp-name">' + t.name + '</span><span class="mpp-artist">' + t.artist + '</span>';
+      row.addEventListener('click', function() {
+        load(i);
+        if (!playing) toggle();
+        closePlaylist();
+      });
+      plPanel.appendChild(row);
+    });
+    updatePlaylistHighlight();
+  }
+
+  function updatePlaylistHighlight() {
+    var rows = plPanel.querySelectorAll('.mpp-row');
+    rows.forEach(function(r, i) { r.classList.toggle('active', i === idx); });
+  }
+
+  function openPlaylist() {
+    plOpen = true;
+    plPanel.style.display = 'block';
+    overlay.style.display = 'block';
+    mpDisc.classList.add('expanded');
+  }
+
+  function closePlaylist() {
+    plOpen = false;
+    plPanel.style.display = 'none';
+    overlay.style.display = 'none';
+    mpDisc.classList.remove('expanded');
+  }
+
+  mpDisc.addEventListener('click', function() {
+    if (plOpen) closePlaylist(); else openPlaylist();
+  });
+  overlay.addEventListener('click', closePlaylist);
+  buildPlaylist();
+
+  // --- Audio events ---
   audio.addEventListener('loadedmetadata', save);
   audio.addEventListener('ended', next);
   audio.addEventListener('play', function(){ setPlaying(true); });
@@ -640,14 +694,16 @@ window.addEventListener('pjax:success', () => {
   audio.addEventListener('error', function(){ setPlaying(false); });
 
   mpBtn.addEventListener('click', toggle);
+  mpPrev.addEventListener('click', prev);
+  mpNext.addEventListener('click', next);
 
-  // PJAX event handling: update UI after page transitions
+  // PJAX: update UI after page transitions
   document.addEventListener('pjax:success', function() {
     checkMusicPage();
     updateB2t();
   });
 
-  // Initial setup
+  // Init
   checkMusicPage();
   updateB2t();
 
