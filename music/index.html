@@ -28,7 +28,7 @@
 <meta property="og:description" content="明日方舟官方音乐厂牌塞壬唱片(Monster Siren)作品选">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-24T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-24T06:41:37.933Z">
+<meta property="article:modified_time" content="2026-05-24T06:47:29.244Z">
 <meta property="article:author" content="奶油苏打和冕型灯">
 <meta property="article:tag" content="技术, 学习, 记录">
 <meta name="twitter:card" content="summary">
@@ -304,121 +304,93 @@
 
 <script>
 (function(){
-  var G = window.__vinyl;
-  var playlist = G ? G.playlist : [
-    {cid:"125042",name:"Sanctuary Inside",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/8aad7b966f7a8069f07c094251c5a2eb/6A12C018/siren/audio/20250430/61d007fbdd059d6c77d24359aa85c1f4.wav",cover:"https://web.hycdn.cn/siren/pic/20250430/384e007ed1908ce919a3bf704a5b36ff.png",album:"Sanctuary Inside"},
-    {cid:"306814",name:"Best Moments of...",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/d0f258fb5ec485c658e88aaebf68b821/6A12C018/siren/audio/20231019/d730dee09f6a74272784b2d5de200123.wav",cover:"https://web.hycdn.cn/siren/pic/20231019/ae52bd635f6a7e89be3c3d481788ce82.png",album:"Best Moments of..."},
-    {cid:"953953",name:"Little Wish",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/e0b903a9b2601ce6cf544c7580d6f1bf/6A12C019/siren/audio/20250801/10c5003150590f14844e554df545e8b4.wav",cover:"https://web.hycdn.cn/siren/pic/20250801/7d4b586dddf00b4e2a43c809f3fe4b45.jpg",album:"Little Wish"},
-    {cid:"306846",name:"Your Star",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/d3d870c65bbc0197bee6e97c306eaebb/6A12C019/siren/audio/20220608/8f704dc83ffaebe4a9786627564f1b22.mp3",cover:"https://web.hycdn.cn/siren/pic/20220608/7ceda0fb37acc8cdfc7f25e8352dbbc8.jpg",album:"Your Star"},
-    {cid:"697699",name:"Grow on My Time",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/db459452c39abc245786c4c16d7f491c/6A12C019/siren/audio/20250606/f9746a00e5f44840bacfb51cbe228f3e.wav",cover:"https://web.hycdn.cn/siren/pic/20250606/02da85b2cc73f426ef6cfec4910d31d9.jpg",album:"Grow on My Time"},
-    {cid:"953984",name:"Before Summer",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/bf58f2860d163be53ff969ecb64247d3/6A12C019/siren/audio/20230601/7725b49fdb287aa281103add3fd99c4e.wav",cover:"https://web.hycdn.cn/siren/pic/20230601/d052f9558a4ef28409556ba761cdd861.jpg",album:"Before Summer"},
-    {cid:"232224",name:"Innocence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/59cb1b3aa2d6442ea9a31a55ba7c7b7d/6A12C019/siren/audio/20260430/ad9bf0b9ea6ca69a4d97cf479101b65f.wav",cover:"https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",album:"Innocence"},
-    {cid:"306815",name:"Effervescence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/57deef730043c92d12fd94e18844f899/6A12C0C9/siren/audio/20230809/68b2cd453671e11d132fd2d3cd911879.wav",cover:"https://web.hycdn.cn/siren/pic/20230809/ecc4c113772a8e8a8cdde6aa303a3ad6.jpg",album:"火山旅梦OST"}
-  ];
+  // Must wait for body-end.swig to create window.__vinyl first
+  function init() {
+    var V = window.__vinyl;
+    if (!V) { setTimeout(init, 50); return; }
 
-  // Use global audio if available (PJAX), otherwise create local
-  var audio = G ? G.audio : new Audio();
-  var curIdx = G ? G.getIdx() : 0;
-  var isPlaying = G ? !G.audio.paused : false;
+    var audio = V.audio;
+    var playlist = V.playlist;
 
-  // Restore from localStorage (only if not using global)
-  if (!G) {
-    try {
-      var saved = JSON.parse(localStorage.getItem('vs'));
-      if (saved && saved.i < playlist.length) { curIdx = saved.i; audio.currentTime = saved.t || 0; }
-    } catch(e) {}
+    var disc = document.getElementById('vinylDisc');
+    var tonearm = document.getElementById('vinylTonearm');
+    var cover = document.getElementById('vinylCover');
+    var titleEl = document.getElementById('trackTitle');
+    var artistEl = document.getElementById('trackArtist');
+    var playIcon = document.getElementById('playIcon');
+    var pauseIcon = document.getElementById('pauseIcon');
+    var fill = document.getElementById('progressFill');
+    var bar = document.getElementById('progressBar');
+    var timeCur = document.getElementById('timeCur');
+    var timeDur = document.getElementById('timeDur');
+
+    function fmt(t){var m=Math.floor(t/60);var s=Math.floor(t%60);return (m<10?'0'+m:m)+':'+(s<10?'0'+s:s)}
+
+    function updateUI() {
+      var i = V.getIdx();
+      var t = playlist[i];
+      cover.src = t.cover;
+      titleEl.textContent = t.name;
+      artistEl.textContent = t.artist + ' · ' + t.album;
+      var rows = document.querySelectorAll('.vinyl-playlist-item');
+      rows.forEach(function(el, j) { el.classList.toggle('active', j === i); });
+      var p = !audio.paused;
+      disc.classList.toggle('vinyl-spinning', p);
+      tonearm.classList.toggle('playing', p);
+      playIcon.style.display = p ? 'none' : 'block';
+      pauseIcon.style.display = p ? 'block' : 'none';
+    }
+
+    // UI-only event listeners — guarded to prevent duplicates on PJAX re-entry
+    if (!audio.__musicUIInit) {
+      audio.__musicUIInit = true;
+      audio.addEventListener('loadedmetadata', function() { timeDur.textContent = fmt(audio.duration); });
+      audio.addEventListener('timeupdate', function() {
+        if (!audio.duration) return;
+        fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        timeCur.textContent = fmt(audio.currentTime);
+      });
+      audio.addEventListener('play', updateUI);
+      audio.addEventListener('pause', updateUI);
+    }
+
+    // Progress bar click
+    bar.addEventListener('click', function(e) {
+      if (!audio.duration) return;
+      var rect = bar.getBoundingClientRect();
+      audio.currentTime = (e.clientX - rect.left) / rect.width * audio.duration;
+    });
+
+    // Render playlist
+    var plEl = document.getElementById('playlist');
+    plEl.innerHTML = '';
+    playlist.forEach(function(t, i) {
+      var item = document.createElement('div');
+      item.className = 'vinyl-playlist-item';
+      item.innerHTML = '<span class="pl-num">' + (i < 9 ? '0' + (i + 1) : i + 1) + '</span><span class="pl-title">' + t.name + '</span><span class="pl-dur">' + t.artist + '</span>';
+      item.addEventListener('click', function() {
+        V.load(i);
+        if (audio.paused) V.toggle();
+      });
+      plEl.appendChild(item);
+    });
+
+    // Expose for HTML onclick handlers
+    window.togglePlay = function() { V.toggle(); };
+    window.nextTrack = function() { V.next(); };
+    window.prevTrack = function() { V.prev(); };
+
+    // Sync UI
+    updateUI();
+    timeDur.textContent = audio.duration ? fmt(audio.duration) : '00:00';
   }
 
-  var disc = document.getElementById('vinylDisc');
-  var tonearm = document.getElementById('vinylTonearm');
-  var cover = document.getElementById('vinylCover');
-  var titleEl = document.getElementById('trackTitle');
-  var artistEl = document.getElementById('trackArtist');
-  var playBtn = document.getElementById('playBtn');
-  var playIcon = document.getElementById('playIcon');
-  var pauseIcon = document.getElementById('pauseIcon');
-  var fill = document.getElementById('progressFill');
-  var bar = document.getElementById('progressBar');
-  var timeCur = document.getElementById('timeCur');
-  var timeDur = document.getElementById('timeDur');
-
-  function fmt(t){var m=Math.floor(t/60);var s=Math.floor(t%60);return (m<10?'0'+m:m)+':'+(s<10?'0'+s:s)}
-  function saveState(){try{localStorage.setItem('vs',JSON.stringify({i:curIdx,t:audio.currentTime,p:isPlaying}))}catch(e){}}
-
-  function loadTrack(i){
-    var changed = (curIdx !== i);
-    curIdx = i;
-    var t = playlist[i];
-    if (changed || !audio.src) { audio.src = t.url; audio.setAttribute('data-idx', i); }
-    cover.src = t.cover;
-    titleEl.textContent = t.name;
-    artistEl.textContent = t.artist + ' · ' + t.album;
-    document.querySelectorAll('.vinyl-playlist-item').forEach(function(el,j){el.classList.toggle('active',j===i)});
-    if(isPlaying){audio.play()}
-    if (G) G.load(i);
-    saveState();
+  // Defer: on first load wait for DOM & body-end.swig; on PJAX run ASAP
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-
-  function togglePlay(){
-    if (G) { G.toggle(); return; }
-    if(isPlaying){audio.pause();setPlaying(false)}
-    else{audio.play();setPlaying(true)}
-  }
-
-  function setPlaying(p){
-    isPlaying=p;
-    if(p){disc.classList.add('vinyl-spinning');tonearm.classList.add('playing');playIcon.style.display='none';pauseIcon.style.display='block'}
-    else{disc.classList.remove('vinyl-spinning');tonearm.classList.remove('playing');playIcon.style.display='block';pauseIcon.style.display='none'}
-    if (G) G.setPlaying(p);
-    saveState();
-  }
-
-  function nextTrack(){loadTrack((curIdx+1)%playlist.length)}
-  function prevTrack(){loadTrack((curIdx-1+playlist.length)%playlist.length)}
-
-  audio.addEventListener('loadedmetadata',function(){timeDur.textContent=fmt(audio.duration)});
-  audio.addEventListener('timeupdate',function(){
-    if(!audio.duration)return;
-    var pct = (audio.currentTime/audio.duration)*100;
-    fill.style.width=pct+'%';
-    timeCur.textContent=fmt(audio.currentTime);
-  });
-  audio.addEventListener('ended',function(){nextTrack()});
-  audio.addEventListener('play',function(){setPlaying(true)});
-  audio.addEventListener('pause',function(){setPlaying(false)});
-  audio.addEventListener('error',function(){setPlaying(false)});
-  window.addEventListener('beforeunload',function(){saveState()});
-
-  bar.addEventListener('click',function(e){
-    if(!audio.duration)return;
-    var rect=bar.getBoundingClientRect();
-    var pct=(e.clientX-rect.left)/rect.width;
-    audio.currentTime=pct*audio.duration;
-  });
-
-  // Render playlist
-  var plEl = document.getElementById('playlist');
-  playlist.forEach(function(t,i){
-    var item = document.createElement('div');
-    item.className = 'vinyl-playlist-item';
-    item.innerHTML = '<span class="pl-num">'+(i<9?'0'+(i+1):i+1)+'</span><span class="pl-title">'+t.name+'</span><span class="pl-dur">'+t.artist+'</span>';
-    item.addEventListener('click',function(){loadTrack(i);if(!isPlaying){togglePlay()}});
-    plEl.appendChild(item);
-  });
-
-  // Load track (restore saved or first)
-  loadTrack(curIdx);
-  if (!G && saved && saved.p) {
-    audio.play().then(function(){setPlaying(true)}).catch(function(){});
-  }
-
-  // Sync UI with any existing playing state
-  if (G && !G.audio.paused) { setPlaying(true); }
-
-  // Expose to global scope for onclick handlers
-  window.togglePlay = togglePlay;
-  window.nextTrack = nextTrack;
-  window.prevTrack = prevTrack;
 })();
 </script>
 
