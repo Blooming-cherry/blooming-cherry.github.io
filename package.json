@@ -26,6 +26,6 @@
     "hexo-symbols-count-time": "^0.7.1",
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-theme-landscape": "^1.0.0",
-    "strip-ansi": "6.0.1"
+    "strip-ansi": "7.2.0"
   }
 }
