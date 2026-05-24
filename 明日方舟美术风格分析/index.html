@@ -28,7 +28,7 @@
 <meta property="og:description" content="按故事线&#x2F;地区分类归纳明日方舟UI、美术与PV设计语言">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-23T10:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-24T06:14:07.855Z">
+<meta property="article:modified_time" content="2026-05-24T06:28:30.786Z">
 <meta property="article:author" content="奶油苏打和冕型灯">
 <meta property="article:tag" content="技术, 学习, 记录">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 14:14:07" itemprop="dateModified" datetime="2026-05-24T14:14:07+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 14:28:30" itemprop="dateModified" datetime="2026-05-24T14:28:30+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -964,6 +964,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
@@ -979,6 +980,65 @@
 
 
 <script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -1003,6 +1063,7 @@
 
 
 
+    <div id="pjax">
   
 
   
@@ -1059,7 +1120,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
     {name:"Grow on My Time",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/db459452c39abc245786c4c16d7f491c/6A12C019/siren/audio/20250606/f9746a00e5f44840bacfb51cbe228f3e.wav",cover:"https://web.hycdn.cn/siren/pic/20250606/02da85b2cc73f426ef6cfec4910d31d9.jpg",album:"Grow on My Time"},
     {name:"Before Summer",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/bf58f2860d163be53ff969ecb64247d3/6A12C019/siren/audio/20230601/7725b49fdb287aa281103add3fd99c4e.wav",cover:"https://web.hycdn.cn/siren/pic/20230601/d052f9558a4ef28409556ba761cdd861.jpg",album:"Before Summer"},
     {name:"Innocence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/59cb1b3aa2d6442ea9a31a55ba7c7b7d/6A12C019/siren/audio/20260430/ad9bf0b9ea6ca69a4d97cf479101b65f.wav",cover:"https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",album:"Innocence"},
-	    {name:"Effervescence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/57deef730043c92d12fd94e18844f899/6A12C0C9/siren/audio/20230809/68b2cd453671e11d132fd2d3cd911879.wav",cover:"https://web.hycdn.cn/siren/pic/20230809/ecc4c113772a8e8a8cdde6aa303a3ad6.jpg",album:"火山旅梦OST"}
+    {name:"Effervescence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/57deef730043c92d12fd94e18844f899/6A12C0C9/siren/audio/20230809/68b2cd453671e11d132fd2d3cd911879.wav",cover:"https://web.hycdn.cn/siren/pic/20230809/ecc4c113772a8e8a8cdde6aa303a3ad6.jpg",album:"火山旅梦OST"}
   ];
 
   var audio = new Audio();
@@ -1072,7 +1133,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   var mpBtn = document.getElementById('mpBtn');
   var iconPlay = mpBtn.querySelector('.mp-icon-play');
   var iconPause = mpBtn.querySelector('.mp-icon-pause');
-  var b2t = document.querySelector('.back-to-top');
 
   // Restore from localStorage
   try {
@@ -1099,7 +1159,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
     mpDisc.classList.toggle('spinning', p);
     iconPlay.style.display = p ? 'none' : 'block';
     iconPause.style.display = p ? 'block' : 'none';
-    if (b2t) b2t.classList.toggle('vinyl-on', p);
+    updateB2t();
     save();
   }
 
@@ -1111,38 +1171,50 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   function next() { load((idx + 1) % PL.length); }
   function prev() { load((idx - 1 + PL.length) % PL.length); }
 
+  function updateB2t() {
+    var b2t = document.querySelector('.back-to-top');
+    if (b2t) {
+      b2t.classList.toggle('vinyl-on', playing);
+      if (!b2t.querySelector('.b2t-disc')) {
+        var disc = document.createElement('div');
+        disc.className = 'b2t-disc';
+        b2t.appendChild(disc);
+      }
+    }
+  }
+
+  function checkMusicPage() {
+    var onMusic = window.location.pathname.indexOf('/music') !== -1;
+    mp.style.display = onMusic ? 'none' : '';
+  }
+
   audio.addEventListener('loadedmetadata', save);
   audio.addEventListener('ended', next);
   audio.addEventListener('play', function(){ setPlaying(true); });
   audio.addEventListener('pause', function(){ setPlaying(false); });
   audio.addEventListener('timeupdate', function(){
-    if (audio.currentTime && !(Math.floor(audio.currentTime) % 5)) save();
+    if (audio.currentTime && !(Math.floor(audio.currentTime) % 2)) save();
   });
   audio.addEventListener('error', function(){ setPlaying(false); });
-  window.addEventListener('beforeunload', function(){
-    localStorage.setItem('vs', JSON.stringify({i:idx, t:audio.currentTime, p:false}));
-  });
 
   mpBtn.addEventListener('click', toggle);
 
-  // Back2top vinyl disc
-  if (b2t) {
-    var disc = document.createElement('div');
-    disc.className = 'b2t-disc';
-    b2t.appendChild(disc);
-  }
+  // PJAX event handling: update UI after page transitions
+  document.addEventListener('pjax:success', function() {
+    checkMusicPage();
+    updateB2t();
+  });
 
-  // Hide mini player on /music page (full vinyl there)
-  if (window.location.pathname.indexOf('/music') !== -1) {
-    mp.style.display = 'none';
-  }
+  // Initial setup
+  checkMusicPage();
+  updateB2t();
 
   // Expose for music page
   window.__vinyl = {
     audio: audio, playlist: PL,
     getIdx: function(){ return idx; },
     load: load, toggle: toggle, next: next, prev: prev,
-    setPlaying: setPlaying
+    setPlaying: setPlaying, checkMusicPage: checkMusicPage
   };
 
   // Initial load + auto-play
@@ -1153,5 +1225,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 })();
 </script>
 
+    </div>
 </body>
 </html>
