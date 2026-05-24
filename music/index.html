@@ -28,7 +28,7 @@
 <meta property="og:description" content="明日方舟官方音乐厂牌塞壬唱片(Monster Siren)作品选">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-24T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-24T07:25:36.116Z">
+<meta property="article:modified_time" content="2026-05-24T08:14:18.346Z">
 <meta property="article:author" content="奶油苏打和冕型灯">
 <meta property="article:tag" content="技术, 学习, 记录">
 <meta name="twitter:card" content="summary">
@@ -937,7 +937,10 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 
   // --- Audio events ---
   audio.addEventListener('loadedmetadata', save);
-  audio.addEventListener('ended', next);
+  audio.addEventListener('ended', function() {
+    playing = true;
+    next();
+  });
   audio.addEventListener('play', function(){ setPlaying(true); });
   audio.addEventListener('pause', function(){ setPlaying(false); });
   audio.addEventListener('timeupdate', function(){

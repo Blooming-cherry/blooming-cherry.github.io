@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 15:25:36" itemprop="dateModified" datetime="2026-05-24T15:25:36+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 16:14:18" itemprop="dateModified" datetime="2026-05-24T16:14:18+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -304,7 +304,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 15:25:36" itemprop="dateModified" datetime="2026-05-24T15:25:36+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 16:14:18" itemprop="dateModified" datetime="2026-05-24T16:14:18+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -390,7 +390,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 15:25:36" itemprop="dateModified" datetime="2026-05-24T15:25:36+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 16:14:18" itemprop="dateModified" datetime="2026-05-24T16:14:18+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -476,7 +476,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 15:25:36" itemprop="dateModified" datetime="2026-05-24T15:25:36+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 16:14:18" itemprop="dateModified" datetime="2026-05-24T16:14:18+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -562,7 +562,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-05-24 15:25:36" itemprop="dateModified" datetime="2026-05-24T15:25:36+08:00">2026-05-24</time>
+                <time title="修改时间：2026-05-24 16:14:18" itemprop="dateModified" datetime="2026-05-24T16:14:18+08:00">2026-05-24</time>
               </span>
 
           <br>
@@ -1126,7 +1126,10 @@ window.addEventListener('pjax:success', () => {
 
   // --- Audio events ---
   audio.addEventListener('loadedmetadata', save);
-  audio.addEventListener('ended', next);
+  audio.addEventListener('ended', function() {
+    playing = true;
+    next();
+  });
   audio.addEventListener('play', function(){ setPlaying(true); });
   audio.addEventListener('pause', function(){ setPlaying(false); });
   audio.addEventListener('timeupdate', function(){

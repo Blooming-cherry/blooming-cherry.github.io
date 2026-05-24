@@ -780,7 +780,10 @@ window.addEventListener('pjax:success', () => {
 
   // --- Audio events ---
   audio.addEventListener('loadedmetadata', save);
-  audio.addEventListener('ended', next);
+  audio.addEventListener('ended', function() {
+    playing = true;
+    next();
+  });
   audio.addEventListener('play', function(){ setPlaying(true); });
   audio.addEventListener('pause', function(){ setPlaying(false); });
   audio.addEventListener('timeupdate', function(){
