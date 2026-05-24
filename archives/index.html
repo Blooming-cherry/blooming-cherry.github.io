@@ -617,6 +617,93 @@ window.addEventListener('pjax:success', () => {
     {name:"Effervescence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/57deef730043c92d12fd94e18844f899/6A12C0C9/siren/audio/20230809/68b2cd453671e11d132fd2d3cd911879.wav",cover:"https://web.hycdn.cn/siren/pic/20230809/ecc4c113772a8e8a8cdde6aa303a3ad6.jpg",album:"火山旅梦OST"}
   ];
 
+  // PJAX guard: body-end.swig re-executes inside #pjax on every navigation.
+  // Rebind new DOM to the existing Audio instead of creating a duplicate.
+  if (window.__vinyl) {
+    var V = window.__vinyl;
+    var mp2 = document.getElementById('miniPlayer');
+    var mpDisc2 = document.getElementById('mpDisc');
+    var mpCover2 = document.getElementById('mpCover');
+    var mpTitle2 = document.getElementById('mpTitle');
+    var mpBtn2 = document.getElementById('mpBtn');
+    var mpPrev2 = document.getElementById('mpPrev');
+    var mpNext2 = document.getElementById('mpNext');
+    var iconPlay2 = mpBtn2.querySelector('.mp-icon-play');
+    var iconPause2 = mpBtn2.querySelector('.mp-icon-pause');
+    var plPanel2 = document.getElementById('mpPlaylist');
+    var overlay2 = document.getElementById('mpOverlay');
+    var plOpen2 = false;
+
+    mpCover2.style.backgroundImage = 'url(' + V.playlist[V.getIdx()].cover + ')';
+    mpTitle2.textContent = V.playlist[V.getIdx()].name;
+    var playing = !V.audio.paused;
+    mpDisc2.classList.toggle('spinning', playing);
+    iconPlay2.style.display = playing ? 'none' : 'block';
+    iconPause2.style.display = playing ? 'block' : 'none';
+
+    function updateHighlight2() {
+      var rows = plPanel2.querySelectorAll('.mpp-row');
+      rows.forEach(function(r, i) { r.classList.toggle('active', i === V.getIdx()); });
+    }
+    plPanel2.innerHTML = '';
+    V.playlist.forEach(function(t, i) {
+      var row = document.createElement('div');
+      row.className = 'mpp-row';
+      row.innerHTML = '<span class="mpp-num">' + (i < 9 ? '0' + (i + 1) : i + 1) + '</span><span class="mpp-name">' + t.name + '</span><span class="mpp-artist">' + t.artist + '</span>';
+      row.addEventListener('click', function() {
+        V.load(i);
+        if (V.audio.paused) V.toggle();
+        plPanel2.style.display = 'none';
+        overlay2.style.display = 'none';
+        mpDisc2.classList.remove('expanded');
+        plOpen2 = false;
+      });
+      plPanel2.appendChild(row);
+    });
+    updateHighlight2();
+
+    function openPanel2() { plOpen2 = true; plPanel2.style.display = 'block'; overlay2.style.display = 'block'; mpDisc2.classList.add('expanded'); }
+    function closePanel2() { plOpen2 = false; plPanel2.style.display = 'none'; overlay2.style.display = 'none'; mpDisc2.classList.remove('expanded'); }
+    mpDisc2.addEventListener('click', function() { if (plOpen2) closePanel2(); else openPanel2(); });
+    overlay2.addEventListener('click', closePanel2);
+    mpBtn2.addEventListener('click', function() { V.toggle(); });
+    mpPrev2.addEventListener('click', function() { V.prev(); });
+    mpNext2.addEventListener('click', function() { V.next(); });
+    var onMusic = window.location.pathname.indexOf('/music') !== -1;
+    mp2.style.display = onMusic ? 'none' : '';
+    if (!V.audio.__syncBound) {
+      V.audio.__syncBound = true;
+      function syncUI() {
+        var d = document.getElementById('mpDisc');
+        var ip = document.querySelector('#mpBtn .mp-icon-play');
+        var ipa = document.querySelector('#mpBtn .mp-icon-pause');
+        var p = !V.audio.paused;
+        if (d) d.classList.toggle('spinning', p);
+        if (ip) ip.style.display = p ? 'none' : 'block';
+        if (ipa) ipa.style.display = p ? 'block' : 'none';
+      }
+      V.audio.addEventListener('play', syncUI);
+      V.audio.addEventListener('pause', syncUI);
+      var origLoad = V.load;
+      V.load = function(i) {
+        origLoad(i);
+        var cov = document.getElementById('mpCover');
+        var tit = document.getElementById('mpTitle');
+        if (cov) cov.style.backgroundImage = 'url(' + V.playlist[i].cover + ')';
+        if (tit) tit.textContent = V.playlist[i].name;
+        var rows = document.querySelectorAll('.mpp-row');
+        rows.forEach(function(r, j) { r.classList.toggle('active', j === i); });
+      };
+      var origCheck = V.checkMusicPage;
+      V.checkMusicPage = function() {
+        origCheck();
+        var m = document.getElementById('miniPlayer');
+        if (m) { var onM = window.location.pathname.indexOf('/music') !== -1; m.style.display = onM ? 'none' : ''; }
+      };
+    }
+    return;
+  }
+
   var audio = new Audio();
   var idx = 0;
   var playing = false;
