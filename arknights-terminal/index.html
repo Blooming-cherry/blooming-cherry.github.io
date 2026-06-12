@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"adaydream.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="在下不才，兹于AAU求学，于图门下求道，辟此秘境，记录技术学习点滴。">
+  <meta name="description" content="TERMINAL &#x2F;&#x2F; R.I. OS v4.7   :root {   --bg:        #080c10;   --panel:     #0d131c;   --border:    #1a2433;   --cyan:      #00d4ff;   --cyan-dim:  #006880;   --text:      #c8d0d8;   --text-dim:  #">
 <meta property="og:type" content="website">
 <meta property="og:title" content="“松花酿酒，春水煎茶”">
-<meta property="og:url" content="https://adaydream.cn/archives/2026/04/index.html">
+<meta property="og:url" content="https://adaydream.cn/arknights-terminal/index.html">
 <meta property="og:site_name" content="“松花酿酒，春水煎茶”">
-<meta property="og:description" content="在下不才，兹于AAU求学，于图门下求道，辟此秘境，记录技术学习点滴。">
+<meta property="og:description" content="TERMINAL &#x2F;&#x2F; R.I. OS v4.7   :root {   --bg:        #080c10;   --panel:     #0d131c;   --border:    #1a2433;   --cyan:      #00d4ff;   --cyan-dim:  #006880;   --text:      #c8d0d8;   --text-dim:  #">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-12T01:28:36.856Z">
+<meta property="article:modified_time" content="2026-06-02T12:20:48.968Z">
 <meta property="article:author" content="奶油苏打和冕型灯">
 <meta property="article:tag" content="技术, 学习, 记录">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://adaydream.cn/archives/2026/04/">
+<link rel="canonical" href="https://adaydream.cn/arknights-terminal/">
 
 
 <script id="page-configurations">
@@ -44,7 +46,8 @@
   };
 </script>
 
-  <title>归档 | “松花酿酒，春水煎茶”</title>
+  <title> | “松花酿酒，春水煎茶”
+</title>
   
 
 
@@ -180,77 +183,738 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content archive">
+          <div class="content page posts-expand">
             
 
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
   
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
+
+</div>
+
+</header>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2026</span>
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERMINAL // R.I. OS v4.7</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+:root {
+  --bg:        #080c10;
+  --panel:     #0d131c;
+  --border:    #1a2433;
+  --cyan:      #00d4ff;
+  --cyan-dim:  #006880;
+  --text:      #c8d0d8;
+  --text-dim:  #5a6470;
+  --accent:    #f0a040;
+  --red:       #ff4458;
+  --white:     #e8ecef;
+  --font-mono: 'Consolas', 'SF Mono', 'Cascadia Code', monospace;
+  --font-ui:   'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Background Grid ── */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 30%, transparent 70%);
+}
+
+/* ── Floating Particles Layer ── */
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: var(--cyan);
+  opacity: 0;
+}
+
+/* ── Scanline Overlay ── */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+}
+
+/* ── Main Container ── */
+.main-container {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+/* ── Top Bar ── */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo-rhombus {
+  width: 10px; height: 10px;
+  background: var(--cyan);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px var(--cyan), 0 0 30px rgba(0,212,255,0.4);
+}
+.top-bar-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.top-bar-right {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+.top-bar-right span { color: var(--cyan); }
+
+/* ── Header Section ── */
+.header-section {
+  margin-bottom: 2.5rem;
+}
+.rhombus-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+.rhombus-line .r {
+  width: 6px; height: 6px;
+  background: var(--cyan-dim);
+  transform: rotate(45deg);
+}
+.rhombus-line .line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan-dim), transparent);
+}
+.rhombus-line .tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: var(--cyan-dim);
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-family: var(--font-ui);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 200;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  line-height: 1.2;
+}
+.main-title em {
+  font-style: normal;
+  color: var(--cyan);
+  font-weight: 400;
+}
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+/* ── Cards Grid ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+  overflow: hidden;
+  transition: border-color 0.4s ease;
+}
+/* Diagonal cut corner */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 16px 16px 0;
+  border-color: transparent var(--bg) transparent transparent;
+  z-index: 2;
+  transition: border-right-color 0.4s ease;
+}
+/* Accent corner line */
+.card .corner-line {
+  position: absolute;
+  top: 0; right: 0;
+  width: 22px; height: 1px;
+  background: var(--cyan-dim);
+  transform-origin: top right;
+  transform: rotate(-45deg) translateX(-4px);
+  z-index: 3;
+  transition: background 0.4s ease;
+}
+.card .card-icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.card .card-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+.card .card-value {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+.card .card-stat {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+}
+.card:hover { border-color: var(--cyan-dim); }
+.card:hover::after { border-right-color: var(--panel); }
+.card:hover .corner-line { background: var(--cyan); }
+
+/* ── Main Terminal Panel ── */
+.terminal-panel {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+/* Left accent bar */
+.terminal-panel::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyan), transparent 60%);
+}
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.panel-header .indicator {
+  width: 8px; height: 8px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+.panel-header .panel-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+.panel-header .panel-status {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--cyan-dim);
+}
+
+.log-lines { list-style: none; }
+.log-line {
+  display: flex;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+.log-time { color: var(--text-dim); min-width: 4.5rem; }
+.log-tag {
+  display: inline-block;
+  min-width: 5rem;
+  font-size: 0.6rem;
+  padding: 0.1rem 0.4rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.log-tag.info  { color: var(--cyan);  border: 1px solid rgba(0,212,255,0.2); }
+.log-tag.warn  { color: var(--accent); border: 1px solid rgba(240,160,64,0.2); }
+.log-tag.error { color: var(--red);   border: 1px solid rgba(255,68,88,0.2); }
+.log-msg { color: var(--text); flex: 1; }
+
+/* ── Action Buttons ── */
+.actions-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 100%;
+  height: 2px;
+  background: var(--cyan);
+  transition: right 0.3s ease;
+}
+.btn:hover { border-color: var(--cyan); color: var(--white); }
+.btn:hover::after { right: 0; }
+.btn.primary {
+  border-color: var(--cyan-dim);
+  color: var(--cyan);
+}
+.btn.primary:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(0,212,255,0.1), inset 0 0 20px rgba(0,212,255,0.03);
+}
+
+/* ── Footer ── */
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+
+/* ── Diamond Decoration ── */
+.diamond-deco {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: transparent;
+  border: 1px solid var(--cyan-dim);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .main-container { padding: 2rem 1rem 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Background layers -->
+<div class="bg-grid"></div>
+<div class="particles" id="particles"></div>
+<div class="scanlines"></div>
+
+<!-- Decorative diamonds -->
+<div class="diamond-deco" style="top:12%;left:8%;width:6px;height:6px;"></div>
+<div class="diamond-deco" style="top:25%;right:10%;width:10px;height:10px;"></div>
+<div class="diamond-deco" style="top:60%;left:5%;width:8px;height:8px;"></div>
+<div class="diamond-deco" style="top:70%;right:8%;width:6px;height:6px;"></div>
+<div class="diamond-deco" style="top:40%;left:92%;width:5px;height:5px;"></div>
+
+<!-- Main content -->
+<main class="main-container">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="logo-rhombus"></div>
+      <span class="top-bar-title">Rhodes Island · Terminal</span>
     </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2026-04-22T15:13:17+08:00"
-              content="2026-04-22">
-          04-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E6%9D%BE%E8%8A%B1%E9%85%BF%E9%85%92%EF%BC%8C%E6%98%A5%E6%B0%B4%E7%85%8E%E8%8C%B6/" itemprop="url">
-            <span itemprop="name">松花酿酒，春水煎茶</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2026-04-22T12:00:00+08:00"
-              content="2026-04-22">
-          04-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E8%B4%B2%E4%BA%8E%E4%B8%98%E5%9B%AD/" itemprop="url">
-            <span itemprop="name">贲于丘园，朱绂方来</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+    <div class="top-bar-right">
+      <span>SYS.OK</span>
+      <span>ENC.ACTIVE</span>
+      <span>UTC+8 14:07:32</span>
     </div>
   </div>
-  
-  
-  
 
-  
+  <!-- Header -->
+  <div class="header-section">
+    <div class="rhombus-line">
+      <div class="r"></div><div class="r"></div><div class="r"></div>
+      <span class="tag">Mission Briefing</span>
+      <div class="line"></div>
+    </div>
+    <h1 class="main-title">
+      Operation<br><em>Phantom Cross</em>
+    </h1>
+    <p class="subtitle">// CLASSIFIED · CLEARANCE LEVEL 5 · EYES ONLY</p>
+  </div>
 
+  <!-- Stat cards -->
+  <div class="cards-grid">
+    <div class="card">
+      <div class="corner-line"></div>
+      <span class="card-icon">◆</span>
+      <span class="card-label">Deployed Operators</span>
+      <span class="card-value">12</span>
+      <span class="card-stat">▲ 2 in reserve</span>
+    </div>
+    <div class="card">
+      <div class="corner-line"></div>
+      <span class="card-icon">◈</span>
+      <span class="card-label">Mission Progress</span>
+      <span class="card-value">64.7<span style="font-size:0.6em;color:var(--text-dim)">%</span></span>
+      <span class="card-stat" style="color:var(--cyan)">Phase 3 / 5</span>
+    </div>
+    <div class="card">
+      <div class="corner-line"></div>
+      <span class="card-icon">◎</span>
+      <span class="card-label">Threat Level</span>
+      <span class="card-value" style="color:var(--accent)">ELEVATED</span>
+      <span class="card-stat" style="color:var(--red)">▲ Monitoring</span>
+    </div>
+  </div>
+
+  <!-- Terminal log panel -->
+  <div class="terminal-panel">
+    <div class="panel-header">
+      <div class="indicator"></div>
+      <span class="panel-title">System Log · Live Feed</span>
+      <span class="panel-status">● RECEIVING</span>
+    </div>
+    <ul class="log-lines">
+      <li class="log-line"><span class="log-time">14:03:22</span><span class="log-tag info">SYS</span><span class="log-msg">Operator deployment confirmed · Grid sector E7–E9</span></li>
+      <li class="log-line"><span class="log-time">14:04:11</span><span class="log-tag info">COM</span><span class="log-msg">Encrypted channel established · Latency 12ms</span></li>
+      <li class="log-line"><span class="log-time">14:05:47</span><span class="log-tag warn">SEN</span><span class="log-msg">Anomalous energy signature detected · Bearing 247°</span></li>
+      <li class="log-line"><span class="log-time">14:06:03</span><span class="log-tag error">TAC</span><span class="log-msg">Perimeter breach · Sector F4 · Drones scrambled</span></li>
+      <li class="log-line"><span class="log-time">14:07:18</span><span class="log-tag info">SYS</span><span class="log-msg">Backup power routed · All systems nominal</span></li>
+    </ul>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions-row">
+    <button class="btn primary" id="btn-deploy">▸ Deploy Squad</button>
+    <button class="btn" id="btn-report">View Report</button>
+    <button class="btn" id="btn-abort">Abort Mission</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-bar">
+    <span>R.I. TERMINAL v4.7.2</span>
+    <span>RHODES ISLAND PHARMA · ALL RIGHTS RESERVED</span>
+    <span>CORE TEMP: 42.1°C</span>
+  </div>
+
+</main>
+
+<script>
+// ── Generate floating particles ──
+(function initParticles() {
+  const container = document.getElementById('particles');
+  const frag = document.createDocumentFragment();
+  const count = 30;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.top  = `${Math.random() * 100}%`;
+    p.style.width  = `${1 + Math.random() * 2}px`;
+    p.style.height = p.style.width;
+    p.style.opacity = 0;
+    frag.appendChild(p);
+  }
+  container.appendChild(frag);
+})();
+
+// ── GSAP: Entrance Timeline ──
+const mm = gsap.matchMedia();
+
+mm.add({
+  isDesktop: "(min-width: 701px)",
+  reduceMotion: "(prefers-reduced-motion: reduce)"
+}, (ctx) => {
+  const { reduceMotion } = ctx.conditions;
+  const dur = reduceMotion ? 0.01 : 0.8;
+
+  const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+  // 1. Top bar slides in
+  tl.from(".top-bar", {
+    y: -20, autoAlpha: 0, duration: 0.5, ease: "power2.out"
+  }, 0);
+
+  // 2. Rhombus line expands
+  tl.from(".rhombus-line .r", {
+    scale: 0, rotation: 90, duration: 0.4,
+    stagger: { each: 0.08, from: "start" },
+    ease: "back.out(1.7)"
+  }, 0.1);
+  tl.from(".rhombus-line .line", {
+    scaleX: 0, transformOrigin: "left center", duration: 0.5, ease: "power2.inOut"
+  }, 0.2);
+  tl.from(".rhombus-line .tag", {
+    x: -10, autoAlpha: 0, duration: 0.35
+  }, 0.25);
+
+  // 3. Title words
+  tl.from(".main-title", {
+    y: 30, autoAlpha: 0, duration: dur, ease: "power3.out"
+  }, 0.3);
+  tl.from(".subtitle", {
+    y: 10, autoAlpha: 0, duration: 0.4
+  }, 0.55);
+
+  // 4. Cards stagger in
+  tl.from(".card", {
+    y: 40, autoAlpha: 0, duration: dur,
+    stagger: { each: 0.12, from: "start" },
+    ease: "power3.out"
+  }, 0.5);
+
+  // 5. Terminal panel
+  tl.from(".terminal-panel", {
+    y: 30, autoAlpha: 0, duration: dur, ease: "power3.out"
+  }, 0.7);
+  tl.from(".terminal-panel::before", {
+    scaleY: 0, transformOrigin: "top center", duration: 0.5, ease: "power2.inOut"
+  }, 1.0);
+  tl.from(".log-line", {
+    x: -15, autoAlpha: 0, duration: 0.35,
+    stagger: { each: 0.08, from: "start" }
+  }, 1.0);
+
+  // 6. Buttons
+  tl.from(".btn", {
+    y: 15, autoAlpha: 0, duration: 0.4,
+    stagger: { each: 0.08, from: "start" }
+  }, 1.2);
+
+  // 7. Footer & diamonds
+  tl.from(".footer-bar", { autoAlpha: 0, duration: 0.4 }, 1.3);
+  tl.from(".diamond-deco", {
+    scale: 0, rotation: 90, autoAlpha: 0, duration: 0.5,
+    stagger: { each: 0.1, from: "random" }
+  }, 1.3);
+
+  // ── Ambient: particles float ──
+  if (!reduceMotion) {
+    gsap.to(".particle", {
+      y: () => gsap.utils.random(-60, -20),
+      x: () => gsap.utils.random(-15, 15),
+      autoAlpha: () => gsap.utils.random(0.15, 0.5),
+      scale: () => gsap.utils.random(0.6, 1.4),
+      duration: () => gsap.utils.random(3, 7),
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      stagger: { each: 0.2, from: "random" }
+    });
+
+    // ── Ambient: logo rhombus pulse ──
+    gsap.to(".logo-rhombus", {
+      boxShadow: "0 0 20px rgba(0,212,255,0.8), 0 0 50px rgba(0,212,255,0.3)",
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: "sine.inOut"
+    });
+
+    // ── Ambient: panel indicator pulse ──
+    gsap.to(".indicator", {
+      boxShadow: "0 0 3px rgba(0,212,255,0.5)",
+      repeat: -1,
+      yoyo: true,
+      duration: 1.5,
+      ease: "sine.inOut"
+    });
+  }
+
+  // ── Button hover effects ──
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      gsap.to(btn, { scale: 1.03, duration: 0.25, ease: "power2.out" });
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, { scale: 1, duration: 0.25, ease: "power2.out" });
+    });
+    btn.addEventListener('mousedown', () => {
+      gsap.to(btn, { scale: 0.97, duration: 0.1 });
+    });
+    btn.addEventListener('mouseup', () => {
+      gsap.to(btn, { scale: 1.03, duration: 0.15, ease: "power2.out" });
+    });
+  });
+
+  // ── Card hover: subtle lift ──
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, { y: -3, duration: 0.3, ease: "power2.out" });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+    });
+  });
+
+  // ── Deploy button: dramatic click ──
+  const deployBtn = document.getElementById('btn-deploy');
+  deployBtn.addEventListener('click', () => {
+    // Flash panel
+    gsap.to('.terminal-panel', {
+      borderColor: 'rgba(0,212,255,0.4)',
+      duration: 0.1,
+      yoyo: true,
+      repeat: 1
+    });
+    // Pulse indicator
+    gsap.to('.indicator', {
+      scale: 2.5, autoAlpha: 0.3, duration: 0.3,
+      ease: "power4.out",
+      onComplete: () => {
+        gsap.to('.indicator', { scale: 1, autoAlpha: 1, duration: 0.5, ease: "power2.out" });
+      }
+    });
+    // Log it
+    const logList = document.querySelector('.log-lines');
+    const li = document.createElement('li');
+    li.className = 'log-line';
+    const now = new Date();
+    const time = now.toTimeString().slice(0,8);
+    li.innerHTML = `<span class="log-time">${time}</span><span class="log-tag info">CMD</span><span class="log-msg">Squad deployment initiated · Awaiting confirmation</span>`;
+    logList.appendChild(li);
+    gsap.from(li, { x: -20, autoAlpha: 0, duration: 0.35, ease: "power2.out" });
+
+    // Pulse the 2nd card value
+    gsap.to('.card:nth-child(2) .card-value', {
+      color: '#ffffff', duration: 0.2,
+      yoyo: true, repeat: 1,
+      onComplete: () => {
+        gsap.to('.card:nth-child(2) .card-value', { color: '#e8ecef', duration: 0.3 });
+      }
+    });
+  });
+
+  // Abort button
+  const abortBtn = document.getElementById('btn-abort');
+  abortBtn.addEventListener('click', () => {
+    gsap.to('.cards-grid .card:last-child .card-value', {
+      color: 'var(--red)', duration: 0.3, ease: "power2.out",
+      yoyo: true, repeat: 1
+    });
+    gsap.to('.indicator', {
+      backgroundColor: '#ff4458',
+      boxShadow: '0 0 10px #ff4458',
+      duration: 0.4,
+      yoyo: true,
+      repeat: 2,
+      onComplete: () => {
+        gsap.set('.indicator', {
+          backgroundColor: 'var(--cyan)',
+          boxShadow: '0 0 8px var(--cyan)'
+        });
+      }
+    });
+  });
+
+  return () => {
+    // Cleanup on unmatch — GSAP matchMedia handles reverting tweens automatically
+  };
+});
+</script>
+
+</body>
+</html>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -297,6 +961,9 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">
+      OperationPhantom Cross
+    </span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -509,6 +1176,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'Ov23li1PWJC42UVKm49t',
+      clientSecret: 'b7ea163f893ec547d25552b840dfdb3efc0a3be7',
+      repo        : 'blooming-cherry.github.io',
+      owner       : 'Blooming-cherry',
+      admin       : ['Blooming-cherry'],
+      id          : 'd1093180bcee5ac606bd2c591cf81d3f',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 <!-- Arknights credit -->
 <script>
 (function(){

@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"adaydream.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="在下不才，兹于AAU求学，于图门下求道，辟此秘境，记录技术学习点滴。">
+  <meta name="description" content="GSAP Core 演示   * { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: system-ui, sans-serif; background: #0f0f0f; color: #e0e0e0; min-height: 100vh; padding: 2rem; } h1 { text-a">
 <meta property="og:type" content="website">
 <meta property="og:title" content="“松花酿酒，春水煎茶”">
-<meta property="og:url" content="https://adaydream.cn/archives/2026/04/index.html">
+<meta property="og:url" content="https://adaydream.cn/gsap-demo/index.html">
 <meta property="og:site_name" content="“松花酿酒，春水煎茶”">
-<meta property="og:description" content="在下不才，兹于AAU求学，于图门下求道，辟此秘境，记录技术学习点滴。">
+<meta property="og:description" content="GSAP Core 演示   * { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: system-ui, sans-serif; background: #0f0f0f; color: #e0e0e0; min-height: 100vh; padding: 2rem; } h1 { text-a">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-02T12:16:58.452Z">
+<meta property="article:modified_time" content="2026-06-02T12:16:58.451Z">
 <meta property="article:author" content="奶油苏打和冕型灯">
 <meta property="article:tag" content="技术, 学习, 记录">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://adaydream.cn/archives/2026/04/">
+<link rel="canonical" href="https://adaydream.cn/gsap-demo/">
 
 
 <script id="page-configurations">
@@ -44,7 +46,8 @@
   };
 </script>
 
-  <title>归档 | “松花酿酒，春水煎茶”</title>
+  <title> | “松花酿酒，春水煎茶”
+</title>
   
 
 
@@ -180,77 +183,362 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content archive">
+          <div class="content page posts-expand">
             
 
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
   
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
+
+</div>
+
+</header>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2026</span>
-    </div>
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSAP Core 演示</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; background: #0f0f0f; color: #e0e0e0; min-height: 100vh; padding: 2rem; }
+h1 { text-align: center; margin-bottom: 0.5rem; font-size: 2rem; background: linear-gradient(135deg, #88ff88, #88ccff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { text-align: center; color: #888; margin-bottom: 2rem; }
+section { max-width: 900px; margin: 0 auto 3rem; background: #1a1a1a; border-radius: 12px; padding: 2rem; border: 1px solid #2a2a2a; }
+section h2 { font-size: 1.2rem; margin-bottom: 1rem; color: #88ccff; }
+.row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+/* Demo 1: 基础补间 */
+.box { width: 60px; height: 60px; border-radius: 10px; }
+.green { background: #88ff88; }
+.blue { background: #88ccff; }
+.purple { background: #cc88ff; }
+.orange { background: #ffaa44; }
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2026-04-22T15:13:17+08:00"
-              content="2026-04-22">
-          04-22
-        </time>
-      </div>
+/* Demo 2: Stagger */
+.stagger-item { width: 40px; height: 40px; background: #88ff88; border-radius: 6px; }
 
-      <div class="post-title">
-          <a class="post-title-link" href="/%E6%9D%BE%E8%8A%B1%E9%85%BF%E9%85%92%EF%BC%8C%E6%98%A5%E6%B0%B4%E7%85%8E%E8%8C%B6/" itemprop="url">
-            <span itemprop="name">松花酿酒，春水煎茶</span>
-          </a>
-      </div>
+/* Demo 3: 缓动对比 */
+.ease-row { gap: 0.5rem; }
+.ease-ball { width: 30px; height: 30px; background: #ffaa44; border-radius: 50%; }
+.ease-labels { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; font-size: 0.75rem; color: #666; }
+.ease-label { width: 140px; text-align: center; }
 
-    </header>
-  </article>
+/* Demo 4: 控制 */
+.control-bar { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+button { padding: 0.5rem 1.2rem; border: 1px solid #444; border-radius: 6px; background: #2a2a2a; color: #e0e0e0; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+button:hover { background: #3a3a3a; border-color: #666; }
+button:active { transform: scale(0.97); }
+button.primary { background: #88ff88; color: #0f0f0f; border-color: #88ff88; }
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+/* Demo 5: autoAlpha */
+.autoalpha-demo { position: relative; height: 80px; }
+.autoalpha-demo .box { position: absolute; }
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2026-04-22T12:00:00+08:00"
-              content="2026-04-22">
-          04-22
-        </time>
-      </div>
+.progress-bar { width: 100%; height: 4px; background: #2a2a2a; border-radius: 2px; margin-top: 1rem; }
+.progress-fill { height: 100%; background: #88ff88; border-radius: 2px; width: 0%; }
 
-      <div class="post-title">
-          <a class="post-title-link" href="/%E8%B4%B2%E4%BA%8E%E4%B8%98%E5%9B%AD/" itemprop="url">
-            <span itemprop="name">贲于丘园，朱绂方来</span>
-          </a>
-      </div>
+.info { color: #888; font-size: 0.85rem; }
+</style>
+</head>
+<body>
 
-    </header>
-  </article>
+<h1>🎬 GSAP Core 演示</h1>
+<p class="subtitle">打开控制台 (F12) 可以看到每段动画的代码日志</p>
 
-
-    </div>
+<!-- Demo 1: 基础补间 -->
+<section>
+  <h2>1. 基础补间：to / from / fromTo</h2>
+  <div class="row" id="demo1">
+    <div class="box green" id="demo1-green"></div>
+    <div class="box blue" id="demo1-blue"></div>
+    <div class="box purple" id="demo1-purple"></div>
+    <div class="box orange" id="demo1-orange"></div>
   </div>
-  
-  
-  
+  <div class="control-bar">
+    <button onclick="demo1_to()">gsap.to()</button>
+    <button onclick="demo1_from()">gsap.from()</button>
+    <button onclick="demo1_fromTo()">gsap.fromTo()</button>
+    <button onclick="demo1_reset()">重置</button>
+  </div>
+  <p class="info" style="margin-top:0.5rem">
+    <code>gsap.to()</code> 从当前状态 → 目标值；<code>gsap.from()</code> 从指定值 → 当前状态；<code>gsap.fromTo()</code> 从指定起始值 → 指定终点值
+  </p>
+</section>
 
-  
+<!-- Demo 2: Stagger -->
+<section>
+  <h2>2. Stagger 交错动画</h2>
+  <div class="row" id="demo2"></div>
+  <div class="row">
+    <button onclick="demo2_staggerSimple()">简单交错 (0.1s)</button>
+    <button onclick="demo2_staggerRandom()">随机顺序</button>
+    <button onclick="demo2_staggerCenter()">从中心展开</button>
+    <button onclick="demo2_reset()">重置</button>
+  </div>
+</section>
 
+<!-- Demo 3: 缓动对比 -->
+<section>
+  <h2>3. Easing 缓动对比</h2>
+  <div class="row ease-row" id="demo3"></div>
+  <div class="control-bar">
+    <button onclick="demo3_ease()">同时运行动画</button>
+    <button onclick="demo3_reset()">重置</button>
+  </div>
+</section>
+
+<!-- Demo 4: 播放控制 -->
+<section>
+  <h2>4. 播放控制 (Tween Control)</h2>
+  <div class="row" style="position:relative; height:70px">
+    <div class="box green" id="demo4-box" style="position:absolute; left:0"></div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="demo4-progress"></div></div>
+  <div class="control-bar">
+    <button onclick="demo4_play()">▶ 播放</button>
+    <button onclick="demo4_pause()">⏸ 暂停</button>
+    <button onclick="demo4_reverse()">◀ 反转</button>
+    <button onclick="demo4_seek()">跳到 50%</button>
+    <button onclick="demo4_reset()">🔄 重置</button>
+  </div>
+</section>
+
+<!-- Demo 5: autoAlpha + 实用组合 -->
+<section>
+  <h2>5. autoAlpha 与实用组合</h2>
+  <div class="autoalpha-demo" id="demo5">
+    <div class="box green" id="demo5-a">A</div>
+    <div class="box blue" id="demo5-b">B</div>
+    <div class="box purple" id="demo5-c">C</div>
+  </div>
+  <div class="control-bar">
+    <button class="primary" onclick="demo5_staggerFade()">交错淡入</button>
+    <button onclick="demo5_swap()">交换位置+旋转</button>
+  </div>
+</section>
+
+<script>
+// ===== Demo 1: 基础补间 =====
+function demo1_to() {
+  console.log('gsap.to(".box", { x: 80, rotation: 180, scale: 1.3, duration: 1, ease: "back.out(1.7)" })');
+
+  gsap.to("#demo1-green", { x: 80, rotation: 180, scale: 1.3, duration: 1, ease: "back.out(1.7)" });
+  gsap.to("#demo1-blue",  { x: 80, y: -20, rotation: -180, duration: 1, ease: "elastic.out(1, 0.3)" });
+  gsap.to("#demo1-purple",{ x: 80, rotation: 360, scale: 0.7, duration: 1, ease: "power4.inOut" });
+  gsap.to("#demo1-orange",{ x: 80, rotation: "90_cw", duration: 1, ease: "bounce.out" });
+}
+
+function demo1_from() {
+  console.log('gsap.from(".box", { x: -80, rotation: -90, scale: 0.3, opacity: 0, duration: 1, ease: "power2.out" })');
+
+  gsap.from("#demo1-green",  { x: -80, rotation: -90, scale: 0.3, autoAlpha: 0, duration: 1, ease: "power2.out" });
+  gsap.from("#demo1-blue",   { x: -120, y: -40, rotation: 90, autoAlpha: 0, duration: 1.2, ease: "back.out(1.4)" });
+  gsap.from("#demo1-purple", { x: -160, rotation: -180, autoAlpha: 0, duration: 1.4, ease: "elastic.out(1, 0.4)" });
+  gsap.from("#demo1-orange", { x: -200, scale: 0, autoAlpha: 0, duration: 1.6, ease: "bounce.out" });
+}
+
+function demo1_fromTo() {
+  console.log('gsap.fromTo(".box", { x: -60, rotation: -90 }, { x: 80, rotation: 180, duration: 1.5 })');
+
+  gsap.fromTo("#demo1-green",  { x: -60, rotation: -90 }, { x: 80, rotation: 180, scale: 1.3, duration: 1.5, ease: "power3.inOut" });
+  gsap.fromTo("#demo1-blue",   { y: 40 }, { x: 80, y: -40, rotation: -180, duration: 1.5, ease: "power3.inOut" });
+  gsap.fromTo("#demo1-purple", { scale: 0.3 }, { x: 80, scale: 1.3, rotation: 360, duration: 1.5, ease: "power3.inOut" });
+  gsap.fromTo("#demo1-orange", { x: 0, rotation: 0 }, { x: 80, rotation: "360_ccw", duration: 1.5, ease: "power3.inOut" });
+}
+
+function demo1_reset() {
+  gsap.set("#demo1 .box", { x: 0, y: 0, rotation: 0, scale: 1, autoAlpha: 1, clearProps: "all" });
+}
+
+// ===== Demo 2: Stagger =====
+(function initDemo2() {
+  const container = document.getElementById("demo2");
+  for (let i = 0; i < 12; i++) {
+    const div = document.createElement("div");
+    div.className = "stagger-item";
+    container.appendChild(div);
+  }
+})();
+
+function demo2_staggerSimple() {
+  console.log('gsap.to(".stagger-item", { y: -30, scale: 1.3, duration: 0.4, stagger: 0.1, ease: "back.out(1.7)", yoyo: true, repeat: 1 })');
+
+  gsap.to("#demo2 .stagger-item", {
+    y: -30, scale: 1.3, duration: 0.4,
+    stagger: 0.1, ease: "back.out(1.7)",
+    yoyo: true, repeat: 1
+  });
+}
+
+function demo2_staggerRandom() {
+  console.log('gsap.to(".stagger-item", { stagger: { each: 0.1, from: "random" } })');
+
+  gsap.to("#demo2 .stagger-item", {
+    y: -30, rotation: 180, scale: 1.2, duration: 0.5,
+    stagger: { each: 0.1, from: "random" },
+    ease: "power2.out",
+    yoyo: true, repeat: 1
+  });
+}
+
+function demo2_staggerCenter() {
+  console.log('gsap.to(".stagger-item", { stagger: { each: 0.08, from: "center" } })');
+
+  gsap.to("#demo2 .stagger-item", {
+    y: -30, scale: 1.3, duration: 0.4,
+    stagger: { each: 0.08, from: "center" },
+    ease: "elastic.out(1, 0.3)",
+    yoyo: true, repeat: 1
+  });
+}
+
+function demo2_reset() {
+  gsap.set("#demo2 .stagger-item", { y: 0, scale: 1, rotation: 0, clearProps: "all" });
+}
+
+// ===== Demo 3: 缓动对比 =====
+const EASINGS = [
+  { name: "none",       ease: "none" },
+  { name: "power1.out", ease: "power1.out" },
+  { name: "power3.out", ease: "power3.out" },
+  { name: "back.out(1.7)", ease: "back.out(1.7)" },
+  { name: "elastic.out(1,0.3)", ease: "elastic.out(1, 0.3)" },
+  { name: "bounce.out", ease: "bounce.out" },
+];
+
+(function initDemo3() {
+  const row = document.getElementById("demo3");
+  EASINGS.forEach((e, i) => {
+    const ball = document.createElement("div");
+    ball.className = "ease-ball";
+    ball.id = `ease-ball-${i}`;
+    ball.style.marginRight = "10px";
+    row.appendChild(ball);
+  });
+  const labels = document.createElement("div");
+  labels.className = "ease-labels";
+  EASINGS.forEach(e => {
+    const lbl = document.createElement("span");
+    lbl.className = "ease-label";
+    lbl.textContent = e.name;
+    labels.appendChild(lbl);
+  });
+  row.parentElement.appendChild(labels);
+})();
+
+function demo3_ease() {
+  EASINGS.forEach((e, i) => {
+    console.log(`gsap.to("#ease-ball-${i}", { x: 500, ease: "${e.ease}", duration: 2 })`);
+
+    gsap.set(`#ease-ball-${i}`, { x: 0 });
+    gsap.to(`#ease-ball-${i}`, {
+      x: 780, duration: 2.5, ease: e.ease, delay: 0.2
+    });
+  });
+}
+
+function demo3_reset() {
+  EASINGS.forEach((_, i) => {
+    gsap.set(`#ease-ball-${i}`, { x: 0 });
+  });
+}
+
+// ===== Demo 4: 播放控制 =====
+let demo4Tween = null;
+function demo4_play() {
+  if (demo4Tween) demo4Tween.kill();
+  demo4Tween = gsap.to("#demo4-box", {
+    x: 760, rotation: 360, scale: 1.5, duration: 2, ease: "power2.inOut",
+    onUpdate: () => {
+      const pct = Math.round(demo4Tween.progress() * 100);
+      document.getElementById("demo4-progress").style.width = `${pct}%`;
+    }
+  });
+  console.log('const tween = gsap.to("#demo4-box", { x: 760, rotation: 360, ... });\ntween.play();');
+}
+function demo4_pause() { if (demo4Tween) demo4Tween.pause(); console.log("tween.pause()"); }
+function demo4_reverse() { if (demo4Tween) demo4Tween.reverse(); console.log("tween.reverse()"); }
+function demo4_seek() {
+  if (demo4Tween) demo4Tween.progress(0.5);
+  else demo4_play().then(() => { if (demo4Tween) demo4Tween.progress(0.5); });
+  console.log("tween.progress(0.5) — 跳到动画 50% 位置");
+}
+function demo4_reset() {
+  if (demo4Tween) { demo4Tween.kill(); demo4Tween = null; }
+  gsap.set("#demo4-box", { x: 0, rotation: 0, scale: 1 });
+  document.getElementById("demo4-progress").style.width = "0%";
+}
+
+// ===== Demo 5: autoAlpha + 实用组合 =====
+(function initDemo5() {
+  gsap.set("#demo5-a", { x: 0, y: 20 });      // 位置 A
+  gsap.set("#demo5-b", { x: 80, y: 20 });     // 位置 B
+  gsap.set("#demo5-c", { x: 160, y: 20 });    // 位置 C
+})();
+
+function demo5_staggerFade() {
+  console.log('gsap.from("#demo5 .box", { autoAlpha: 0, y: 30, stagger: 0.2 }) — autoAlpha 在 opacity=0 时自动添加 visibility:hidden');
+
+  gsap.from("#demo5 .box", {
+    autoAlpha: 0,        // 比 opacity 更好：自动加上 visibility:hidden
+    y: 30,
+    duration: 0.6,
+    stagger: 0.2,
+    ease: "back.out(1.4)"
+  });
+}
+
+function demo5_swap() {
+  console.log('使用相对值: x: "+=80" 和 +=/-= 进行位置交换');
+
+  // 原地放大 → 交换位置 → 归位
+  const tl = gsap.timeline();
+  tl.to("#demo5 .box", { scale: 1.4, duration: 0.3, ease: "power2.out" })
+    .to("#demo5-a", { x: "+=160", rotation: 180, duration: 0.6, ease: "power2.inOut" })
+    .to("#demo5-c", { x: "-=160", rotation: -180, duration: 0.6, ease: "power2.inOut" }, "<")
+    .to("#demo5 .box", { scale: 1, rotation: 0, duration: 0.3, ease: "power2.in" });
+}
+
+console.log("🎬 GSAP Core Demo 已就绪！点击按钮查看各类动画效果。");
+console.log("每个按钮点击时会在控制台打印对应的 GSAP 代码。");
+</script>
+
+</body>
+</html>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -297,6 +585,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">🎬 GSAP Core 演示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">1. 基础补间：to &#x2F; from &#x2F; fromTo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">2. Stagger 交错动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">3. Easing 缓动对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">4. 播放控制 (Tween Control)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">5. autoAlpha 与实用组合</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -509,6 +798,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'Ov23li1PWJC42UVKm49t',
+      clientSecret: 'b7ea163f893ec547d25552b840dfdb3efc0a3be7',
+      repo        : 'blooming-cherry.github.io',
+      owner       : 'Blooming-cherry',
+      admin       : ['Blooming-cherry'],
+      id          : 'a7575dd8a531f5d4faf2a3d9a4cd24c6',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 <!-- Arknights credit -->
 <script>
 (function(){
