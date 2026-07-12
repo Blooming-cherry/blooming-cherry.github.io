@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"adaydream.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="&#x2F;* ── Reset ── *&#x2F;  &#x2F;* ── Dot grid ── *&#x2F;   &#x2F;* ── Main column ── *&#x2F;  &#x2F;* ══════ Hero ══════ *&#x2F; .hero { padding: 64px 0 48px; text-align: center; } .hero h1 {   font-size: 2.1rem; font-weight: 700; let">
+<meta property="og:type" content="website">
+<meta property="og:title" content="C 语言链表 · 学习笔记">
+<meta property="og:url" content="https://adaydream.cn/vibecoding/2026-07-12-c-linked-list-guide.html">
+<meta property="og:site_name" content="“松花酿酒，春水煎茶”">
+<meta property="og:description" content="&#x2F;* ── Reset ── *&#x2F;  &#x2F;* ── Dot grid ── *&#x2F;   &#x2F;* ── Main column ── *&#x2F;  &#x2F;* ══════ Hero ══════ *&#x2F; .hero { padding: 64px 0 48px; text-align: center; } .hero h1 {   font-size: 2.1rem; font-weight: 700; let">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-07-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-12T14:11:43.645Z">
+<meta property="article:author" content="奶油苏打和冕型灯">
+<meta property="article:tag" content="技术, 学习, 记录">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://adaydream.cn/vibecoding/2026-07-12-c-linked-list-guide">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C 语言链表 · 学习笔记 | “松花酿酒，春水煎茶”
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">“松花酿酒，春水煎茶”</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">来一杯春季特调的毛峰芽尖</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-vibe-coding">
+
+    <a href="/vibecoding/" rel="section"><i class="fa fa-pen fa-fw"></i>vibe-coding</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">C 语言链表 · 学习笔记
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          
+<style>
+
+/* ── Reset ── */
+
+/* ── Dot grid ── */
+
+
+/* ── Main column ── */
+
+/* ══════ Hero ══════ */
+.hero { padding: 64px 0 48px; text-align: center; }
+.hero h1 {
+  font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.25; color: #1a1a1a; margin-bottom: 10px;
+}
+.hero h1 em { font-style: normal; color: #c23b2e; }
+.hero p { font-size: 1.05rem; color: #5e5e5e; max-width: 480px; margin: 0 auto 40px; }
+
+/* Canvas area */
+.canvas-box {
+  background: #fefefe;
+  background-image: radial-gradient(circle, #e6e4dd 1px, transparent 1px);
+  background-size: 18px 18px;
+  border: 1px solid #d9d7d0;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.canvas-box::after {
+  content: '实时示意图';
+  position: absolute; top: 10px; left: 14px;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+  color: #b0ada5; letter-spacing: 0.08em;
+  z-index: 2;
+}
+.canvas-box canvas { display: block; width: 100%; height: 320px; }
+
+.canvas-ctrls { display: flex; gap: 1px; justify-content: center; margin-top: 14px; }
+.canvas-ctrls button {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+  padding: 7px 16px; border: 1px solid #d0cdc6; background: #fafaf8;
+  color: #444; cursor: pointer; transition: background 0.15s;
+}
+.canvas-ctrls button:first-of-type { border-radius: 3px 0 0 3px; }
+.canvas-ctrls button:last-of-type { border-radius: 0 3px 3px 0; }
+.canvas-ctrls button + button { border-left: none; }
+.canvas-ctrls button:hover { background: #f0ede6; }
+.canvas-ctrls button.on { background: #eae6dc; color: #1a1a1a; font-weight: 500; }
+
+/* ══════ Sections ══════ */
+.section { padding: 44px 0; border-top: 1px solid #e6e4dd; }
+.section:first-of-type { border-top: none; }
+.section h2 {
+  font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em;
+  color: #1a1a1a; margin-bottom: 20px;
+}
+.section h3 {
+  font-size: 1.05rem; font-weight: 600; color: #333; margin: 24px 0 10px;
+}
+.section h3 .marker { color: #c23b2e; font-weight: 400; font-size: 0.85rem; margin-left: 6px; }
+.section p { color: #3a3a3a; margin-bottom: 12px; font-size: 0.98rem; }
+.section strong { color: #1a1a1a; }
+
+/* ── Code block ── */
+.code {
+  background: #f6f5f1; border: 1px solid #e0ddd6; border-radius: 2px;
+  margin: 14px 0; overflow: hidden;
+}
+.code .code-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+  color: #9a978e; letter-spacing: 0.06em;
+  padding: 7px 14px; border-bottom: 1px solid #e0ddd6;
+}
+.code pre {
+  padding: 14px 16px; overflow-x: auto; font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.78rem; line-height: 1.75; color: #2a2a2a; tab-size: 4;
+}
+.code .kw { color: #7b4ea0; }   /* keyword */
+.code .ty { color: #2468a0; }   /* type */
+.code .fn { color: #28784a; }   /* function */
+.code .str { color: #9b5919; }  /* string */
+.code .cm { color: #9a978e; }   /* comment */
+.code .num { color: #c23b2e; }  /* number */
+.code .op { color: #5e5e5e; }   /* operator */
+.code .mt { color: #2468a0; }   /* memory funcs */
+
+/* ── Hand-drawn diagram (SVG or CSS) ── */
+.diag {
+  margin: 18px 0; padding: 22px 18px;
+  background: #fcfbf8; border: 1px solid #e8e5dc; border-radius: 2px;
+  overflow-x: auto;
+}
+.diag svg { display: block; max-width: 100%; }
+.diag-caption {
+  font-family: 'Gaegu', 'Noto Serif SC', cursive; font-size: 0.85rem;
+  color: #c23b2e; margin-top: 10px; text-align: center;
+}
+
+/* ── CSS-only hand-drawn node (for inline use) ── */
+.node-row { display: flex; align-items: center; gap: 0; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; }
+.node-box {
+  display: flex; border: 2px solid #3a3a3a; border-radius: 3px;
+  overflow: hidden; flex-shrink: 0;
+  transform: rotate(-0.3deg);
+}
+.node-box .d { padding: 8px 14px; background: rgba(36,104,160,0.06); color: #1a1a1a; font-weight: 500; }
+.node-box .p { padding: 8px 14px; border-left: 2px dotted #bbb; color: #2468a0; font-size: 0.7rem; }
+.node-arr {
+  color: #2468a0; font-size: 1.6rem; flex-shrink: 0;
+  padding: 0 4px; font-family: 'Source Serif 4', serif;
+}
+.node-nil {
+  font-size: 0.7rem; color: #9a978e; padding: 8px 12px;
+  border: 2px dashed #ccc; border-radius: 3px; flex-shrink: 0;
+}
+.node-lbl {
+  font-family: 'Gaegu', 'Noto Serif SC', cursive; font-size: 0.9rem;
+  color: #c23b2e; padding: 2px 6px; white-space: nowrap;
+}
+.node-hi { position: relative; }
+.node-hi::after {
+  content: ''; position: absolute; inset: -3px; border: 2px solid #c23b2e; border-radius: 5px;
+  pointer-events: none; opacity: 0.7;
+}
+.node-ins { border-color: #28784a; }
+.node-del { border-color: #c23b2e; opacity: 0.45; text-decoration: line-through; }
+
+/* ── Callout (red marker annotation) ── */
+.note {
+  border-left: 3px solid #c23b2e; padding: 12px 16px;
+  background: rgba(194,59,46,0.04); margin: 16px 0;
+  font-size: 0.92rem; color: #4a3030;
+}
+.note strong { color: #c23b2e; }
+
+/* ── Two columns ── */
+.col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 16px 0; }
+@media (max-width: 640px) { .col2 { grid-template-columns: 1fr; } }
+
+/* ── Table ── */
+.tbl { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 16px 0; }
+.tbl th { text-align: left; padding: 10px 14px; border-bottom: 2px solid #3a3a3a; font-weight: 600; color: #1a1a1a; }
+.tbl td { padding: 9px 14px; border-bottom: 1px solid #e6e4dd; color: #3a3a3a; }
+.tbl td:first-child { font-weight: 500; color: #1a1a1a; }
+
+/* ── Taxonomy grid ── */
+.taxonomy { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin: 16px 0; }
+.tax-chip {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+  padding: 12px; text-align: center; color: #3a3a3a;
+  background: #fafaf8; border: 1px solid #e0ddd6; border-radius: 2px;
+}
+.tax-chip .ico { font-size: 1.4rem; display: block; margin-bottom: 6px; }
+.tax-chip .sub { font-size: 0.62rem; color: #9a978e; margin-top: 3px; }
+
+/* ── Steps ── */
+.steps { list-style: none; padding: 0; }
+.steps li { padding: 9px 0 9px 28px; position: relative; color: #3a3a3a; font-size: 0.93rem; }
+.steps li::before {
+  content: '→'; position: absolute; left: 2px; top: 9px;
+  color: #c23b2e; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
+}
+
+/* ── Sketch SVG shared styles ── */
+.sketch-line { fill: none; stroke: #3a3a3a; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.sketch-arrow { fill: #3a3a3a; }
+.sketch-text { font-family: 'Gaegu', 'Noto Serif SC', cursive; font-size: 14px; fill: #3a3a3a; }
+.sketch-text-sm { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #5e5e5e; }
+.sketch-red { fill: #c23b2e; }
+.sketch-blue { fill: #2468a0; stroke: #2468a0; }
+.sketch-fill { fill: rgba(36,104,160,0.06); stroke: #3a3a3a; stroke-width: 2; }
+
+/* ── Footer ── */
+.footer { text-align: center; padding: 40px 0; color: #b0ada5; font-size: 0.8rem; border-top: 1px solid #e6e4dd; margin-top: 20px; }
+
+/* ── Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .node-arr { animation: none; }
+}
+
+</style>
+
+
+<main>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <h1>C 语言<em>链表</em> · 学习笔记</h1>
+  <p>从节点结构到指针操作，从单向到双向循环——一份随手可查的链表参考</p>
+
+  <div class="canvas-box">
+    <canvas id="mc"></canvas>
+  </div>
+  <div class="canvas-ctrls">
+    <button class="on" data-a="traverse">遍历</button>
+    <button data-a="insert">头部插入</button>
+    <button data-a="delete">删除节点</button>
+    <button data-a="reverse">反转链表</button>
+  </div>
+</section>
+
+<!-- ═══════════ 1. 节点结构 ═══════════ -->
+<section class="section">
+  <h2>节点结构 —— 自引用结构体</h2>
+
+  <p>链表的核心是一个<strong>包含指向自身类型指针</strong>的结构体。只要有 <code style="font-family:var(--font-mono)">struct Xxx* next</code> 这个字段，它就是链表节点——叫 Node、Student、Task 都一样。</p>
+
+  <div class="code">
+    <div class="code-label">节点定义</div>
+    <pre><span class="kw">typedef</span> <span class="kw">struct</span> <span class="ty">Node</span> {
+    <span class="ty">int</span> data;              <span class="cm">/* 数据域 */</span>
+    <span class="kw">struct</span> <span class="ty">Node</span>* next;       <span class="cm">/* 指针域 —— 串起节点的"链条" */</span>
+} <span class="ty">Node</span>;</pre>
+  </div>
+
+  <p>三个角色要分清：</p>
+  <div class="diag">
+    <svg viewBox="0 0 620 120" width="100%" height="120">
+      <!-- head label -->
+      <text x="28" y="30" class="sketch-text" font-size="13" fill="#c23b2e">head</text>
+      <path d="M55,26 C60,24 68,24 72,26" class="sketch-line" stroke="#c23b2e" stroke-dasharray="5,3"/>
+      <!-- head node (empty, hat) -->
+      <rect x="80" y="10" width="50" height="36" rx="3" class="sketch-fill" fill="rgba(0,0,0,0.03)"/>
+      <text x="105" y="33" text-anchor="middle" class="sketch-text-sm" fill="#9a978e">头结点</text>
+      <text x="105" y="62" text-anchor="middle" class="sketch-text-sm" fill="#9a978e">（可选）</text>
+      <!-- arrow -->
+      <path d="M132,28 C140,26 146,24 152,26" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="158,26 150,20 150,32" fill="#2468a0"/>
+      <!-- first real node -->
+      <rect x="164" y="8" width="56" height="38" rx="3" class="sketch-fill"/>
+      <line x1="202" y1="10" x2="202" y2="44" stroke="#ccc" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="183" y="32" text-anchor="middle" class="sketch-text" font-size="16" fill="#1a1a1a">42</text>
+      <text x="230" y="32" text-anchor="middle" class="sketch-text-sm" fill="#2468a0">→</text>
+      <text x="183" y="62" text-anchor="middle" class="sketch-text-sm" fill="#9a978e">首元结点</text>
+      <!-- arrow -->
+      <path d="M222,27 C230,25 238,24 244,26" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="250,26 242,20 242,32" fill="#2468a0"/>
+      <!-- second node -->
+      <rect x="256" y="8" width="56" height="38" rx="3" class="sketch-fill" fill="rgba(0,0,0,0.02)"/>
+      <line x1="294" y1="10" x2="294" y2="44" stroke="#ccc" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="275" y="32" text-anchor="middle" class="sketch-text" font-size="16">99</text>
+      <text x="322" y="32" text-anchor="middle" class="sketch-text-sm" fill="#5e5e5e">∅</text>
+      <!-- tail label -->
+      <text x="330" y="62" text-anchor="middle" class="sketch-text-sm" fill="#9a978e">尾结点 (next = NULL)</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════ 2. 内存布局 ═══════════ -->
+<section class="section">
+  <h2>内存布局 —— 散落在堆上的珍珠</h2>
+
+  <p>数组元素<strong>连续排列</strong>在一整块内存中；链表节点<strong>散布在堆的各处</strong>，全靠 <code>next</code> 指针串联。这就是为什么链表插入删除 O(1) 但随机访问 O(n)。</p>
+
+  <div class="diag">
+    <svg viewBox="0 0 620 200" width="100%" height="200">
+      <!-- Array - contiguous -->
+      <text x="30" y="30" class="sketch-text-sm" fill="#5e5e5e">数组（连续内存）:</text>
+      <rect x="175" y="14" width="48" height="30" rx="2" fill="rgba(194,59,46,0.1)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="199" y="34" text-anchor="middle" class="sketch-text-sm">10</text>
+      <rect x="225" y="14" width="48" height="30" rx="2" fill="rgba(194,59,46,0.1)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="249" y="34" text-anchor="middle" class="sketch-text-sm">20</text>
+      <rect x="275" y="14" width="48" height="30" rx="2" fill="rgba(194,59,46,0.1)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="299" y="34" text-anchor="middle" class="sketch-text-sm">30</text>
+      <rect x="325" y="14" width="48" height="30" rx="2" fill="rgba(194,59,46,0.1)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="349" y="34" text-anchor="middle" class="sketch-text-sm">40</text>
+      <text x="175" y="56" class="sketch-text-sm" font-size="9" fill="#9a978e">0x1000    0x1004    0x1008    0x100C</text>
+
+      <!-- Linked - scattered -->
+      <text x="30" y="100" class="sketch-text-sm" fill="#5e5e5e">链表（散列内存）:</text>
+
+      <!-- node at 0x2A00 -->
+      <rect x="140" y="78" width="58" height="38" rx="3" fill="rgba(36,104,160,0.06)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="178" y1="80" x2="178" y2="114" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="159" y="102" text-anchor="middle" class="sketch-text-sm" font-size="13">10</text>
+      <text x="207" y="96" text-anchor="middle" class="sketch-text-sm" font-size="9" fill="#2468a0">0x7F30</text>
+      <text x="169" y="132" class="sketch-text-sm" font-size="9" fill="#9a978e">0x2A00</text>
+      <!-- bent arrow to next -->
+      <path d="M200,97 C230,80 260,80 290,97" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="296,99 288,93 288,103" fill="#2468a0"/>
+
+      <!-- node at 0x7F30 -->
+      <rect x="300" y="78" width="58" height="38" rx="3" fill="rgba(36,104,160,0.04)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="338" y1="80" x2="338" y2="114" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="319" y="102" text-anchor="middle" class="sketch-text-sm" font-size="13">20</text>
+      <text x="367" y="96" text-anchor="middle" class="sketch-text-sm" font-size="9" fill="#2468a0">0x3B90</text>
+      <text x="329" y="132" class="sketch-text-sm" font-size="9" fill="#9a978e">0x7F30</text>
+      <!-- bent arrow -->
+      <path d="M360,97 C380,60 420,60 445,97" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="450,99 442,93 442,103" fill="#2468a0"/>
+
+      <!-- node at 0x3B90 (last) -->
+      <rect x="455" y="78" width="58" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="493" y1="80" x2="493" y2="114" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="474" y="102" text-anchor="middle" class="sketch-text-sm" font-size="13">30</text>
+      <text x="522" y="96" text-anchor="middle" class="sketch-text-sm" font-size="9" fill="#5e5e5e">∅</text>
+      <text x="484" y="132" class="sketch-text-sm" font-size="9" fill="#9a978e">0x3B90</text>
+    </svg>
+    <div class="diag-caption">↖ 节点随意散落，靠指针串联</div>
+  </div>
+</section>
+
+<!-- ═══════════ 3. head = head->next ═══════════ -->
+<section class="section">
+  <h2>head = head→next —— 指针前移一位</h2>
+
+  <p>这是链表<strong>最核心的操作</strong>：把 head 指针移向下一个节点。每执行一次，head 就往前跨一步。</p>
+
+  <div class="diag">
+    <svg viewBox="0 0 560 150" width="100%" height="150">
+      <text x="20" y="32" class="sketch-text-sm" fill="#5e5e5e">执行前:</text>
+      <text x="72" y="28" fill="#c23b2e" class="sketch-text" font-size="13">head</text>
+      <path d="M100,30 C108,28 112,26 114,28" class="sketch-line" stroke="#c23b2e" stroke-dasharray="5,2"/>
+      <rect x="120" y="8" width="56" height="38" rx="3" fill="rgba(36,104,160,0.08)" stroke="#3a3a3a" stroke-width="2.5"/>
+      <line x1="158" y1="10" x2="158" y2="44" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="139" y="32" text-anchor="middle" class="sketch-text-sm" font-size="14">10</text>
+      <text x="187" y="32" text-anchor="middle" class="sketch-text-sm" fill="#2468a0">→</text>
+      <path d="M178,27 C188,25 196,24 204,26" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="210,27 202,21 202,32" fill="#2468a0"/>
+      <rect x="216" y="8" width="56" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="254" y1="10" x2="254" y2="44" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="235" y="32" text-anchor="middle" class="sketch-text-sm" font-size="14">20</text>
+      <text x="283" y="32" text-anchor="middle" class="sketch-text-sm" fill="#2468a0">→</text>
+      <path d="M274,27 C284,25 292,24 300,26" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="306,27 298,21 298,32" fill="#2468a0"/>
+      <rect x="312" y="8" width="56" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="350" y1="10" x2="350" y2="44" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="331" y="32" text-anchor="middle" class="sketch-text-sm" font-size="14">30</text>
+      <text x="379" y="32" text-anchor="middle" class="sketch-text-sm" fill="#5e5e5e">∅</text>
+
+      <!-- after -->
+      <text x="20" y="100" class="sketch-text-sm" fill="#5e5e5e">执行后:</text>
+      <text x="165" y="96" fill="#c23b2e" class="sketch-text" font-size="13">head</text>
+      <path d="M195,98 C203,96 207,94 209,96" class="sketch-line" stroke="#c23b2e" stroke-dasharray="5,2"/>
+      <!-- nodes, first one dimmed -->
+      <rect x="120" y="78" width="56" height="38" rx="3" fill="rgba(0,0,0,0.01)" stroke="#bbb" stroke-width="1.5"/>
+      <line x1="158" y1="80" x2="158" y2="114" stroke="#ccc" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="139" y="102" text-anchor="middle" class="sketch-text-sm" font-size="14" fill="#9a978e">10</text>
+      <text x="187" y="102" text-anchor="middle" class="sketch-text-sm" fill="#9a978e">→</text>
+      <!-- second, now highlighted -->
+      <rect x="216" y="78" width="56" height="38" rx="3" fill="rgba(36,104,160,0.08)" stroke="#3a3a3a" stroke-width="2.5"/>
+      <line x1="254" y1="80" x2="254" y2="114" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="235" y="102" text-anchor="middle" class="sketch-text-sm" font-size="14">20</text>
+      <text x="283" y="102" text-anchor="middle" class="sketch-text-sm" fill="#2468a0">→</text>
+      <!-- rest -->
+      <path d="M274,97 C284,95 292,94 300,96" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="306,97 298,91 298,102" fill="#2468a0"/>
+      <rect x="312" y="78" width="56" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="350" y1="80" x2="350" y2="114" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="331" y="102" text-anchor="middle" class="sketch-text-sm" font-size="14">30</text>
+      <text x="379" y="102" text-anchor="middle" class="sketch-text-sm" fill="#5e5e5e">∅</text>
+    </svg>
+  </div>
+
+  <p>典型用法：while 循环遍历链表。注意用<strong>临时指针 cur</strong> 而不是直接用 head——否则遍历完 head 指向 NULL，链表开头就找不到了。</p>
+
+  <div class="code">
+    <div class="code-label">遍历链表</div>
+    <pre><span class="kw">void</span> <span class="fn">printList</span>(<span class="ty">Node</span>* head) {
+    <span class="ty">Node</span>* cur = head;
+    <span class="kw">while</span> (cur != <span class="num">NULL</span>) {
+        <span class="fn">printf</span>(<span class="str">"%d → "</span>, cur<span class="op">-></span>data);
+        cur = cur<span class="op">-></span>next;          <span class="cm">/* 指针前移 */</span>
+    }
+    <span class="fn">printf</span>(<span class="str">"NULL\n"</span>);
+}</pre>
+  </div>
+</section>
+
+<!-- ═══════════ 4. 指针基础 ═══════════ -->
+<section class="section">
+  <h2>指针基础 —— 链表为什么离不开指针</h2>
+
+  <h3>内存的本质</h3>
+  <p>计算机内存由连续存储单元组成，<strong>8 bit = 1 byte</strong>，每个 byte 有唯一地址编号——就像小区里每户有门牌号。32 位机器最多寻址 2³² = 4GB。</p>
+
+  <p>以 <code>int a = 999</code> 为例，int 占 4 字节，999 的补码是 <code style="font-family:var(--font-mono)">0000 0011 1110 0111</code>：</p>
+
+  <div class="diag">
+    <svg viewBox="0 0 560 100" width="100%" height="100">
+      <text x="20" y="30" class="sketch-text-sm" fill="#5e5e5e">大端（高位→低地址）:</text>
+      <rect x="215" y="12" width="44" height="26" rx="2" fill="rgba(40,120,74,0.12)" stroke="#28784a" stroke-width="1.8"/>
+      <text x="237" y="30" text-anchor="middle" class="sketch-text-sm" font-size="11">00</text>
+      <rect x="261" y="12" width="44" height="26" rx="2" fill="rgba(40,120,74,0.09)" stroke="#28784a" stroke-width="1.8"/>
+      <text x="283" y="30" text-anchor="middle" class="sketch-text-sm" font-size="11">03</text>
+      <rect x="307" y="12" width="44" height="26" rx="2" fill="rgba(40,120,74,0.06)" stroke="#28784a" stroke-width="1.8"/>
+      <text x="329" y="30" text-anchor="middle" class="sketch-text-sm" font-size="11">E7</text>
+      <rect x="353" y="12" width="44" height="26" rx="2" fill="rgba(40,120,74,0.03)" stroke="#28784a" stroke-width="1.8"/>
+      <text x="375" y="30" text-anchor="middle" class="sketch-text-sm" font-size="11">06</text>
+
+      <text x="20" y="70" class="sketch-text-sm" fill="#5e5e5e">小端（低位→低地址）:</text>
+      <rect x="215" y="52" width="44" height="26" rx="2" fill="rgba(194,59,46,0.09)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="237" y="70" text-anchor="middle" class="sketch-text-sm" font-size="11">06</text>
+      <rect x="261" y="52" width="44" height="26" rx="2" fill="rgba(194,59,46,0.06)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="283" y="70" text-anchor="middle" class="sketch-text-sm" font-size="11">E7</text>
+      <rect x="307" y="52" width="44" height="26" rx="2" fill="rgba(194,59,46,0.04)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="329" y="70" text-anchor="middle" class="sketch-text-sm" font-size="11">03</text>
+      <rect x="353" y="52" width="44" height="26" rx="2" fill="rgba(194,59,46,0.02)" stroke="#c23b2e" stroke-width="1.8"/>
+      <text x="375" y="70" text-anchor="middle" class="sketch-text-sm" font-size="11">00</text>
+    </svg>
+  </div>
+
+  <p><strong>链表节点的字段</strong>完全一样：data 和 next 按结构体成员顺序依次排列在内存中，next 里存的就是下一个节点的<strong>首地址</strong>——一个 4 或 8 字节的整数编号。</p>
+
+  <h3>指针 = 存地址的变量</h3>
+  <div class="code">
+    <div class="code-label">指针本质</div>
+    <pre><span class="ty">int</span> a = <span class="num">42</span>;
+<span class="ty">int</span>* pa = &a;          <span class="cm">/* pa 存的是 a 在内存中的首地址 */</span>
+<span class="fn">printf</span>(<span class="str">"%p"</span>, pa);     <span class="cm">/* → 0x7ffcad3b8f3c */</span>
+<span class="fn">printf</span>(<span class="str">"%d"</span>, *pa);    <span class="cm">/* → 42  解引用：按 int 类型读出值 */</span></pre>
+  </div>
+
+  <p><strong>解引用靠指针类型：</strong></p>
+  <div class="code">
+    <div class="code-label">类型决定"取多少字节"</div>
+    <pre><span class="ty">int</span>*   pi = &a;    <span class="cm">/* *pi 取 4 字节，按 int 解释 */</span>
+<span class="ty">char</span>*  pc = &a;    <span class="cm">/* *pc 只取 1 字节（最低字节） */</span>
+<span class="ty">float</span>* pf = &a;    <span class="cm">/* *pf 取 4 字节，但按 IEEE 754 浮点数解释 */</span></pre>
+  </div>
+
+  <p>链表的 <code>struct Node* next</code> 就是利用这个机制——编译器知道 next 指向的内容按 <code>struct Node</code> 布局解读：前几个字节是 data，后几个字节是 next。</p>
+
+  <div class="note">
+    <strong>核心关系：</strong>每个节点有两个域 —— <span style="color:#c23b2e">data（数据）</span> + <span style="color:#2468a0">next（地址编号）</span>。next 存的值恰好是下一个 Node 结构体在内存中的起始位置。指针就这样把散落的节点"串"成了一条链。
+  </div>
+</section>
+
+<!-- ═══════════ 5. 基本操作 ═══════════ -->
+<section class="section">
+  <h2>基本操作 —— 增 · 删 · 查 · 改</h2>
+
+  <h3>创建节点（malloc）</h3>
+  <div class="code">
+    <div class="code-label">在堆上申请一个节点</div>
+    <pre><span class="ty">Node</span>* <span class="fn">createNode</span>(<span class="ty">int</span> value) {
+    <span class="ty">Node</span>* n = (<span class="ty">Node</span>*)<span class="mt">malloc</span>(<span class="kw">sizeof</span>(<span class="ty">Node</span>));
+    n<span class="op">-></span>data = value;
+    n<span class="op">-></span>next = <span class="num">NULL</span>;
+    <span class="kw">return</span> n;
+}</pre>
+  </div>
+
+  <h3>头插法 —— 新节点成为新的头</h3>
+  <div class="diag">
+    <svg viewBox="0 0 520 160" width="100%" height="160">
+      <text x="20" y="32" class="sketch-text-sm" fill="#5e5e5e">插入前:</text>
+      <text x="70" y="28" fill="#c23b2e" class="sketch-text" font-size="13">head</text>
+      <path d="M95,30 C102,28 106,26 108,28" class="sketch-line" stroke="#c23b2e" stroke-dasharray="5,2"/>
+      <rect x="114" y="8" width="56" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="152" y1="10" x2="152" y2="44" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="133" y="32" text-anchor="middle" class="sketch-text-sm" font-size="14">20</text>
+      <text x="181" y="32" text-anchor="middle" class="sketch-text-sm" fill="#2468a0">→</text>
+      <path d="M172,27 C182,25 190,24 198,26" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="204,27 196,21 196,32" fill="#2468a0"/>
+      <rect x="210" y="8" width="56" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="248" y1="10" x2="248" y2="44" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="229" y="32" text-anchor="middle" class="sketch-text-sm" font-size="14">30</text>
+      <text x="277" y="32" text-anchor="middle" class="sketch-text-sm" fill="#5e5e5e">∅</text>
+
+      <text x="20" y="98" class="sketch-text-sm" fill="#5e5e5e">插入后:</text>
+      <text x="55" y="92" fill="#c23b2e" class="sketch-text" font-size="13">head</text>
+      <path d="M80,94 C87,92 91,90 93,92" class="sketch-line" stroke="#c23b2e" stroke-dasharray="5,2"/>
+      <!-- new node -->
+      <rect x="99" y="75" width="56" height="38" rx="3" fill="rgba(40,120,74,0.12)" stroke="#28784a" stroke-width="2.8"/>
+      <line x1="137" y1="77" x2="137" y2="111" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="118" y="99" text-anchor="middle" class="sketch-text-sm" font-size="14" fill="#1a1a1a">10</text>
+      <text x="166" y="99" text-anchor="middle" class="sketch-text-sm" fill="#28784a">→</text>
+      <path d="M157,94 C167,92 175,91 183,93" class="sketch-line" stroke="#28784a"/>
+      <polygon points="189,94 181,88 181,99" fill="#28784a"/>
+      <!-- old head -->
+      <rect x="195" y="75" width="56" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="233" y1="77" x2="233" y2="111" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="214" y="99" text-anchor="middle" class="sketch-text-sm" font-size="14">20</text>
+      <text x="262" y="99" text-anchor="middle" class="sketch-text-sm" fill="#2468a0">→</text>
+      <path d="M253,94 C263,92 271,91 279,93" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="285,94 277,88 277,99" fill="#2468a0"/>
+      <rect x="291" y="75" width="56" height="38" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <line x1="329" y1="77" x2="329" y2="111" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="310" y="99" text-anchor="middle" class="sketch-text-sm" font-size="14">30</text>
+      <text x="358" y="99" text-anchor="middle" class="sketch-text-sm" fill="#5e5e5e">∅</text>
+
+      <text x="118" y="142" text-anchor="middle" class="sketch-text-sm" font-size="11" fill="#28784a">新节点</text>
+    </svg>
+  </div>
+  <div class="code">
+    <div class="code-label">头插（两行搞定）</div>
+    <pre><span class="ty">Node</span>* <span class="fn">insertHead</span>(<span class="ty">Node</span>* head, <span class="ty">int</span> v) {
+    <span class="ty">Node</span>* n = <span class="fn">createNode</span>(v);
+    n<span class="op">-></span>next = head;        <span class="cm">/* 新节点指向原头 */</span>
+    <span class="kw">return</span> n;               <span class="cm">/* 返回新头 */</span>
+}</pre>
+  </div>
+
+  <h3>中间插入 —— 顺序千万不能反</h3>
+  <div class="note">
+    <strong>⚠ 关键：</strong>① 先让新节点接上后方 → ② 再让前方接上新节点。<strong>顺序反了后半段链表就丢了。</strong>
+  </div>
+  <div class="code">
+    <div class="code-label">在 prev 之后插入</div>
+    <pre><span class="kw">void</span> <span class="fn">insertAfter</span>(<span class="ty">Node</span>* prev, <span class="ty">int</span> v) {
+    <span class="ty">Node</span>* n = <span class="fn">createNode</span>(v);
+    n<span class="op">-></span>next = prev<span class="op">-></span>next;   <span class="cm">/* ① 先接后方 */</span>
+    prev<span class="op">-></span>next = n;          <span class="cm">/* ② 再接前方 */</span>
+}</pre>
+  </div>
+
+  <h3>删除节点 —— 别忘了 free！</h3>
+  <div class="code">
+    <div class="code-label">按值删除（需二级指针）</div>
+    <pre><span class="kw">void</span> <span class="fn">deleteByValue</span>(<span class="ty">Node</span>** headRef, <span class="ty">int</span> key) {
+    <span class="ty">Node</span>* cur = *headRef, *prev = <span class="num">NULL</span>;
+    <span class="kw">if</span> (cur && cur<span class="op">-></span>data == key) {        <span class="cm">/* 删的是头 */</span>
+        *headRef = cur<span class="op">-></span>next;  <span class="mt">free</span>(cur);  <span class="kw">return</span>;
+    }
+    <span class="kw">while</span> (cur && cur<span class="op">-></span>data != key) {       <span class="cm">/* 查找 */</span>
+        prev = cur;  cur = cur<span class="op">-></span>next;
+    }
+    <span class="kw">if</span> (!cur) <span class="kw">return</span>;                        <span class="cm">/* 没找到 */</span>
+    prev<span class="op">-></span>next = cur<span class="op">-></span>next;                <span class="cm">/* 跳过被删节点 */</span>
+    <span class="mt">free</span>(cur);                              <span class="cm">/* 释放内存 */</span>
+}</pre>
+  </div>
+
+  <h3>尾插法</h3>
+  <div class="code">
+    <div class="code-label">追加到链表末尾</div>
+    <pre><span class="ty">Node</span>* <span class="fn">insertTail</span>(<span class="ty">Node</span>* head, <span class="ty">int</span> v) {
+    <span class="ty">Node</span>* n = <span class="fn">createNode</span>(v);
+    <span class="kw">if</span> (!head) <span class="kw">return</span> n;                <span class="cm">/* 空表 */</span>
+    <span class="ty">Node</span>* cur = head;
+    <span class="kw">while</span> (cur<span class="op">-></span>next) cur = cur<span class="op">-></span>next;   <span class="cm">/* 找到尾 */</span>
+    cur<span class="op">-></span>next = n;                         <span class="cm">/* 挂上去 */</span>
+    <span class="kw">return</span> head;
+}</pre>
+  </div>
+</section>
+
+<!-- ═══════════ 6. 链表反转 ═══════════ -->
+<section class="section">
+  <h2>链表反转 —— 三指针迭代法</h2>
+
+  <p>用 <strong>pre、cur、next</strong> 三个指针协作，逐个把每个节点的 next 箭头掰向它的前驱。</p>
+
+  <div class="diag">
+    <svg viewBox="0 0 560 100" width="100%" height="100">
+      <text x="15" y="26" class="sketch-text-sm" fill="#5e5e5e">初始化:</text>
+      <text x="70" y="26" fill="#9a978e" class="sketch-text-sm" font-size="10">pre=NULL</text>
+      <text x="140" y="26" fill="#2468a0" class="sketch-text-sm" font-size="10">cur</text>
+      <path d="M160,28 C166,27 170,26 172,28" class="sketch-line" stroke="#2468a0" stroke-dasharray="4,2"/>
+      <rect x="178" y="8" width="48" height="32" rx="3" fill="rgba(36,104,160,0.08)" stroke="#2468a0" stroke-width="2.5"/>
+      <text x="202" y="29" text-anchor="middle" class="sketch-text-sm" font-size="13">1</text>
+      <path d="M228,24 C238,23 244,22 250,23" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="255,24 247,19 247,28" fill="#2468a0"/>
+      <rect x="260" y="8" width="48" height="32" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <text x="284" y="29" text-anchor="middle" class="sketch-text-sm" font-size="13">2</text>
+      <path d="M310,24 C320,23 326,22 332,23" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="337,24 329,19 329,28" fill="#2468a0"/>
+      <rect x="342" y="8" width="48" height="32" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <text x="366" y="29" text-anchor="middle" class="sketch-text-sm" font-size="13">3</text>
+      <text x="399" y="29" class="sketch-text-sm" fill="#5e5e5e">∅</text>
+
+      <text x="15" y="72" class="sketch-text-sm" fill="#5e5e5e">完成后:</text>
+      <rect x="55" y="54" width="48" height="32" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <text x="79" y="75" text-anchor="middle" class="sketch-text-sm" font-size="13">3</text>
+      <path d="M105,70 C115,69 121,68 127,69" class="sketch-line" stroke="#c23b2e"/>
+      <polygon points="132,70 124,65 124,74" fill="#c23b2e"/>
+      <rect x="137" y="54" width="48" height="32" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <text x="161" y="75" text-anchor="middle" class="sketch-text-sm" font-size="13">2</text>
+      <path d="M187,70 C197,69 203,68 209,69" class="sketch-line" stroke="#c23b2e"/>
+      <polygon points="214,70 206,65 206,74" fill="#c23b2e"/>
+      <rect x="219" y="54" width="48" height="32" rx="3" fill="rgba(0,0,0,0.02)" stroke="#3a3a3a" stroke-width="2"/>
+      <text x="243" y="75" text-anchor="middle" class="sketch-text-sm" font-size="13">1</text>
+      <text x="276" y="75" class="sketch-text-sm" fill="#5e5e5e">∅</text>
+    </svg>
+    <div class="diag-caption">↖ 所有箭头方向反转，pre 成为新头</div>
+  </div>
+
+  <div class="code">
+    <div class="code-label">三指针反转</div>
+    <pre><span class="ty">Node</span>* <span class="fn">reverse</span>(<span class="ty">Node</span>* head) {
+    <span class="ty">Node</span>* pre = <span class="num">NULL</span>;
+    <span class="ty">Node</span>* cur = head;
+    <span class="kw">while</span> (cur) {
+        <span class="ty">Node</span>* nxt = cur<span class="op">-></span>next;   <span class="cm">/* ① 保存下一个 */</span>
+        cur<span class="op">-></span>next = pre;         <span class="cm">/* ② 反转箭头 */</span>
+        pre = cur;               <span class="cm">/* ③ pre 前移 */</span>
+        cur = nxt;               <span class="cm">/* ④ cur 前移 */</span>
+    }
+    <span class="kw">return</span> pre;                  <span class="cm">/* 新头 */</span>
+}</pre>
+  </div>
+</section>
+
+<!-- ═══════════ 7. 链表分类 ═══════════ -->
+<section class="section">
+  <h2>链表分类 —— 三个维度，八种组合</h2>
+
+  <p>单向/双向 × 带头/不带头 × 循环/非循环 = <strong>2 × 2 × 2 = 8 种</strong>。</p>
+
+  <div class="taxonomy">
+    <div class="tax-chip"><span class="ico">→</span>单向 · 不带头 · 非循环<span class="sub">面试高频，最基础的结构</span></div>
+    <div class="tax-chip"><span class="ico">→○</span>单向 · 不带头 · 循环<span class="sub">尾节点指回头</span></div>
+    <div class="tax-chip"><span class="ico">H→</span>单向 · 带头 · 非循环<span class="sub">头结点统一操作逻辑</span></div>
+    <div class="tax-chip"><span class="ico">H→○</span>单向 · 带头 · 循环</div>
+    <div class="tax-chip"><span class="ico">⇄</span>双向 · 不带头 · 非循环<span class="sub">可前后遍历</span></div>
+    <div class="tax-chip"><span class="ico">⇄○</span>双向 · 不带头 · 循环</div>
+    <div class="tax-chip"><span class="ico">H⇄</span>双向 · 带头 · 非循环</div>
+    <div class="tax-chip" style="border-color:#2468a0;background:rgba(36,104,160,0.04)"><span class="ico">H⇄○</span>双向 · 带头 · 循环<span class="sub"><strong>最复杂但最好用</strong></span></div>
+  </div>
+
+  <div class="col2">
+    <div>
+      <h3>双向链表节点</h3>
+      <div class="code">
+        <div class="code-label">doubly-linked</div>
+        <pre><span class="kw">typedef</span> <span class="kw">struct</span> <span class="ty">DNode</span> {
+    <span class="ty">int</span> data;
+    <span class="kw">struct</span> <span class="ty">DNode</span>* prev;  <span class="cm">/* 前驱 */</span>
+    <span class="kw">struct</span> <span class="ty">DNode</span>* next;  <span class="cm">/* 后继 */</span>
+} <span class="ty">DNode</span>;</pre>
+      </div>
+      <p>删除时不用遍历找前驱，效率更高。</p>
+    </div>
+    <div>
+      <h3>快慢指针判环</h3>
+      <div class="code">
+        <div class="code-label">detect-cycle</div>
+        <pre><span class="ty">bool</span> <span class="fn">hasCycle</span>(<span class="ty">Node</span>* head) {
+    <span class="ty">Node</span>* s = head, *f = head;
+    <span class="kw">while</span> (f && f<span class="op">-></span>next) {
+        s = s<span class="op">-></span>next;            <span class="cm">/* 慢: 1步 */</span>
+        f = f<span class="op">-></span>next<span class="op">-></span>next;       <span class="cm">/* 快: 2步 */</span>
+        <span class="kw">if</span> (s == f) <span class="kw">return</span> <span class="num">true</span>;
+    }
+    <span class="kw">return</span> <span class="num">false</span>;
+}</pre>
+      </div>
+      <p>相遇则有环，找入环点：一个指针回头，同速走，再次相遇处即入口。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 8. 链表 vs 数组 ═══════════ -->
+<section class="section">
+  <h2>链表 vs 数组</h2>
+
+  <table class="tbl">
+    <thead><tr><th>对比维度</th><th>链表</th><th>数组</th></tr></thead>
+    <tbody>
+      <tr><td>内存分布</td><td>不连续，堆上逐个分配</td><td>连续，一整块</td></tr>
+      <tr><td>随机访问</td><td>O(n) 只能顺序遍历</td><td>O(1) a[i]</td></tr>
+      <tr><td>头部插入/删除</td><td>O(1)</td><td>O(n) 移动所有元素</td></tr>
+      <tr><td>中间插入/删除</td><td>O(1)（已知位置时）</td><td>O(n) 移动后续元素</td></tr>
+      <tr><td>扩容</td><td>随时 malloc，无拷贝</td><td>realloc + 拷贝</td></tr>
+      <tr><td>额外内存</td><td>每节点多存 1~2 个指针</td><td>无</td></tr>
+      <tr><td>缓存友好</td><td>差（cache miss 多）</td><td>好（连续存储）</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════ 9. 多级指针 & void指针 ═══════════ -->
+<section class="section">
+  <h2>多级指针 &amp; void 指针在链表中的角色</h2>
+
+  <h3>改 head 必须用二级指针（Node**）</h3>
+  <p>C 语言函数传参是<strong>值传递</strong>。传一级指针只能改指针指向的内容，不能改指针本身。要改 head 本身，必须传 head 的地址——二级指针。</p>
+  <div class="col2">
+    <div>
+      <div style="font-size:0.78rem;color:#c23b2e;margin-bottom:4px">✗ 错误</div>
+      <div class="code"><pre><span class="kw">void</span> <span class="fn">delHead</span>(<span class="ty">Node</span>* head) {
+    head = head<span class="op">-></span>next;  <span class="cm">/* 改的是局部变量！main 里的 head 不变 */</span>
+}</pre></div>
+    </div>
+    <div>
+      <div style="font-size:0.78rem;color:#28784a;margin-bottom:4px">✓ 正确</div>
+      <div class="code"><pre><span class="kw">void</span> <span class="fn">delHead</span>(<span class="ty">Node</span>** hr) {
+    *hr = (*hr)<span class="op">-></span>next;  <span class="cm">/* 改的是 main 里的 head */</span>
+}
+<span class="cm">/* 调用: delHead(&head); */</span></pre></div>
+    </div>
+  </div>
+
+  <h3>多级指针：快递柜模型</h3>
+  <p>根本没有"多级指针"这种东西——指针就是指针。同一块内存，<strong>存实际内容就叫变量，存别人地址就叫指针</strong>。</p>
+  <div class="diag">
+    <svg viewBox="0 0 530 120" width="100%" height="120">
+      <!-- Locker 03 -->
+      <rect x="15" y="8" width="110" height="36" rx="3" fill="rgba(194,59,46,0.06)" stroke="#c23b2e" stroke-width="2"/>
+      <text x="70" y="32" text-anchor="middle" class="sketch-text-sm" font-size="11">📋 "纸条在 05"</text>
+      <text x="70" y="60" text-anchor="middle" class="sketch-text-sm" font-size="9" fill="#9a978e">格子 03 · 二级指针 ppa</text>
+      <path d="M128,26 C160,18 200,14 225,26" class="sketch-line" stroke="#c23b2e"/>
+      <polygon points="231,28 223,21 223,32" fill="#c23b2e"/>
+
+      <!-- Locker 05 -->
+      <rect x="236" y="8" width="110" height="36" rx="3" fill="rgba(36,104,160,0.06)" stroke="#2468a0" stroke-width="2"/>
+      <text x="291" y="32" text-anchor="middle" class="sketch-text-sm" font-size="11">📋 "书在 07"</text>
+      <text x="291" y="60" text-anchor="middle" class="sketch-text-sm" font-size="9" fill="#9a978e">格子 05 · 一级指针 pa</text>
+      <path d="M349,26 C380,18 410,14 430,26" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="436,28 428,21 428,32" fill="#2468a0"/>
+
+      <!-- Locker 07 -->
+      <rect x="440" y="8" width="70" height="36" rx="3" fill="rgba(40,120,74,0.08)" stroke="#28784a" stroke-width="2"/>
+      <text x="475" y="32" text-anchor="middle" class="sketch-text-sm" font-size="14">📕 42</text>
+      <text x="475" y="60" text-anchor="middle" class="sketch-text-sm" font-size="9" fill="#9a978e">格子 07 · 变量 a</text>
+    </svg>
+  </div>
+  <div class="code">
+    <div class="code-label">二级指针代码</div>
+    <pre><span class="ty">int</span>   a   = <span class="num">42</span>;        <span class="cm">/* 变量 */</span>
+<span class="ty">int</span>*  pa  = &a;        <span class="cm">/* 一级指针：存 a 的地址 */</span>
+<span class="ty">int</span>** ppa = &pa;       <span class="cm">/* 二级指针：存 pa 的地址 */</span>
+
+<span class="cm">/* 关系：ppa → pa → a(42) */</span></pre>
+  </div>
+
+  <h3>void 指针 —— 泛型链表的基石</h3>
+  <div class="code">
+    <div class="code-label">通用节点</div>
+    <pre><span class="kw">typedef</span> <span class="kw">struct</span> <span class="ty">GNode</span> {
+    <span class="kw">void</span>* data;              <span class="cm">/* 可指向 int / float / 任何类型 */</span>
+    <span class="kw">struct</span> <span class="ty">GNode</span>* next;
+} <span class="ty">GNode</span>;
+
+<span class="ty">int</span> x = <span class="num">42</span>;  <span class="ty">float</span> y = <span class="num">3.14</span>;
+<span class="ty">GNode</span>* n1 = <span class="fn">makeNode</span>(&x);   <span class="cm">/* data → int */</span>
+<span class="ty">GNode</span>* n2 = <span class="fn">makeNode</span>(&y);   <span class="cm">/* data → float */</span></pre>
+  </div>
+  <div class="note">
+    <strong>不能直接解引用 void*：</strong>编译器不知道它指向什么类型。使用前必须转回来：<code style="font-family:var(--font-mono)">*(int*)node->data</code>。
+  </div>
+
+  <h3>数组名 ≠ 指针（虽然长得像）</h3>
+  <div class="code">
+    <div class="code-label">关键区别</div>
+    <pre><span class="ty">int</span> arr[<span class="num">10</span>];
+<span class="ty">int</span>* p = arr;
+
+<span class="fn">printf</span>(<span class="str">"%zu"</span>, <span class="kw">sizeof</span>(arr));  <span class="cm">/* 40 —— 整个数组 */</span>
+<span class="fn">printf</span>(<span class="str">"%zu"</span>, <span class="kw">sizeof</span>(p));    <span class="cm">/* 4 或 8 —— 指针本身 */</span></pre>
+  </div>
+  <p>数组名在 <code>sizeof</code> 下表现的是整个数组的长度，编译器在编译期就知道。链表只有一个 head 指针，编译器无从得知链表有多长。</p>
+</section>
+
+<!-- ═══════════ 10. typedef / typeof / 结构体布局 ═══════════ -->
+<section class="section">
+  <h2>typedef · typeof · 结构体内存布局</h2>
+
+  <div class="col2">
+    <div>
+      <h3>typedef —— 起别名</h3>
+      <div class="code">
+        <div class="code-label">给结构体起短名</div>
+        <pre><span class="kw">typedef</span> <span class="kw">struct</span> <span class="ty">Student</span> {
+    <span class="ty">char</span> name[<span class="num">20</span>];
+    <span class="ty">int</span>  score;
+    <span class="kw">struct</span> <span class="ty">Student</span>* next;  <span class="cm">/* 自引用 → 链表标志 */</span>
+} <span class="ty">Student</span>;
+
+<span class="ty">Student</span>* head = <span class="num">NULL</span>;     <span class="cm">/* 不用写 struct */</span></pre>
+      </div>
+      <p>有自引用指针就是链表节点，叫什么名字无关紧要。</p>
+    </div>
+    <div>
+      <h3>typeof —— 取类型</h3>
+      <div class="code">
+        <div class="code-label">GCC 扩展，泛型宏</div>
+        <pre><span class="kw">#define</span> SWAP(a, b) <span class="kw">do</span> { \
+    <span class="kw">typeof</span>(a) t = a;    \
+    a = b;  b = t;      \
+} <span class="kw">while</span>(<span class="num">0</span>)
+
+<span class="ty">int</span> x=<span class="num">1</span>,y=<span class="num">2</span>;  <span class="ty">double</span> p=<span class="num">1.5</span>,q=<span class="num">2.5</span>;
+<span class="fn">SWAP</span>(x,y);  <span class="cm">/* typeof(a)→int    */</span>
+<span class="fn">SWAP</span>(p,q);  <span class="cm">/* typeof(a)→double */</span></pre>
+      </div>
+      <p>非标准 C，编译器扩展。与链表本身无关。</p>
+    </div>
+  </div>
+
+  <h3>结构体指针的本质：基地址 + 偏移量</h3>
+  <p>链表节点的 <code>cur→data</code> 和 <code>cur→next</code> 底层都是这样工作的：</p>
+  <div class="diag">
+    <svg viewBox="0 0 520 100" width="100%" height="100">
+      <text x="15" y="22" class="sketch-text-sm" fill="#5e5e5e">ptr (0x1A00)</text>
+      <path d="M95,24 C105,23 112,22 118,24" class="sketch-line" stroke="#2468a0"/>
+      <polygon points="124,25 116,20 116,29" fill="#2468a0"/>
+
+      <rect x="130" y="6" width="90" height="36" rx="3" fill="rgba(194,59,46,0.06)" stroke="#3a3a3a" stroke-width="2"/>
+      <text x="175" y="30" text-anchor="middle" class="sketch-text-sm" font-size="11">data (偏移 +0)</text>
+
+      <line x1="222" y1="8" x2="222" y2="40" stroke="#bbb" stroke-width="1" stroke-dasharray="3,2"/>
+
+      <rect x="226" y="6" width="90" height="36" rx="3" fill="rgba(36,104,160,0.06)" stroke="#3a3a3a" stroke-width="2"/>
+      <text x="271" y="30" text-anchor="middle" class="sketch-text-sm" font-size="11">next (偏移 +4)</text>
+
+      <text x="15" y="72" class="sketch-text-sm" font-size="11" fill="#5e5e5e">ptr→data → 从 ptr 偏移 0，取 sizeof(int) = 4 字节</text>
+      <text x="15" y="91" class="sketch-text-sm" font-size="11" fill="#5e5e5e">ptr→next → 从 ptr 偏移 sizeof(int)，取 sizeof(void*) 字节</text>
+    </svg>
+  </div>
+  <div class="note">
+    <strong>链表的根本：</strong>next 只是结构体尾部的一个字段，存的是下一个同类结构体的首地址——仅此而已。
+  </div>
+</section>
+
+<!-- ═══════════ 11. 注意事项 ═══════════ -->
+<section class="section">
+  <h2>常见错误 &amp; 注意事项</h2>
+
+  <ul class="steps">
+    <li><strong>插入顺序不能颠倒：</strong>先接后方，再接前方。反了会丢后半段。</li>
+    <li><strong>删除后要 free：</strong>只改指针不释放 = 内存泄漏。</li>
+    <li><strong>改头指针用二级指针：</strong>要在函数内改 head，参数必须是 Node**。</li>
+    <li><strong>遍历用临时指针：</strong>别直接用 head 遍历——走完 head 指向 NULL，链表开头就没了。</li>
+    <li><strong>带头结点统一操作：</strong>有了头结点，首元结点的插入删除不再需要特殊处理。</li>
+    <li><strong>画图：</strong>链表操作最直观的理解方式——纸笔画出每个指针的指向变化。</li>
+    <li><strong>避免指针越界访问：</strong>对 short* 解引用成 float 会读到脏数据；写入则可能 coredump。类型必须匹配。</li>
+    <li><strong>void* 不能直接解引用：</strong>必须先强转回原类型。</li>
+    <li><strong>数组名 ≠ 指针：</strong>sizeof(arr) 是整个数组大小，sizeof(ptr) 永远只是指针本身大小。</li>
+    <li><strong>NULL 是链表的终点：</strong>while (cur != NULL) 就是在防止越界——NULL 标志链表的边界。</li>
+  </ul>
+</section>
+
+<div class="footer">C 语言链表学习笔记 · 2026-07-10</div>
+</main>
+
+<!-- ═══════════ CANVAS ═══════════ -->
+<script>
+(function() {
+  const cv = document.getElementById('mc');
+  const ctx = cv.getContext('2d');
+  let W, H, mode = 'traverse', headTarget = 0, travIdx = -1, travT = 0;
+  const nodes = [
+    { data: 10, x:0,y:0, hi:false,ins:false,del:false },
+    { data: 25, x:0,y:0, hi:false,ins:false,del:false },
+    { data: 42, x:0,y:0, hi:false,ins:false,del:false },
+    { data: 67, x:0,y:0, hi:false,ins:false,del:false },
+    { data: 89, x:0,y:0, hi:false,ins:false,del:false }
+  ];
+  const NW=84, NH=42, GAP=64;
+
+  function size() {
+    const r = cv.parentElement.getBoundingClientRect();
+    const dpr = window.devicePixelRatio||1;
+    cv.width = r.width*dpr; cv.height = 320*dpr;
+    cv.style.width = r.width+'px'; cv.style.height = '320px';
+    ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr,dpr);
+    W=r.width; H=320;
+  }
+
+  function layout() {
+    const tw = nodes.length*NW + (nodes.length-1)*GAP;
+    let sx = (W-tw)/2; if (sx<20) sx=20;
+    nodes.forEach((n,i)=>{ n.x=sx+i*(NW+GAP); n.y=(H-NH)/2+20; });
+  }
+
+  function reset() { nodes.forEach(n=>{n.hi=n.ins=n.del=false;}); }
+
+  function drawNode(n, i) {
+    const x=n.x, y=n.y;
+    ctx.save();
+    // glow on highlight
+    if (n.hi) { ctx.shadowColor='rgba(36,104,160,0.4)'; ctx.shadowBlur=10; }
+    else if (n.ins) { ctx.shadowColor='rgba(40,120,74,0.4)'; ctx.shadowBlur=12; }
+    else if (n.del) { ctx.shadowColor='rgba(194,59,46,0.35)'; ctx.shadowBlur=8; }
+
+    let bc='#3a3a3a', bw=2;
+    if (n.hi) { bc='#2468a0'; bw=2.5; }
+    else if (n.ins) { bc='#28784a'; bw=2.8; }
+    else if (n.del) { bc='#c23b2e'; bw=2; }
+
+    ctx.fillStyle='#fcfbf8'; ctx.strokeStyle=bc; ctx.lineWidth=bw;
+    ctx.beginPath(); ctx.roundRect(x,y,NW,NH,3); ctx.fill(); ctx.stroke();
+    ctx.shadowColor='transparent'; ctx.shadowBlur=0;
+
+    // divider
+    ctx.strokeStyle='#d0cdc6'; ctx.lineWidth=1; ctx.setLineDash([3,2]);
+    ctx.beginPath(); ctx.moveTo(x+NW*.55,y+3); ctx.lineTo(x+NW*.55,y+NH-3); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // data
+    ctx.fillStyle='#1a1a1a'; ctx.font='500 14px "JetBrains Mono","Consolas",monospace';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    const alpha=n.del?0.35:1; ctx.globalAlpha=alpha;
+    ctx.fillText(n.data, x+NW*.275, y+NH/2);
+
+    // next
+    ctx.fillStyle=i<nodes.length-1?'#2468a0':'#9a978e';
+    ctx.font='10px "JetBrains Mono","Consolas",monospace';
+    ctx.fillText(i<nodes.length-1?'next':'NULL', x+NW*.55+NW*.225, y+NH/2);
+    ctx.globalAlpha=1;
+
+    // addr
+    ctx.fillStyle='#b0ada5'; ctx.font='8px "JetBrains Mono","Consolas",monospace';
+    ctx.fillText('0x'+(0x1A00+i*48).toString(16).toUpperCase(), x+NW/2, y+NH+12);
+    ctx.restore();
+  }
+
+  function drawArrow(x1,y1,x2,y2,color,alpha){
+    const my=y1;
+    ctx.save(); ctx.globalAlpha=alpha; ctx.strokeStyle=color; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.moveTo(x1,my);
+    ctx.quadraticCurveTo((x1+x2)/2, my-6, x2,my); ctx.stroke();
+    ctx.fillStyle=color;
+    ctx.beginPath(); ctx.moveTo(x2,my); ctx.lineTo(x2-6,my-5); ctx.lineTo(x2-6,my+5); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  }
+
+  function drawHead(target, alpha) {
+    const t=nodes[target], sx=t.x-44, sy=t.y-42, ex=t.x+NW/2, ey=t.y-4;
+    ctx.save(); ctx.globalAlpha=alpha;
+    ctx.strokeStyle='#c23b2e'; ctx.lineWidth=2; ctx.setLineDash([4,2]);
+    ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(ex,sy); ctx.lineTo(ex,ey); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='#c23b2e';
+    ctx.beginPath(); ctx.moveTo(ex,ey); ctx.lineTo(ex-4,ey-7); ctx.lineTo(ex+4,ey-7); ctx.closePath(); ctx.fill();
+    ctx.font='600 11px "Gaegu","Noto Serif SC",cursive'; ctx.textAlign='right';
+    ctx.fillText('head', sx-6, sy+5);
+    ctx.restore();
+  }
+
+  function draw(ts) {
+    size(); layout();
+    ctx.clearRect(0,0,W,H);
+    // dot grid
+    ctx.fillStyle='#e6e4dd';
+    for (let x=0; x<W; x+=18) for (let y=0; y<H; y+=18) {
+      ctx.beginPath(); ctx.arc(x,y,0.6,0,Math.PI*2); ctx.fill();
+    }
+
+    // inter-node arrows
+    for (let i=0; i<nodes.length-1; i++) {
+      drawArrow(nodes[i].x+NW, nodes[i].y+NH/2, nodes[i+1].x+2, nodes[i+1].y+NH/2, '#2468a0',
+        (nodes[i].del||nodes[i+1].del)?0.2:0.45);
+    }
+    nodes.forEach((n,i)=>drawNode(n,i));
+    drawHead(headTarget, 1);
+
+    // traverse cursor
+    if (mode==='traverse' && travIdx>=0 && travIdx<nodes.length) {
+      const t=nodes[travIdx], a=0.35+0.65*Math.abs(Math.sin(travT||0));
+      ctx.save(); ctx.globalAlpha=a; ctx.strokeStyle='#c23b2e'; ctx.lineWidth=2.5; ctx.setLineDash([]);
+      ctx.beginPath(); ctx.roundRect(t.x-3,t.y-3,NW+6,NH+6,5); ctx.stroke();
+      ctx.fillStyle='#c23b2e'; ctx.font='9px "JetBrains Mono",monospace'; ctx.textAlign='center';
+      ctx.fillText('CUR', t.x+NW/2, t.y-10);
+      ctx.restore();
+    }
+  }
+
+  function anim(ts) {
+    draw(ts);
+    if (mode==='traverse') travT=ts*0.004;
+    requestAnimationFrame(anim);
+  }
+
+  // ── Actions ──
+  function playTraverse() {
+    reset(); mode='traverse'; headTarget=0; travIdx=-1;
+    let step=0;
+    const iv=setInterval(()=>{
+      if (mode!=='traverse'){clearInterval(iv);return;}
+      nodes.forEach(n=>n.hi=false);
+      if (step<nodes.length){ travIdx=step; headTarget=step; nodes[step].hi=true; step++; }
+      else { travIdx=-1; headTarget=0; clearInterval(iv); setTimeout(()=>{if(mode==='traverse')playTraverse();},1200); }
+    },750);
+  }
+
+  function playInsert() {
+    reset(); mode='insert'; travIdx=-1; headTarget=0;
+    setTimeout(()=>{if(mode!=='insert')return; nodes[0].hi=true;},400);
+    setTimeout(()=>{if(mode!=='insert')return; nodes.forEach(n=>n.hi=false); nodes[0].ins=true; nodes[0].data=7;},1000);
+    setTimeout(()=>{if(mode!=='insert')return; nodes[0].ins=false; nodes[0].hi=true;},1900);
+    setTimeout(()=>{if(mode!=='insert')return; nodes[0].data=10; nodes[0].hi=false; playInsert();},3000);
+  }
+
+  function playDelete() {
+    reset(); mode='delete'; travIdx=-1; headTarget=0;
+    setTimeout(()=>{if(mode!=='delete')return; headTarget=1; nodes[1].hi=true;},400);
+    setTimeout(()=>{if(mode!=='delete')return; nodes[1].del=true; nodes[1].hi=false;},1100);
+    setTimeout(()=>{if(mode!=='delete')return; headTarget=0;
+      nodes.splice(1,1); nodes.push({data:Math.floor(Math.random()*80+10),x:0,y:0,hi:false,ins:true,del:false});
+      setTimeout(()=>{nodes[nodes.length-1].ins=false;},500);
+    },1900);
+    setTimeout(()=>{if(mode!=='delete')return;
+      nodes.length=0;
+      [10,25,42,67,89].forEach(d=>nodes.push({data:d,x:0,y:0,hi:false,ins:false,del:false}));
+      playDelete();
+    },3200);
+  }
+
+  function playReverse() {
+    reset(); mode='reverse'; travIdx=-1; headTarget=0;
+    const rev=[...nodes].reverse();
+    let step=0;
+    const iv=setInterval(()=>{
+      if (mode!=='reverse'){clearInterval(iv);return;}
+      if (step<nodes.length){ nodes.forEach(n=>n.hi=false); nodes[step].hi=true; step++; }
+      else if (step<nodes.length*2){
+        const ri=step-nodes.length;
+        nodes.forEach(n=>n.hi=false); nodes[ri].hi=true; nodes[ri].data=rev[ri].data; step++;
+      } else {
+        nodes.forEach(n=>n.hi=false); headTarget=0; clearInterval(iv);
+        nodes.forEach((n,i)=>{n.data=[10,25,42,67,89][i];});
+        setTimeout(()=>{if(mode==='reverse')playReverse();},1800);
+      }
+    },650);
+  }
+
+  // ── Buttons ──
+  document.querySelectorAll('.canvas-ctrls button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.canvas-ctrls button').forEach(bb=>bb.classList.remove('on'));
+      b.classList.add('on');
+      reset();
+      nodes.length=0;
+      [10,25,42,67,89].forEach(d=>nodes.push({data:d,x:0,y:0,hi:false,ins:false,del:false}));
+      travIdx=-1; headTarget=0;
+      const a=b.dataset.a;
+      if (a==='traverse') playTraverse();
+      else if (a==='insert') playInsert();
+      else if (a==='delete') playDelete();
+      else if (a==='reverse') playReverse();
+    });
+  });
+
+  // polyfill
+  if (!ctx.roundRect) {
+    ctx.roundRect=function(x,y,w,h,r){
+      if (typeof r==='number') r={tl:r,tr:r,br:r,bl:r};
+      ctx.beginPath(); ctx.moveTo(x+r.tl,y); ctx.lineTo(x+w-r.tr,y);
+      ctx.quadraticCurveTo(x+w,y,x+w,y+r.tr); ctx.lineTo(x+w,y+h-r.br);
+      ctx.quadraticCurveTo(x+w,y+h,x+w-r.br,y+h); ctx.lineTo(x+r.bl,y+h);
+      ctx.quadraticCurveTo(x,y+h,x,y+h-r.bl); ctx.lineTo(x,y+r.tl);
+      ctx.quadraticCurveTo(x,y,x+r.tl,y); ctx.closePath();
+    };
+  }
+
+  size(); layout(); playTraverse(); requestAnimationFrame(anim);
+  window.addEventListener('resize',()=>{size();layout();});
+})();
+</script>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">C 语言链表 · 学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">节点结构 —— 自引用结构体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">内存布局 —— 散落在堆上的珍珠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">head &#x3D; head→next —— 指针前移一位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">指针基础 —— 链表为什么离不开指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.1.</span> <span class="nav-text">内存的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.2.</span> <span class="nav-text">指针 &#x3D; 存地址的变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">基本操作 —— 增 · 删 · 查 · 改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.1.</span> <span class="nav-text">创建节点（malloc）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.2.</span> <span class="nav-text">头插法 —— 新节点成为新的头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.3.</span> <span class="nav-text">中间插入 —— 顺序千万不能反</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.4.</span> <span class="nav-text">删除节点 —— 别忘了 free！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.5.</span> <span class="nav-text">尾插法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">链表反转 —— 三指针迭代法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.7.</span> <span class="nav-text">链表分类 —— 三个维度，八种组合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.7.1.</span> <span class="nav-text">双向链表节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.7.2.</span> <span class="nav-text">快慢指针判环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.8.</span> <span class="nav-text">链表 vs 数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.9.</span> <span class="nav-text">多级指针 &amp; void 指针在链表中的角色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.1.</span> <span class="nav-text">改 head 必须用二级指针（Node**）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.2.</span> <span class="nav-text">多级指针：快递柜模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.3.</span> <span class="nav-text">void 指针 —— 泛型链表的基石</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.4.</span> <span class="nav-text">数组名 ≠ 指针（虽然长得像）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.10.</span> <span class="nav-text">typedef · typeof · 结构体内存布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.10.1.</span> <span class="nav-text">typedef —— 起别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.10.2.</span> <span class="nav-text">typeof —— 取类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.10.3.</span> <span class="nav-text">结构体指针的本质：基地址 + 偏移量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.11.</span> <span class="nav-text">常见错误 &amp; 注意事项</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="奶油苏打和冕型灯"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">奶油苏打和冕型灯</p>
+  <div class="site-description" itemprop="description">在下不才，于图门下求道，辟此秘境，记录技术学习点滴。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Blooming-cherry" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Blooming-cherry" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yifan230@gmail.com" title="E-Mail → mailto:yifan230@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://music.163.com/#/user/home?id=6326055984" title="网易云音乐 → https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;6326055984" rel="noopener" target="_blank"><i class="fa fa-music fa-fw"></i>网易云音乐</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/3461564099201962" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3461564099201962" rel="noopener" target="_blank"><i class="fa fa-play-circle fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://echoesfromshell.netlify.app/" title="https:&#x2F;&#x2F;echoesfromshell.netlify.app" rel="noopener" target="_blank">EchoesFromShell</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://seewater.cc/" title="https:&#x2F;&#x2F;seewater.cc" rel="noopener" target="_blank">SeeWater</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">奶油苏打和冕型灯</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">7k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<!-- Arknights credit -->
+<script>
+(function(){
+  function injectCredit() {
+    var footer = document.querySelector('.footer');
+    if (!footer) return;
+    // Remove any stale duplicates first
+    var stale = footer.querySelectorAll('.arknights-credit');
+    stale.forEach(function(el) { el.remove(); });
+    var credit = document.createElement('div');
+    credit.className = 'arknights-credit';
+    credit.style.cssText = 'margin-top:6px;font-size:12px;color:#999;text-align:center;';
+    credit.innerHTML = 'Inspired by <a href="https://ak.hypergryph.com/" target="_blank" style="color:#999;">Arknights / 明日方舟</a> &copy; Hypergryph / Studio Montagne';
+    footer.appendChild(credit);
+  }
+  injectCredit();
+  // Re-inject after PJAX page swaps (footer may have been replaced)
+  document.addEventListener('pjax:success', injectCredit);
+})();
+</script>
+
+<!-- Monster Siren URL Loader -->
+<script src="/js/siren-url-loader.js"></script>
+
+<!-- Global Mini Vinyl Player -->
+<div id="mpOverlay" style="display:none"></div>
+<div id="mpPlaylist" style="display:none"></div>
+<div id="miniPlayer">
+  <button class="mp-ctrl" id="mpPrev" title="上一首"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+  <div id="mpDisc" title="展开播放列表"><div id="mpCover"></div></div>
+  <span id="mpTitle">—</span>
+  <button id="mpBtn" title="播放/暂停">
+    <span class="mp-icon-play">▶</span>
+    <span class="mp-icon-pause" style="display:none">⏸</span>
+  </button>
+  <button class="mp-ctrl" id="mpNext" title="下一首"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+</div>
+
+<script>
+(function(){
+  var PL = [
+    {cid:"125042",name:"Sanctuary Inside",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/8aad7b966f7a8069f07c094251c5a2eb/6A12C018/siren/audio/20250430/61d007fbdd059d6c77d24359aa85c1f4.wav",cover:"https://web.hycdn.cn/siren/pic/20250430/384e007ed1908ce919a3bf704a5b36ff.png",album:"Sanctuary Inside"},
+    {cid:"306814",name:"Best Moments of...",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/d0f258fb5ec485c658e88aaebf68b821/6A12C018/siren/audio/20231019/d730dee09f6a74272784b2d5de200123.wav",cover:"https://web.hycdn.cn/siren/pic/20231019/ae52bd635f6a7e89be3c3d481788ce82.png",album:"Best Moments of..."},
+    {cid:"953953",name:"Little Wish",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/e0b903a9b2601ce6cf544c7580d6f1bf/6A12C019/siren/audio/20250801/10c5003150590f14844e554df545e8b4.wav",cover:"https://web.hycdn.cn/siren/pic/20250801/7d4b586dddf00b4e2a43c809f3fe4b45.jpg",album:"Little Wish"},
+    {cid:"306846",name:"Your Star",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/d3d870c65bbc0197bee6e97c306eaebb/6A12C019/siren/audio/20220608/8f704dc83ffaebe4a9786627564f1b22.mp3",cover:"https://web.hycdn.cn/siren/pic/20220608/7ceda0fb37acc8cdfc7f25e8352dbbc8.jpg",album:"Your Star"},
+    {cid:"697699",name:"Grow on My Time",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/db459452c39abc245786c4c16d7f491c/6A12C019/siren/audio/20250606/f9746a00e5f44840bacfb51cbe228f3e.wav",cover:"https://web.hycdn.cn/siren/pic/20250606/02da85b2cc73f426ef6cfec4910d31d9.jpg",album:"Grow on My Time"},
+    {cid:"953984",name:"Before Summer",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/bf58f2860d163be53ff969ecb64247d3/6A12C019/siren/audio/20230601/7725b49fdb287aa281103add3fd99c4e.wav",cover:"https://web.hycdn.cn/siren/pic/20230601/d052f9558a4ef28409556ba761cdd861.jpg",album:"Before Summer"},
+    {cid:"232224",name:"Innocence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/59cb1b3aa2d6442ea9a31a55ba7c7b7d/6A12C019/siren/audio/20260430/ad9bf0b9ea6ca69a4d97cf479101b65f.wav",cover:"https://web.hycdn.cn/siren/pic/20260430/87e3010a27c3f0f85422fa6f1f33483e.jpg",album:"Innocence"},
+    {cid:"306815",name:"Effervescence",artist:"塞壬唱片-MSR",url:"https://res01.hycdn.cn/57deef730043c92d12fd94e18844f899/6A12C0C9/siren/audio/20230809/68b2cd453671e11d132fd2d3cd911879.wav",cover:"https://web.hycdn.cn/siren/pic/20230809/ecc4c113772a8e8a8cdde6aa303a3ad6.jpg",album:"火山旅梦OST"}
+  ];
+
+  // Resolve fresh URL from proxy cache, fallback to hardcoded
+  function resolveUrl(track) {
+    if (window.__sirenUrls && window.__sirenUrls[track.cid]) {
+      return window.__sirenUrls[track.cid];
+    }
+    return track.url;
+  }
+
+  // PJAX guard: body-end.swig re-executes inside #pjax on every navigation.
+  // Rebind new DOM to the existing Audio instead of creating a duplicate.
+  if (window.__vinyl) {
+    var V = window.__vinyl;
+    var mp2 = document.getElementById('miniPlayer');
+    var mpDisc2 = document.getElementById('mpDisc');
+    var mpCover2 = document.getElementById('mpCover');
+    var mpTitle2 = document.getElementById('mpTitle');
+    var mpBtn2 = document.getElementById('mpBtn');
+    var mpPrev2 = document.getElementById('mpPrev');
+    var mpNext2 = document.getElementById('mpNext');
+    var iconPlay2 = mpBtn2.querySelector('.mp-icon-play');
+    var iconPause2 = mpBtn2.querySelector('.mp-icon-pause');
+    var plPanel2 = document.getElementById('mpPlaylist');
+    var overlay2 = document.getElementById('mpOverlay');
+    var plOpen2 = false;
+
+    mpCover2.style.backgroundImage = 'url(' + V.playlist[V.getIdx()].cover + ')';
+    mpTitle2.textContent = V.playlist[V.getIdx()].name;
+    var playing = !V.audio.paused;
+    mpDisc2.classList.toggle('spinning', playing);
+    iconPlay2.style.display = playing ? 'none' : 'block';
+    iconPause2.style.display = playing ? 'block' : 'none';
+
+    function updateHighlight2() {
+      var rows = plPanel2.querySelectorAll('.mpp-row');
+      rows.forEach(function(r, i) { r.classList.toggle('active', i === V.getIdx()); });
+    }
+    plPanel2.innerHTML = '';
+    V.playlist.forEach(function(t, i) {
+      var row = document.createElement('div');
+      row.className = 'mpp-row';
+      row.innerHTML = '<span class="mpp-num">' + (i < 9 ? '0' + (i + 1) : i + 1) + '</span><span class="mpp-name">' + t.name + '</span><span class="mpp-artist">' + t.artist + '</span>';
+      row.addEventListener('click', function() {
+        V.load(i);
+        if (V.audio.paused) V.toggle();
+        plPanel2.style.display = 'none';
+        overlay2.style.display = 'none';
+        mpDisc2.classList.remove('expanded');
+        plOpen2 = false;
+      });
+      plPanel2.appendChild(row);
+    });
+    updateHighlight2();
+
+    function openPanel2() { plOpen2 = true; plPanel2.style.display = 'block'; overlay2.style.display = 'block'; mpDisc2.classList.add('expanded'); }
+    function closePanel2() { plOpen2 = false; plPanel2.style.display = 'none'; overlay2.style.display = 'none'; mpDisc2.classList.remove('expanded'); }
+    mpDisc2.addEventListener('click', function() { if (plOpen2) closePanel2(); else openPanel2(); });
+    overlay2.addEventListener('click', closePanel2);
+    mpBtn2.addEventListener('click', function() { V.toggle(); });
+    mpPrev2.addEventListener('click', function() { V.prev(); });
+    mpNext2.addEventListener('click', function() { V.next(); });
+    var onMusic = window.location.pathname.indexOf('/music') !== -1;
+    mp2.style.display = onMusic ? 'none' : '';
+    if (!V.audio.__syncBound) {
+      V.audio.__syncBound = true;
+      function syncUI() {
+        var d = document.getElementById('mpDisc');
+        var ip = document.querySelector('#mpBtn .mp-icon-play');
+        var ipa = document.querySelector('#mpBtn .mp-icon-pause');
+        var p = !V.audio.paused;
+        if (d) d.classList.toggle('spinning', p);
+        if (ip) ip.style.display = p ? 'none' : 'block';
+        if (ipa) ipa.style.display = p ? 'block' : 'none';
+      }
+      V.audio.addEventListener('play', syncUI);
+      V.audio.addEventListener('pause', syncUI);
+      var origLoad = V.load;
+      V.load = function(i) {
+        origLoad(i);
+        var cov = document.getElementById('mpCover');
+        var tit = document.getElementById('mpTitle');
+        if (cov) cov.style.backgroundImage = 'url(' + V.playlist[i].cover + ')';
+        if (tit) tit.textContent = V.playlist[i].name;
+        var rows = document.querySelectorAll('.mpp-row');
+        rows.forEach(function(r, j) { r.classList.toggle('active', j === i); });
+      };
+      var origCheck = V.checkMusicPage;
+      V.checkMusicPage = function() {
+        origCheck();
+        var m = document.getElementById('miniPlayer');
+        if (m) { var onM = window.location.pathname.indexOf('/music') !== -1; m.style.display = onM ? 'none' : ''; }
+      };
+    }
+    return;
+  }
+
+  var audio = new Audio();
+  var idx = 0;
+  var playing = false;
+  var mp = document.getElementById('miniPlayer');
+  var mpDisc = document.getElementById('mpDisc');
+  var mpCover = document.getElementById('mpCover');
+  var mpTitle = document.getElementById('mpTitle');
+  var mpBtn = document.getElementById('mpBtn');
+  var mpPrev = document.getElementById('mpPrev');
+  var mpNext = document.getElementById('mpNext');
+  var iconPlay = mpBtn.querySelector('.mp-icon-play');
+  var iconPause = mpBtn.querySelector('.mp-icon-pause');
+  var plPanel = document.getElementById('mpPlaylist');
+  var overlay = document.getElementById('mpOverlay');
+  var plOpen = false;
+
+  // Restore from localStorage
+  try {
+    var s = JSON.parse(localStorage.getItem('vs'));
+    if (s && s.i < PL.length) { idx = s.i; audio.currentTime = s.t || 0; }
+  } catch(e) {}
+
+  function save() {
+    try { localStorage.setItem('vs', JSON.stringify({i:idx, t:audio.currentTime, p:playing})); } catch(e) {}
+  }
+
+  function load(i) {
+    var changed = (idx !== i);
+    idx = i;
+    var t = PL[i];
+    if (changed || !audio.src) { audio.src = resolveUrl(t); audio.setAttribute('data-idx', i); }
+    mpCover.style.backgroundImage = 'url(' + t.cover + ')';
+    mpTitle.textContent = t.name;
+    updatePlaylistHighlight();
+    save();
+    if (playing) audio.play();
+  }
+
+  function setPlaying(p) {
+    playing = p;
+    mpDisc.classList.toggle('spinning', p);
+    iconPlay.style.display = p ? 'none' : 'block';
+    iconPause.style.display = p ? 'block' : 'none';
+    updateB2t();
+    save();
+  }
+
+  function toggle() {
+    if (playing) { audio.pause(); setPlaying(false); }
+    else { audio.play().then(function(){ setPlaying(true); }).catch(function(){}); }
+  }
+
+  function next() { load((idx + 1) % PL.length); }
+  function prev() { load((idx - 1 + PL.length) % PL.length); }
+
+  function updateB2t() {
+    var b2t = document.querySelector('.back-to-top');
+    if (b2t) {
+      b2t.classList.toggle('vinyl-on', playing);
+      if (!b2t.querySelector('.b2t-disc')) {
+        var disc = document.createElement('div');
+        disc.className = 'b2t-disc';
+        b2t.appendChild(disc);
+      }
+    }
+  }
+
+  function checkMusicPage() {
+    var onMusic = window.location.pathname.indexOf('/music') !== -1;
+    mp.style.display = onMusic ? 'none' : '';
+  }
+
+  // --- Playlist panel ---
+  function buildPlaylist() {
+    plPanel.innerHTML = '';
+    PL.forEach(function(t, i) {
+      var row = document.createElement('div');
+      row.className = 'mpp-row';
+      row.innerHTML = '<span class="mpp-num">' + (i < 9 ? '0' + (i + 1) : i + 1) + '</span><span class="mpp-name">' + t.name + '</span><span class="mpp-artist">' + t.artist + '</span>';
+      row.addEventListener('click', function() {
+        load(i);
+        if (!playing) toggle();
+        closePlaylist();
+      });
+      plPanel.appendChild(row);
+    });
+    updatePlaylistHighlight();
+  }
+
+  function updatePlaylistHighlight() {
+    var rows = plPanel.querySelectorAll('.mpp-row');
+    rows.forEach(function(r, i) { r.classList.toggle('active', i === idx); });
+  }
+
+  function openPlaylist() {
+    plOpen = true;
+    plPanel.style.display = 'block';
+    overlay.style.display = 'block';
+    mpDisc.classList.add('expanded');
+  }
+
+  function closePlaylist() {
+    plOpen = false;
+    plPanel.style.display = 'none';
+    overlay.style.display = 'none';
+    mpDisc.classList.remove('expanded');
+  }
+
+  mpDisc.addEventListener('click', function() {
+    if (plOpen) closePlaylist(); else openPlaylist();
+  });
+  overlay.addEventListener('click', closePlaylist);
+  buildPlaylist();
+
+  // --- Audio events ---
+  audio.addEventListener('loadedmetadata', save);
+  audio.addEventListener('ended', function() {
+    playing = true;
+    next();
+  });
+  audio.addEventListener('play', function(){ setPlaying(true); });
+  audio.addEventListener('pause', function(){ setPlaying(false); });
+  audio.addEventListener('timeupdate', function(){
+    if (audio.currentTime && !(Math.floor(audio.currentTime) % 2)) save();
+  });
+  audio.addEventListener('error', function(){ setPlaying(false); });
+
+  mpBtn.addEventListener('click', toggle);
+  mpPrev.addEventListener('click', prev);
+  mpNext.addEventListener('click', next);
+
+  // PJAX: update UI after page transitions
+  document.addEventListener('pjax:success', function() {
+    checkMusicPage();
+    updateB2t();
+  });
+
+  // Init
+  checkMusicPage();
+  updateB2t();
+
+  // Expose for music page
+  window.__vinyl = {
+    audio: audio, playlist: PL,
+    getIdx: function(){ return idx; },
+    load: load, toggle: toggle, next: next, prev: prev,
+    setPlaying: setPlaying, checkMusicPage: checkMusicPage
+  };
+
+  // Initial load + auto-play
+  load(idx);
+  if (s && s.p && window.location.pathname.indexOf('/music') === -1) {
+    audio.play().then(function(){ setPlaying(true); }).catch(function(){});
+  }
+})();
+</script>
+
+    </div>
+</body>
+</html>
