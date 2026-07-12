@@ -28,7 +28,7 @@
 <meta property="og:description" content="问题嵌入 Hexo 的 C 链表学习笔记页面存在三类冲突：SVG 子元素被 markdown 渲染器转义为 &amp;lt;text&gt; 导致图表破碎；canvas 裸选择器覆盖鼠标拖尾尺寸；* &#x2F; html &#x2F; body 等全局 CSS 规则破坏 NexT 主题布局。 解决 源文件从 .md 改为 .html，绕过 Hexo markdown 转义 canvas { he">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-12T14:11:43.646Z">
+<meta property="article:modified_time" content="2026-07-12T14:14:21.495Z">
 <meta property="article:author" content="奶油苏打和冕型灯">
 <meta property="article:tag" content="技术, 学习, 记录">
 <meta name="twitter:card" content="summary">
@@ -641,6 +641,7 @@ window.addEventListener('pjax:success', () => {
   }
 
   var audio = new Audio();
+  audio.volume = 0.3;
   var idx = 0;
   var playing = false;
   var mp = document.getElementById('miniPlayer');
@@ -794,6 +795,246 @@ window.addEventListener('pjax:success', () => {
   if (s && s.p && window.location.pathname.indexOf('/music') === -1) {
     audio.play().then(function(){ setPlaying(true); }).catch(function(){});
   }
+})();
+</script>
+
+<!-- Live2D 看板娘 -->
+<style>
+#waifu {
+  transform: scale(0.42);
+  transform-origin: left bottom;
+}
+/* 工具栏缩小 + 左移 */
+#waifu-tool {
+  transform: scale(0.7);
+  transform-origin: left bottom;
+  left: 8px !important;
+  right: auto !important;
+}
+@media (max-width: 768px) {
+  #waifu { display: none; }
+}
+</style>
+
+<script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.1/dist/live2d.min.js"></script>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.1/dist/waifu.css">
+
+<!-- 拦截 CDN 请求：过滤模型 + sagiri 语音走本地 -->
+<script>
+(function(){
+  // 抑制 widget v1.0.1 Cubism2 hitTest 报错
+  var _warn = console.warn, _error = console.error;
+  console.warn = function() {
+    var m = Array.prototype.join.call(arguments, ' ');
+    if (m.indexOf('hit_areas') !== -1 || m.indexOf('D_REF') !== -1 || m.indexOf('_$NP') !== -1) return;
+    return _warn.apply(console, arguments);
+  };
+  console.error = function() {
+    var m = Array.prototype.join.call(arguments, ' ');
+    if (m.indexOf('hit_areas') !== -1 || m.indexOf('D_REF') !== -1 || m.indexOf('_$NP') !== -1) return;
+    return _error.apply(console, arguments);
+  };
+
+  var origFetch = window.fetch;
+  var CDN = 'https://cdn.jsdelivr.net/npm/yzs-live2d_src@1.1.0';
+
+  window.fetch = function(url, opts) {
+    if (typeof url !== 'string') return origFetch.apply(this, arguments);
+
+    // 过滤模型列表 → 只保留三人
+    if (url.indexOf('yzs-live2d_src') !== -1 && url.indexOf('model_list.json') !== -1) {
+      return Promise.resolve(new Response(JSON.stringify({
+        models: ["umaru", "sagiri", "chino"],
+        messages: [
+          "U.M.R. はい! 小埋参上!",
+          "埃罗芒阿老师来啦！",
+          "欢迎光临 Rabbit House ~"
+        ]
+      }), { headers: { 'Content-Type': 'application/json' } }));
+    }
+
+    // sagiri 的 index.json → 走本地（含 B 站语音引用）
+    if (url.indexOf('yzs-live2d_src') !== -1 && url.indexOf('sagiri/index.json') !== -1) {
+      return origFetch('/js/model/sagiri/index.json', opts);
+    }
+
+    // sagiri 的语音文件 → 走本地（B 站提取的 WAV）
+    if (url.indexOf('yzs-live2d_src') !== -1 && url.indexOf('sagiri/voice/') !== -1) {
+      return origFetch(url.replace(CDN + '/model/sagiri/', '/js/model/sagiri/'), opts);
+    }
+
+    return origFetch.apply(this, arguments);
+  };
+})();
+</script>
+
+<!-- 全局音量控制 -->
+<script>
+(function(){
+  if (window.__lv2AudioHooked) return;
+  window.__lv2AudioHooked = true;
+  var VOL = 0.5;
+  var COOLDOWN = 7000;
+  var lastPlay = {};
+  var liveAudios = {};
+
+  function modelOf(url) {
+    if (!url) return null;
+    var s = String(url);
+    if (s.indexOf('/umaru/') !== -1) return 'umaru';
+    if (s.indexOf('/sagiri/') !== -1) return 'sagiri';
+    if (s.indexOf('/chino/') !== -1) return 'chino';
+    return null;
+  }
+
+  function stopOthers(model) {
+    Object.keys(liveAudios).forEach(function(m) {
+      if (m === model) return;
+      (liveAudios[m] || []).forEach(function(a) {
+        try { a.pause(); if (a.currentTime !== undefined) a.currentTime = 0; } catch(e) {}
+      });
+      liveAudios[m] = [];
+    });
+  }
+
+  var OrigAudio = window.Audio;
+  window.Audio = function(url) {
+    var a = new OrigAudio(url);
+    a.volume = VOL;
+
+    var model = modelOf(url);
+    if (model && !a.__lv2Monitored) {
+      a.__lv2Monitored = true;
+      a.__lv2Model = model;
+
+      var _play = a.play;
+      a.play = function() {
+        var now = Date.now();
+        if (lastPlay[model] && (now - lastPlay[model] < COOLDOWN)) {
+          return Promise.resolve();
+        }
+        stopOthers(model);
+        lastPlay[model] = now;
+        if (!liveAudios[model]) liveAudios[model] = [];
+        liveAudios[model].push(a);
+        return _play.call(a).catch(function(){});
+      };
+
+      a.addEventListener('ended', function() {
+        var arr = liveAudios[model];
+        if (!arr) return;
+        var idx = arr.indexOf(a);
+        if (idx !== -1) arr.splice(idx, 1);
+      });
+      a.addEventListener('pause', function() {
+        var arr = liveAudios[model];
+        if (!arr) return;
+        var idx = arr.indexOf(a);
+        if (idx !== -1) arr.splice(idx, 1);
+      });
+    }
+
+    return a;
+  };
+  window.Audio.prototype = OrigAudio.prototype;
+})();
+</script>
+
+
+<script>
+(function(){
+  // 抑制 Cubism2 运行时 hit_areas 引用异常
+  window.addEventListener('error', function(e) {
+    var m = e.message || '';
+    if (m.indexOf('_$NP') !== -1 || m.indexOf('D_REF') !== -1 || m.indexOf('null') !== -1 && e.filename && e.filename.indexOf('live2d.min.js') !== -1) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
+
+  var s = document.createElement('script');
+  s.type = 'module';
+  s.src = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.1/dist/waifu-tips.js';
+  s.onload = function() {
+    if (typeof initWidget !== 'function') return;
+    initWidget({
+      waifuPath: '/js/live2d-config.json',
+      cdnPath: 'https://cdn.jsdelivr.net/npm/yzs-live2d_src@1.1.0/',
+      cubism2Path: 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.1/dist/live2d.min.js',
+      cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+      tools: ['switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+      logLevel: 'warn',
+      drag: false
+    });
+  };
+  document.head.appendChild(s);
+})();
+</script>
+
+<!-- 鼠标拖尾粒子 -->
+
+<!-- 鼠标拖尾粒子 -->
+<canvas id="mouseTrail" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999"></canvas>
+<script>
+(function(){
+  var canvas = document.getElementById('mouseTrail');
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var maxParticles = 40;
+  var mouse = { x: -100, y: -100 };
+  var raf;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('mousemove', function(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    var now = Date.now();
+    for (var i = 0; i < 2; i++) {
+      if (particles.length >= maxParticles) break;
+      particles.push({
+        x: mouse.x,
+        y: mouse.y,
+        r: Math.random() * 3 + 1.5,
+        vx: (Math.random() - 0.5) * 1.2,
+        vy: (Math.random() - 0.5) * 1.2,
+        life: 1,
+        decay: Math.random() * 0.02 + 0.015,
+        hue: Math.random() * 60 + 200
+      });
+    }
+  });
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.life -= p.decay;
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI * 2);
+      ctx.fillStyle = 'hsla(' + p.hue + ', 80%, 65%, ' + (p.life * 0.6) + ')';
+      ctx.fill();
+    }
+    raf = requestAnimationFrame(draw);
+  }
+  draw();
+
+  // PJAX guard
+  document.addEventListener('pjax:success', function() {
+    canvas = document.getElementById('mouseTrail');
+    if (!canvas) return;
+    ctx = canvas.getContext('2d');
+    resize();
+  });
 })();
 </script>
 
