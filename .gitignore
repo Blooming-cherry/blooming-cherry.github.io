@@ -1,0 +1,18 @@
+# Excluded top-level directories
+terminal/
+personal/
+arknights-art-repo/
+
+# Dependencies
+node_modules/
+
+# Hexo generated
+public/
+.deploy*/
+
+# System files
+.DS_Store
+Thumbs.db
+db.json
+*.log
+_multiconfig.yml

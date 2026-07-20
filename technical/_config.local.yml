@@ -1,0 +1,3 @@
+# Local override for development preview
+# Use this file with `--config _config.yml,_config.local.yml` to override root only for local dev
+root: /
