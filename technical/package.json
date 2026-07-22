@@ -12,6 +12,7 @@
     "version": "8.1.1"
   },
   "dependencies": {
+    "@excalidraw/excalidraw": "^0.18.1",
     "hexo": "^8.0.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
@@ -26,6 +27,7 @@
     "hexo-symbols-count-time": "^0.7.1",
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-theme-landscape": "^1.0.0",
+    "lz-string": "^1.5.0",
     "strip-ansi": "6.0.1"
   }
 }
